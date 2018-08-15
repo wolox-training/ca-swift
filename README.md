@@ -1,18 +1,14 @@
-%project-name iOS
+ca-swift iOS
 ----------------
 
-%project-ci-badge
-%project-codestats-badge
-
-%project-description
+Application that manages book reservations for the library that Wolox has on the 2nd floor, implemented for Carolina Arcos training
 
 # Project info & resources
 
-* **Project Manager**: %pm-full-name - %pm-email-address
-* **Technical Leader**: %tl-full-name - %tl-email-address
+* **Technical Leader**: Daniela Riesgo - daniela.riesgo@wolox.com.ar
 
-  * [Trello board](%project-trello-url): Project issues and current status.
-  * [Google Drive](%project-google-drive-url): Design resources and assets.
+  * [Trello board](https://trello.com/c/L0RIt3qM/16-wbooks): Project issues and current status.
+  * [Google Drive](https://drive.google.com/open?id=0B0bbTjmKxmYsVVdxMkRTMVNmdnM): Design resources and assets.
 
 
 # Setup
@@ -30,10 +26,10 @@ This project uses [CarthageCache](https://github.com/guidomb/carthage_cache) to 
 After setting up the required accounts from all third party service, run the following commands:
 
 ```
-git clone %project-git-ssh-url
-cd %project-root-directory-name
+git clone https://github.com/wolox-training/ca-swift.git
+cd WBooks
 script/bootstrap
-open %project-xcodeproj-file
+open WBooks.xcodeproj
 ```
 
 If any of the previous commands fail please submit an [issue](%project-github-url/issues/new) specifying the command output, OS X version and XCode version.
