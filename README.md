@@ -32,7 +32,7 @@ script/bootstrap
 open WBooks.xcodeproj
 ```
 
-If any of the previous commands fail please submit an [issue](%project-github-url/issues/new) specifying the command output, OS X version and XCode version.
+If any of the previous commands fail please submit an [issue](https://github.com/wolox-training/ca-swift/issues/new) specifying the command output, OS X version and XCode version.
 
 ## Scripts
 
