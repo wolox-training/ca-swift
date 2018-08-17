@@ -42,7 +42,7 @@ final class ViewController: UITabBarController {
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
         
-        let libraryViewController = UIViewController()
+        let libraryViewController = BooksTableViewController()
         libraryViewController.title = Constants.libraryName
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
                                                         image: UIImage(named: Constants.libraryImage),
@@ -50,7 +50,7 @@ final class ViewController: UITabBarController {
         
         tabBarControllers.append(libraryViewController)
         
-        let wishlistViewController = UIViewController()
+        let wishlistViewController = BooksTableViewController()
         wishlistViewController.title = Constants.wishlistName
         wishlistViewController.tabBarItem = UITabBarItem(title: Constants.wishlistName,
                                                          image: UIImage(named: Constants.wishlistImage),
@@ -66,7 +66,7 @@ final class ViewController: UITabBarController {
         
         tabBarControllers.append(addNewViewController)
         
-        let rentalsViewController = UIViewController()
+        let rentalsViewController = BooksTableViewController()
         rentalsViewController.title = Constants.rentalsName
         rentalsViewController.tabBarItem = UITabBarItem(title: Constants.rentalsName,
                                                         image: UIImage(named: Constants.rentalsImage),
