@@ -25,6 +25,9 @@ final class ViewController: UITabBarController {
         static let rentalsName = "Rentals"
         static let rentalsImage = "ic_rentals"
         static let rentalsSelectedImage = "ic_rentals_active"
+        static let titleSize: CGFloat = 17
+        static let navigationBarImage = "bc_nav bar"
+        static let titleFont = "SFUIText-Semibold"
     }
     
     // MARK: - Properties
@@ -42,13 +45,16 @@ final class ViewController: UITabBarController {
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
         
+        let libraryNavigationController = UINavigationController()
         let libraryViewController = BooksTableViewController()
-        libraryViewController.title = Constants.libraryName
+        libraryViewController.title = Constants.libraryName.uppercased()
+        setupNavigationController(viewContoller: libraryViewController)
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
                                                         image: UIImage(named: Constants.libraryImage),
                                                         selectedImage: UIImage(named: Constants.librarySelectedImage))
+        libraryNavigationController.viewControllers = [libraryViewController]
         
-        tabBarControllers.append(libraryViewController)
+        tabBarControllers.append(libraryNavigationController)
         
         let wishlistViewController = BooksTableViewController()
         wishlistViewController.title = Constants.wishlistName
@@ -75,5 +81,26 @@ final class ViewController: UITabBarController {
         tabBarControllers.append(rentalsViewController)
         
         self.viewControllers = tabBarControllers
+    }
+    
+    private func setupNavigationController(viewContoller: UIViewController) {
+        let navView = UIView()
+        
+        let title = UILabel()
+        title.text = viewContoller.title
+        title.textColor = UIColor.white
+        title.font = UIFont(name: Constants.titleFont, size: Constants.titleSize)
+        title.sizeToFit()
+        title.center = navView.center
+        title.textAlignment = .center
+        
+        let navigationImageView = UIImageView(image: UIImage(named: Constants.navigationBarImage))
+        navigationImageView.contentMode = .scaleAspectFit
+        navigationImageView.center = navView.center
+        
+        navView.addSubview(navigationImageView)
+        navView.addSubview(title)
+        viewContoller.navigationItem.titleView = navView
+        navView.sizeToFit()
     }
 }

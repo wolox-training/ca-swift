@@ -14,6 +14,9 @@ class BooksTableViewController: UIViewController {
     
     struct Constants {
         static let rowHeight: CGFloat = 90
+        static let titleSize: CGFloat = 17
+        static let navigationBarImage = "bc_nav bar"
+        static let titleFont = "SFUIText-Semibold"
     }
     
     // MARK: - Properties
@@ -32,11 +35,6 @@ class BooksTableViewController: UIViewController {
         
         _view.tableView.register(cell: BookTableViewCell.self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 // MARK: - Delegate and DataSource implementation
@@ -54,8 +52,4 @@ extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return Constants.rowHeight
-//    }
 }
