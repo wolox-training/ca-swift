@@ -29,7 +29,7 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
     }
     
     func configureCell() {
-        nameLabel.text = "Hola"
-        authorLabel.text = "Mundo"
+        nameLabel.text = "Hola mundo este es un texto muy largo"
+        authorLabel.text = "Mundo este es otro texto largo pero abajo"
     }
 }
