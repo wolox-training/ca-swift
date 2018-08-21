@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  WBooks
 //
 //  Created by Guido Marucci Blas on 4/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ViewController: UITabBarController {
+final class HomeViewController: UITabBarController {
     
     // MARK: - Constants
     
@@ -46,7 +46,9 @@ final class ViewController: UITabBarController {
         var tabBarControllers = [UIViewController]()
         
         let libraryNavigationController = UINavigationController()
-        let libraryViewController = BooksTableViewController()
+        let booksRepository = NetworkingBootstrapper.shared.createBooksRepository()
+        let libraryViewModel = LibraryViewModel(libraryRepository: booksRepository)
+        let libraryViewController = LibraryViewController(viewModel: libraryViewModel)
         libraryViewController.title = Constants.libraryName.uppercased()
         setupNavigationController(viewContoller: libraryViewController)
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,

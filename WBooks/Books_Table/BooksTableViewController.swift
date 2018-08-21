@@ -10,15 +10,6 @@ import UIKit
 
 class BooksTableViewController: UIViewController {
     
-    // MARK: - Constants
-    
-    struct Constants {
-        static let rowHeight: CGFloat = 90
-        static let titleSize: CGFloat = 17
-        static let navigationBarImage = "bc_nav bar"
-        static let titleFont = "SFUIText-Semibold"
-    }
-    
     // MARK: - Properties
     
     private lazy var _view: BooksTableView = BooksTableView.loadFromNib()!
