@@ -11,6 +11,13 @@ import WolmoCore
 
 class LibraryViewController: UIViewController {
     
+    // MARK: - Constants
+    
+    struct Constants {
+        static let backgroundBlueColor = "EAF6FA"
+        static let tablePositionY: CGFloat = 100
+    }
+    
     // MARK: - Properties
     
     let libraryViewModel: LibraryViewModel!
@@ -32,6 +39,19 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        load(childViewController: booksViewcontroller, into: self.view)
+        view.backgroundColor = UIColor(hex: Constants.backgroundBlueColor)
+        
+        let childView = UIView()
+        self.view.addSubview(childView)
+        
+        addChildViewController(booksViewcontroller)
+        view.addSubview(booksViewcontroller.view)
+        booksViewcontroller.view.frame = CGRect(x: view.frame.origin.x,
+                                                y: view.frame.origin.y + Constants.tablePositionY,
+                                                width: view.frame.width,
+                                                height: view.frame.height - (tabBarController?.tabBar.frame.height ?? 0) - Constants.tablePositionY)
+        
+//        load(childViewController: booksViewcontroller, into: self.view)
+//        self.view.addSubview(booksViewcontroller.view)
     }
 }
