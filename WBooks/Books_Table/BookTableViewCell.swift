@@ -11,15 +11,16 @@ import WolmoCore
 
 class BookTableViewCell: UITableViewCell, NibLoadable {
     
-    // MARK:  - Properties
+    // MARK: - Properties
     
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
 
+    // MARK: - Initializers
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,8 +29,11 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
         // Configure the view for the selected state
     }
     
+    // MARK: - Helper methods
+    
     func configureCell() {
-        nameLabel.text = "Hola mundo este es un texto muy largo"
-        authorLabel.text = "Mundo este es otro texto largo pero abajo"
+        nameLabel.text = "This is the title and is so large"
+        authorLabel.text = "And this is the author"
+        logoImageView.image = UIImage(named: "image")
     }
 }
