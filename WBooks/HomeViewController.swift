@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  WBooks
 //
 //  Created by Guido Marucci Blas on 4/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ViewController: UITabBarController {
+final class HomeViewController: UITabBarController {
     
     // MARK: - Constants
     
