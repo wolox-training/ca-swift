@@ -25,9 +25,12 @@ final class HomeViewController: UITabBarController {
         static let rentalsName = "Rentals"
         static let rentalsImage = "ic_rentals"
         static let rentalsSelectedImage = "ic_rentals_active"
-        static let titleSize: CGFloat = 17
         static let navigationBarImage = "bc_nav bar"
         static let titleFont = "SFUIText-Semibold"
+        static let titleSize: CGFloat = 17
+        static let statusBarOriginX: CGFloat = 0
+        static let statusBarOriginY: CGFloat = 0
+        static let statusBarColor = UIColor(hex: "00ADEE")
     }
     
     // MARK: - Properties
@@ -36,6 +39,13 @@ final class HomeViewController: UITabBarController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
+        
+        let barView = UIView(frame: CGRect(x: Constants.statusBarOriginX,
+                                           y: Constants.statusBarOriginY,
+                                           width: view.frame.width,
+                                           height: UIApplication.shared.statusBarFrame.height))
+        barView.backgroundColor = Constants.statusBarColor
+        view.addSubview(barView)
         
         setupTabBarItems()
     }

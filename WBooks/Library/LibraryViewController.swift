@@ -14,7 +14,7 @@ class LibraryViewController: UIViewController {
     // MARK: - Constants
     
     struct Constants {
-        static let backgroundBlueColor = "EAF6FA"
+        static let backgroundBlueColor = UIColor(hex: "EAF6FA")
         static let tablePositionY: CGFloat = 100
     }
     
@@ -39,7 +39,7 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(hex: Constants.backgroundBlueColor)
+        view.backgroundColor = Constants.backgroundBlueColor
         
         let childView = UIView()
         self.view.addSubview(childView)

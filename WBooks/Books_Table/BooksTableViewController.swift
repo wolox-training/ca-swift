@@ -38,7 +38,6 @@ extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = _view.tableView.dequeue(cell: BookTableViewCell.self)!
         
-        // Configure cell
         cell.configureCell()
         
         return cell
