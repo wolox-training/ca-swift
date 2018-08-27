@@ -34,7 +34,8 @@
 		9D1F7A721CBED81900E20BE5 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1F7A701CBED81900E20BE5 /* Quick.framework */; };
 		9D1F7A741CBED82900E20BE5 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D1F7A6F1CBED81900E20BE5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D1F7A751CBED82900E20BE5 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D1F7A701CBED81900E20BE5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AE7144E4212C769300C06BE4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E3212C769300C06BE4 /* Book.swift */; };
+		AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C32130405200925C9B /* BooksViewModel.swift */; };
+		AE65C8C62130409A00925C9B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C52130409A00925C9B /* Book.swift */; };
 		AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */; };
 		AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */; };
 		AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */; };
@@ -112,7 +113,8 @@
 		9D1F7A701CBED81900E20BE5 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		9D6E40551CB1B939008CE558 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9D6E40561CB1B93A008CE558 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
-		AE7144E3212C769300C06BE4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		AE65C8C32130405200925C9B /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		AE65C8C52130409A00925C9B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; }; 
 		AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +185,8 @@
 			children = (
 				46BEC9452117C765004338C4 /* User.swift */,
 				46BEC94A2117DA4E004338C4 /* AuthUser.swift */,
-				AE7144E3212C769300C06BE4 /* Book.swift */,
+				AE65C8C52130409A00925C9B /* Book.swift */,
+				AE7144E3212C769300C06BE4 /* Book.swift */
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,13 +226,13 @@
 				AE7144EC212C9C9800C06BE4 /* Repositories */,
 				AE7144EB212C80A700C06BE4 /* Library */,
 				AEFD614321276BC000DFF419 /* LaunchScreen.storyboard */,
-				9D1575061CB1B27500EA395E /* HomeViewController.swift */,
-				AEB208942127618B0031776C /* Books_Table */,
+				AEB208942127618B0031776C /* Books Table */,
 				AEB2088321275D6F0031776C /* Resources */,
 				46BEC9472117C7A3004338C4 /* Bootstrappers */,
 				46BEC93F2117C704004338C4 /* Models */,
 				CEB934DE1D21A44700DF75C2 /* ConfigurationFiles */,
 				9D1575041CB1B27500EA395E /* AppDelegate.swift */,
+				9D1575061CB1B27500EA395E /* HomeViewController.swift */,
 				9D1575101CB1B27500EA395E /* Info.plist */,
 				CEB934DC1D21992100DF75C2 /* Environment.swift */,
 			);
@@ -323,6 +326,7 @@
 				AEB2088F2127610E0031776C /* BooksTableViewController.swift */,
 				AEB208792127568C0031776C /* BookTableViewCell.swift */,
 				AEB2087A2127568C0031776C /* BookTableViewCell.xib */,
+				AE65C8C32130405200925C9B /* BooksViewModel.swift */,
 			);
 			path = Books_Table;
 			sourceTree = "<group>";
@@ -533,10 +537,11 @@
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
 				46BEC9492117C7AE004338C4 /* NetworkingBootstrapper.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
+				AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */,
 				AEB20896212763820031776C /* BooksTableView.swift in Sources */,
 				46BEC94B2117DA4E004338C4 /* AuthUser.swift in Sources */,
 				AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */,
-				AE7144E4212C769300C06BE4 /* Book.swift in Sources */,
+				AE65C8C62130409A00925C9B /* Book.swift in Sources */,
 				AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */,
 				46BEC9462117C765004338C4 /* User.swift in Sources */,
 				AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */,

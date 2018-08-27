@@ -8,6 +8,8 @@
 
 import UIKit
 import WolmoCore
+import ReactiveCocoa
+import ReactiveSwift
 
 class LibraryViewController: UIViewController {
     
@@ -27,7 +29,15 @@ class LibraryViewController: UIViewController {
     
     init(viewModel: LibraryViewModel) {
         libraryViewModel = viewModel
-        booksViewcontroller = BooksTableViewController()
+        
+        let getBooks: () -> SignalProducer<[Book], NSError> = {
+            return SignalProducer(value: [Book(id: 0, author: "First author", title: "First Title", imageUrl: "image"),
+                                          Book(id: 0, author: "Second author", title: "Second title", imageUrl: "image"),
+                                          Book(id: 0, author: "Third author", title: "Third title", imageUrl: "image")])
+        }
+        let bookViewModel = BooksViewModel(getBooks: getBooks)
+        
+        booksViewcontroller = BooksTableViewController(viewModel: bookViewModel)
         
         super.init(nibName: nil, bundle: nil)
     }

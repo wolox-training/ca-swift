@@ -1,8 +1,8 @@
 //
 //  Book.swift
-//  WBooks
+//  WBooks 
 //
-//  Created by Carolina Arcos on 8/21/18.
+//  Created by Carolina Arcos on 8/24/18.
 //  Copyright © 2018 Wolox. All rights reserved.
 //
 
@@ -19,7 +19,7 @@ struct Book {
     let author: String
     let title: String
     let imageUrl: String
-}
+} 
 
 extension Book: Argo.Decodable {
     
