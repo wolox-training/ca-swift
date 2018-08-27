@@ -30,14 +30,8 @@ class LibraryViewController: UIViewController {
     init(viewModel: LibraryViewModel) {
         libraryViewModel = viewModel
         
-        let getBooks: () -> SignalProducer<[Book], NSError> = {
-            return SignalProducer(value: [Book(id: 0, author: "First author", title: "First Title", imageUrl: "image"),
-                                          Book(id: 0, author: "Second author", title: "Second title", imageUrl: "image"),
-                                          Book(id: 0, author: "Third author", title: "Third title", imageUrl: "image")])
-        }
-        let bookViewModel = BooksViewModel(getBooks: getBooks)
-        
-        booksViewcontroller = BooksTableViewController(viewModel: bookViewModel)
+        let booksViewModel = libraryViewModel.createBooksViewModel()
+        booksViewcontroller = BooksTableViewController(viewModel: booksViewModel)
         
         super.init(nibName: nil, bundle: nil)
     }

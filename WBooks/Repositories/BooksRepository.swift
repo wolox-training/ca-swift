@@ -23,7 +23,7 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
     // MARK: - Constants
     
     struct Constants {
-        static let booksList = "/books"
+        static let booksList = "books"
     }
     
     // MARK: - Consuming methods
