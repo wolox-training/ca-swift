@@ -17,6 +17,8 @@ class BooksTableViewController: UIViewController {
     
     struct Constants {
         static let estimatedRowHeight: CGFloat = 90
+        static let errorAlertTitle = "Error"
+        static let errorAlertButtonTitle = "OK"
     }
     
     // MARK: - Properties
@@ -58,8 +60,13 @@ class BooksTableViewController: UIViewController {
         }
         
         booksViewModel.errorSignal.observeValues({ [unowned self] (error) in
-            // TODO: create alert with error
-//            UIAlertAction()
+            let alertError = UIAlertController(title: Constants.errorAlertTitle,
+                                               message: error.localizedDescription,
+                                               preferredStyle: .alert)
+            alertError.addAction(UIAlertAction(title: Constants.errorAlertButtonTitle,
+                                               style: .default,
+                                               handler: nil))
+            self.present(alertError, animated: true, completion: nil)
         })
     }
 }
