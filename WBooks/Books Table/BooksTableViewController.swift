@@ -51,37 +51,30 @@ class BooksTableViewController: UIViewController {
         
         _view.tableView.register(cell: BookTableViewCell.self)
         
-        booksViewModel.mutableBooks.producer.startWithValues { _ in
+        booksViewModel.loadBooks()
+        
+        booksViewModel.books.producer.startWithValues { [unowned self] _ in
             self._view.tableView.reloadData()
         }
+        
+        booksViewModel.errorSignal.observeValues({ [unowned self] (error) in
+            // TODO: create alert with error
+//            UIAlertAction()
+        })
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        booksViewModel.loadBooks()
-//    }
 }
 
 // MARK: - Delegate and DataSource implementation
 
 extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        var count: Int = 0
-//        booksViewModel.loadBooks().startWithResult( { result in
-//            switch result {
-//            case let .success(array):
-//                count = array.count
-//            case let .failure(_):
-//                count = 0
-//            }})
-//        return count
-        return booksViewModel.mutableBooks.value.count
+        return booksViewModel.books.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = _view.tableView.dequeue(cell: BookTableViewCell.self)!
         
-        cell.configureCell(with: booksViewModel.mutableBooks.value[indexPath.row])
+        cell.configureCell(with: booksViewModel.books.value[indexPath.row])
         
         return cell
     }

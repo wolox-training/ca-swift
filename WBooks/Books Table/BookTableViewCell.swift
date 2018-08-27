@@ -22,6 +22,6 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
     func configureCell(with book: Book) {
         nameLabel.text = book.title
         authorLabel.text = book.author
-        logoImageView.image = UIImage(named: book.imageUrl) // TODO: Download image
+        logoImageView.image = UIImage(named: book.imageUrl) // TODO: Download image when getting the URL from API
     }
 }

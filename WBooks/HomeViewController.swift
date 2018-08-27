@@ -44,7 +44,7 @@ final class HomeViewController: UITabBarController {
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
         
-        let getBooks: () -> SignalProducer<[Book], NSError> = { [unowned self] in
+        let getBooks: () -> SignalProducer<[Book], NSError> = {
             return SignalProducer(value: [Book(id: 0, author: "First author", title: "First Title", imageUrl: "image"),
                                           Book(id: 0, author: "Second author", title: "Second title", imageUrl: "image"),
                                           Book(id: 0, author: "Third author", title: "Third title", imageUrl: "image")])

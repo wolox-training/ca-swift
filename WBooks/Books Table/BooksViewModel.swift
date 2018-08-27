@@ -14,30 +14,36 @@ import Result
 class BooksViewModel {
     
     // MARK: - Properties
-//    var books = [Book]()
-    let mutableBooks = MutableProperty([Book]())
+    
+    private let mutableBooks = MutableProperty([Book]())
+    private let _error: Signal<NSError, NoError>.Observer
+    let books: Property<[Book]>
+    let errorSignal: Signal<NSError, NoError>
     let getBooks: () -> SignalProducer<[Book], NSError>
+    
+    // MARK: - Initializers
     
     init(getBooks: @escaping () -> SignalProducer<[Book], NSError>) {
         self.getBooks = getBooks
+        books = Property(mutableBooks)
+        (errorSignal, _error) = Signal<NSError, NoError>.pipe()
         loadBooks()
     }
     
+    deinit {
+        _error.sendCompleted()
+    }
+    
+    // MARK: - Helper methods
+    
     func loadBooks() {
-        let signal = Signal<[Book], NSError>.Observer(
-            value: { array in
-//                self.books = array
+        self.getBooks().startWithResult { (result) in
+            switch result {
+            case let .success(array):
                 self.mutableBooks.value = array
-        },
-            failed: { (error) in
-                print("Error \(error)")
-        })
-
-        self.getBooks().start(signal)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.mutableBooks.value = [Book(id: 0, author: "Some", title: "Some title", imageUrl: "image"),
-            Book(id: 0, author: "another", title: "another title", imageUrl: "image")]
+            case let .failure(error):
+                self._error.send(value: error)
+            }
         }
     }
 }
