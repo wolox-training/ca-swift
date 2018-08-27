@@ -16,24 +16,12 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-
-    // MARK: - Initializers
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     // MARK: - Helper methods
     
-    func configureCell() {
-        nameLabel.text = "This is the title and is so large"
-        authorLabel.text = "And this is the author"
-        logoImageView.image = UIImage(named: "image")
+    func configureCell(with book: Book) {
+        nameLabel.text = book.title
+        authorLabel.text = book.author
+        logoImageView.image = UIImage(named: book.imageUrl) // TODO: Download image
     }
 }
