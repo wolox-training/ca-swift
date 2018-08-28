@@ -1,5 +1,5 @@
 //
-//  SignalProducer+ErrorManagement.swift
+//  SignalProducer.swift
 //  WBooks
 //
 //  Created by Carolina Arcos on 8/28/18.

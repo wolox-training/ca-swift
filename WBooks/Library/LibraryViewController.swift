@@ -17,7 +17,8 @@ class LibraryViewController: UIViewController {
     
     struct Constants {
         static let backgroundBlueColor = UIColor(hex: "EAF6FA")
-        static let tablePositionYAddition: CGFloat = 40
+        static let tablePositionY: CGFloat = 40
+        static let defultEdgeValue: CGFloat = 0
     }
     
     // MARK: - Properties
@@ -45,18 +46,14 @@ class LibraryViewController: UIViewController {
         
         view.backgroundColor = Constants.backgroundBlueColor
         
-        let childView = UIView()
-        self.view.addSubview(childView)
-        
-        addChildViewController(booksViewcontroller)
-        view.addSubview(booksViewcontroller.view)
-        let tableOriginY = view.frame.origin.y + (self.navigationController?.navigationBar.frame.size.height ?? 0)  + (UIApplication.shared.statusBarFrame.size.height) + Constants.tablePositionYAddition
-        booksViewcontroller.view.frame = CGRect(x: view.frame.origin.x,
-                                                y: tableOriginY,
-                                                width: view.frame.width,
-                                                height: view.frame.height - (tabBarController?.tabBar.frame.height ?? 0) - tableOriginY)
-        
-//        load(childViewController: booksViewcontroller, into: self.view)
-//        self.view.addSubview(booksViewcontroller.view)
+        load(childViewController: booksViewcontroller,
+             into: self.view,
+             with: UIEdgeInsets(top: Constants.tablePositionY,
+                                left: Constants.defultEdgeValue,
+                                bottom: Constants.defultEdgeValue,
+                                right: Constants.defultEdgeValue),
+             in: .front,
+             layout: .constraints,
+             respectSafeArea: true)
     }
 }

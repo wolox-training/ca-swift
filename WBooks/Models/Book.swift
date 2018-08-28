@@ -18,7 +18,7 @@ struct Book {
     let id: Int
     let author: String
     let title: String
-    let imageUrl: String = "http://wolox-training.s3.amazonaws.com/uploads/cover.jpg"
+    let imageUrl: String?
 }
 
 extension Book: Argo.Decodable {
@@ -28,6 +28,6 @@ extension Book: Argo.Decodable {
             <^> json <| "id"
             <*> json <| "author"
             <*> json <| "title"
-//            <*> json <| "image_url"
+            <*> json <|? "image_url"
     }
 }
