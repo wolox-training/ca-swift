@@ -36,9 +36,9 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
         
         if let imageURL = URL(string: book.imageUrl) {
             let imageFetcher = ImageFetcher()
-            let imageResult = imageFetcher.fetchImage(imageURL)
-                .flatMapError { _ in SignalProducer<UIImage, NoError>.empty }
+            let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
                 .take(until: self.reactive.prepareForReuse)
+                .liftError()
             self.logoImageView.reactive.image <~ imageResult
         }
         

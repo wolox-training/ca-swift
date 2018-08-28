@@ -37,6 +37,7 @@
 		AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C32130405200925C9B /* BooksViewModel.swift */; };
 		AE65C8C62130409A00925C9B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C52130409A00925C9B /* Book.swift */; };
 		AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A1E213589EB00545F9E /* ImageFetcher.swift */; };
+		AE696A212135A73200545F9E /* SignalProducer+ErrorManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A202135A73200545F9E /* SignalProducer+ErrorManagement.swift */; };
 		AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB208792127568C0031776C /* BookTableViewCell.swift */; };
 		AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2087A2127568C0031776C /* BookTableViewCell.xib */; };
 		AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */; };
@@ -114,6 +115,7 @@
 		AE65C8C32130405200925C9B /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		AE65C8C52130409A00925C9B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AE696A1E213589EB00545F9E /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		AE696A202135A73200545F9E /* SignalProducer+ErrorManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+ErrorManagement.swift"; sourceTree = "<group>"; };
 		AEB208792127568C0031776C /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		AEB2087A2127568C0031776C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				AE696A1E213589EB00545F9E /* ImageFetcher.swift */,
+				AE696A202135A73200545F9E /* SignalProducer+ErrorManagement.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */,
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
 				46BEC9492117C7AE004338C4 /* NetworkingBootstrapper.swift in Sources */,
+				AE696A212135A73200545F9E /* SignalProducer+ErrorManagement.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 				AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */,
 				AEB20896212763820031776C /* BooksTableView.swift in Sources */,
