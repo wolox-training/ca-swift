@@ -45,9 +45,10 @@ final class HomeViewController: UITabBarController {
         var tabBarControllers = [UIViewController]()
         
         let getBooks: () -> SignalProducer<[Book], NSError> = {
-            return SignalProducer(value: [Book(id: 0, author: "First author", title: "First Title", imageUrl: "image"),
-                                          Book(id: 0, author: "Second author", title: "Second title", imageUrl: "image"),
-                                          Book(id: 0, author: "Third author", title: "Third title", imageUrl: "image")])
+            return SignalProducer(value: [Book(id: 0, author: "First author and a name that is so big", title: "First Title", imageUrl: "http:wolox-training.s3.amazonaws.com/uploads/content.jpeg"),
+                                          Book(id: 0, author: "Second author", title: "Second title and not an URL image", imageUrl: "this is not an URL"),
+                                          Book(id: 0, author: "Third author", title: "Third title", imageUrl: "http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg"),
+                                          Book(id: 0, author: "Large title and author and failed image", title: "Large title and author and failed image", imageUrl: "http://failedimage.jpg")])
         }
         let bookViewModel = BooksViewModel(getBooks: getBooks)
         let libraryViewController = BooksTableViewController(viewModel: bookViewModel)

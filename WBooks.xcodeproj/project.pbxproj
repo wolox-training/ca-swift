@@ -36,6 +36,7 @@
 		9D1F7A751CBED82900E20BE5 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D1F7A701CBED81900E20BE5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C32130405200925C9B /* BooksViewModel.swift */; };
 		AE65C8C62130409A00925C9B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C52130409A00925C9B /* Book.swift */; };
+		AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A1E213589EB00545F9E /* ImageFetcher.swift */; };
 		AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB208792127568C0031776C /* BookTableViewCell.swift */; };
 		AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2087A2127568C0031776C /* BookTableViewCell.xib */; };
 		AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */; };
@@ -112,6 +113,7 @@
 		9D6E40561CB1B93A008CE558 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		AE65C8C32130405200925C9B /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		AE65C8C52130409A00925C9B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		AE696A1E213589EB00545F9E /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		AEB208792127568C0031776C /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		AEB2087A2127568C0031776C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
@@ -216,12 +218,13 @@
 		9D1575031CB1B27500EA395E /* WBooks */ = {
 			isa = PBXGroup;
 			children = (
-				AEFD614321276BC000DFF419 /* LaunchScreen.storyboard */,
+				AE696A1D213589C000545F9E /* Helpers */,
 				AEB208942127618B0031776C /* Books Table */,
 				AEB2088321275D6F0031776C /* Resources */,
 				46BEC9472117C7A3004338C4 /* Bootstrappers */,
 				46BEC93F2117C704004338C4 /* Models */,
 				CEB934DE1D21A44700DF75C2 /* ConfigurationFiles */,
+				AEFD614321276BC000DFF419 /* LaunchScreen.storyboard */,
 				9D1575041CB1B27500EA395E /* AppDelegate.swift */,
 				9D1575061CB1B27500EA395E /* HomeViewController.swift */,
 				9D1575101CB1B27500EA395E /* Info.plist */,
@@ -269,6 +272,14 @@
 				9D6E40561CB1B93A008CE558 /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE696A1D213589C000545F9E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE696A1E213589EB00545F9E /* ImageFetcher.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		AEB2088321275D6F0031776C /* Resources */ = {
@@ -515,6 +526,7 @@
 				AEB20896212763820031776C /* BooksTableView.swift in Sources */,
 				46BEC94B2117DA4E004338C4 /* AuthUser.swift in Sources */,
 				AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */,
+				AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */,
 				AE65C8C62130409A00925C9B /* Book.swift in Sources */,
 				46BEC9462117C765004338C4 /* User.swift in Sources */,
 			);

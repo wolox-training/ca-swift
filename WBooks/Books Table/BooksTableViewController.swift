@@ -59,7 +59,7 @@ class BooksTableViewController: UIViewController {
             self._view.tableView.reloadData()
         }
         
-        booksViewModel.errorSignal.observeValues({ [unowned self] (error) in
+        booksViewModel.errorsSignal.observeValues({ [unowned self] (error) in
             let alertError = UIAlertController(title: Constants.errorAlertTitle,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)
