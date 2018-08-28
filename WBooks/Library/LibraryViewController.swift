@@ -17,7 +17,7 @@ class LibraryViewController: UIViewController {
     
     struct Constants {
         static let backgroundBlueColor = UIColor(hex: "EAF6FA")
-        static let tablePositionY: CGFloat = 100
+        static let tablePositionYAddition: CGFloat = 40
     }
     
     // MARK: - Properties
@@ -50,10 +50,11 @@ class LibraryViewController: UIViewController {
         
         addChildViewController(booksViewcontroller)
         view.addSubview(booksViewcontroller.view)
+        let tableOriginY = view.frame.origin.y + (self.navigationController?.navigationBar.frame.size.height ?? 0)  + (UIApplication.shared.statusBarFrame.size.height) + Constants.tablePositionYAddition
         booksViewcontroller.view.frame = CGRect(x: view.frame.origin.x,
-                                                y: view.frame.origin.y + Constants.tablePositionY,
+                                                y: tableOriginY,
                                                 width: view.frame.width,
-                                                height: view.frame.height - (tabBarController?.tabBar.frame.height ?? 0) - Constants.tablePositionY)
+                                                height: view.frame.height - (tabBarController?.tabBar.frame.height ?? 0) - tableOriginY)
         
 //        load(childViewController: booksViewcontroller, into: self.view)
 //        self.view.addSubview(booksViewcontroller.view)

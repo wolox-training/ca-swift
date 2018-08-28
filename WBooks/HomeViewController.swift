@@ -31,7 +31,8 @@ final class HomeViewController: UITabBarController {
         static let titleSize: CGFloat = 17
         static let statusBarOriginX: CGFloat = 0
         static let statusBarOriginY: CGFloat = 0
-        static let statusBarColor = UIColor(hex: "00ADEE")
+        static let tabBarBorderWidth: CGFloat = 0.0
+        static let defaultColor = UIColor(hex: "00ADEE")
     }
     
     // MARK: - Properties
@@ -40,12 +41,15 @@ final class HomeViewController: UITabBarController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
+        tabBar.tintColor = Constants.defaultColor
+        tabBar.layer.borderWidth = Constants.tabBarBorderWidth
+        tabBar.clipsToBounds = true
         
         let barView = UIView(frame: CGRect(x: Constants.statusBarOriginX,
                                            y: Constants.statusBarOriginY,
                                            width: view.frame.width,
                                            height: UIApplication.shared.statusBarFrame.height))
-        barView.backgroundColor = Constants.statusBarColor
+        barView.backgroundColor = Constants.defaultColor
         view.addSubview(barView)
         
         setupTabBarItems()
