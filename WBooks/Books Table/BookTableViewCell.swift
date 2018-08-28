@@ -9,7 +9,6 @@
 import UIKit
 import WolmoCore
 import ReactiveSwift
-import ReactiveCocoa
 import Result
 
 class BookTableViewCell: UITableViewCell, NibLoadable {
@@ -31,14 +30,13 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
     func configureCell(with book: Book) {
         nameLabel.text = book.title
         authorLabel.text = book.author
-        
         logoImageView.image = Constants.defaultImage
         
         if let imageURL = URL(string: book.imageUrl) {
             let imageFetcher = ImageFetcher()
             let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
-                .take(until: self.reactive.prepareForReuse)
                 .liftError()
+                .take(until: self.reactive.prepareForReuse)
             self.logoImageView.reactive.image <~ imageResult
         }
         
