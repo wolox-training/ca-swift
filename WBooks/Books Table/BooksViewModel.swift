@@ -14,17 +14,17 @@ class BooksViewModel {
     
     // MARK: - Properties
     
-    private let mutableBooks = MutableProperty([Book]())
+    private let _mutableBooks = MutableProperty([Book]())
     private let _errors: Signal<NSError, NoError>.Observer
-    private let getBooks: () -> SignalProducer<[Book], NSError>
+    private let _getBooks: () -> SignalProducer<[Book], NSError>
     let books: Property<[Book]>
     let errorsSignal: Signal<NSError, NoError>
     
     // MARK: - Initializers
     
     init(getBooks: @escaping () -> SignalProducer<[Book], NSError>) {
-        self.getBooks = getBooks
-        books = Property(mutableBooks)
+        self._getBooks = getBooks
+        books = Property(_mutableBooks)
         (errorsSignal, _errors) = Signal<NSError, NoError>.pipe()
     }
     
@@ -35,10 +35,10 @@ class BooksViewModel {
     // MARK: - Helper methods
     
     func loadBooks() {
-        self.getBooks().startWithResult { (result) in
+        self._getBooks().startWithResult { (result) in
             switch result {
             case let .success(array):
-                self.mutableBooks.value = array
+                self._mutableBooks.value = array
             case let .failure(error):
                 self._errors.send(value: error)
             }
