@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 final class HomeViewController: UITabBarController {
     
@@ -42,7 +43,14 @@ final class HomeViewController: UITabBarController {
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
         
-        let libraryViewController = UIViewController()
+        let getBooks: () -> SignalProducer<[Book], NSError> = {
+            return SignalProducer(value: [Book(id: 0, author: "First author and a name that is so big", title: "First Title", imageUrl: "http:wolox-training.s3.amazonaws.com/uploads/content.jpeg"),
+                                          Book(id: 0, author: "Second author", title: "Second title and not an URL image", imageUrl: "this is not an URL"),
+                                          Book(id: 0, author: "Third author", title: "Third title", imageUrl: "http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg"),
+                                          Book(id: 0, author: "Large title and author and failed image", title: "Large title and author and failed image", imageUrl: "http://failedimage.jpg")])
+        }
+        let bookViewModel = BooksViewModel(getBooks: getBooks)
+        let libraryViewController = BooksTableViewController(viewModel: bookViewModel)
         libraryViewController.title = Constants.libraryName
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
                                                         image: Constants.libraryImage,
