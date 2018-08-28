@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ReactiveCocoa
 import ReactiveSwift
 import Result
 import Networking
@@ -16,34 +15,33 @@ class BooksViewModel {
     
     // MARK: - Properties
     
-    private let mutableBooks = MutableProperty([Book]())
-    private let _error: Signal<RepositoryError, NoError>.Observer
+    private let _mutableBooks = MutableProperty([Book]())
+    private let _errors: Signal<RepositoryError, NoError>.Observer
+    private let _getBooks: () -> SignalProducer<[Book], RepositoryError>
     let books: Property<[Book]>
-    let errorSignal: Signal<RepositoryError, NoError>
-    let getBooks: () -> SignalProducer<[Book], RepositoryError>
+    let errorsSignal: Signal<RepositoryError, NoError>
     
     // MARK: - Initializers
     
     init(getBooks: @escaping () -> SignalProducer<[Book], RepositoryError>) {
-        self.getBooks = getBooks
-        books = Property(mutableBooks)
-        (errorSignal, _error) = Signal<RepositoryError, NoError>.pipe()
-        loadBooks()
+        self._getBooks = getBooks
+        books = Property(_mutableBooks)
+        (errorsSignal, _errors) = Signal<RepositoryError, NoError>.pipe()
     }
     
     deinit {
-        _error.sendCompleted()
+        _errors.sendCompleted()
     }
     
     // MARK: - Helper methods
     
     func loadBooks() {
-        self.getBooks().startWithResult { (result) in
+        self._getBooks().startWithResult { (result) in
             switch result {
             case let .success(array):
-                self.mutableBooks.value = array
+                self._mutableBooks.value = array
             case let .failure(error):
-                self._error.send(value: error)
+                self._errors.send(value: error)
             }
         }
     }

@@ -8,8 +8,16 @@
 
 import UIKit
 import WolmoCore
+import ReactiveSwift
+import Result
 
 class BookTableViewCell: UITableViewCell, NibLoadable {
+    
+    // MARK: - Constants
+    
+    struct Constants {
+        static let defaultImage = UIImage(named: "default_image")!
+    }
     
     // MARK: - Properties
     
@@ -22,6 +30,15 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
     func configureCell(with book: Book) {
         nameLabel.text = book.title
         authorLabel.text = book.author
-        logoImageView.image = UIImage(named: "image") // TODO: Download image when getting the URL from API
+        logoImageView.image = Constants.defaultImage
+        
+        if let imageURL = URL(string: book.imageUrl) {
+            let imageFetcher = ImageFetcher()
+            let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
+                .liftError()
+                .take(until: self.reactive.prepareForReuse)
+            self.logoImageView.reactive.image <~ imageResult
+        }
+        
     }
 }
