@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import ReactiveCocoa
 import ReactiveSwift
 import Networking
 import Argo
-import Result
 
 protocol BooksRepositoryType {
     

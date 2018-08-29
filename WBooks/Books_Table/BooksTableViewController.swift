@@ -21,12 +21,12 @@ class BooksTableViewController: UIViewController {
     // MARK: - Properties
     
     private lazy var _view: BooksTableView = BooksTableView.loadFromNib()!
-    let booksViewModel: BooksViewModel
+    private let _booksViewModel: BooksViewModel
     
     // MARK: - Initializers
     
-    init(viewModel: BooksViewModel) {
-        booksViewModel = viewModel
+    init(booksViewModel: BooksViewModel) {
+        _booksViewModel = booksViewModel
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -50,13 +50,13 @@ class BooksTableViewController: UIViewController {
         
         _view.tableView.register(cell: BookTableViewCell.self)
         
-        booksViewModel.loadBooks()
+        _booksViewModel.loadBooks()
         
-        booksViewModel.books.producer.startWithValues { [unowned self] _ in
+        _booksViewModel.books.producer.startWithValues { [unowned self] _ in
             self._view.tableView.reloadData()
         }
         
-        booksViewModel.errorsSignal.observeValues({ [unowned self] (error) in
+        _booksViewModel.errorsSignal.observeValues({ [unowned self] (error) in
             let alertError = UIAlertController(title: Constants.errorAlertTitle,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)
@@ -72,13 +72,13 @@ class BooksTableViewController: UIViewController {
 
 extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return booksViewModel.books.value.count
+        return _booksViewModel.books.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = _view.tableView.dequeue(cell: BookTableViewCell.self)!
         
-        cell.configureCell(with: booksViewModel.books.value[indexPath.row])
+        cell.configureCell(with: _booksViewModel.books.value[indexPath.row])
         
         return cell
     }

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ReactiveCocoa
 import ReactiveSwift
 import Networking
 
@@ -15,7 +14,7 @@ class LibraryViewModel {
     
     // MARK: - Properties
     
-    private let _libraryRespository:  BooksRepositoryType
+    private let _libraryRespository: BooksRepositoryType
     
     // MARK: - Initializers
     

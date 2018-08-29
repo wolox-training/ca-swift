@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import WolmoCore
-import ReactiveCocoa
-import ReactiveSwift
 
 class LibraryViewController: UIViewController {
     
@@ -23,16 +20,16 @@ class LibraryViewController: UIViewController {
     
     // MARK: - Properties
     
-    let libraryViewModel: LibraryViewModel!
-    let booksViewcontroller: BooksTableViewController
+    private let _libraryViewModel: LibraryViewModel!
+    private let _booksViewcontroller: BooksTableViewController
     
     // MARK: - Initializers
     
-    init(viewModel: LibraryViewModel) {
-        libraryViewModel = viewModel
+    init(libraryViewModel: LibraryViewModel) {
+        _libraryViewModel = libraryViewModel
         
-        let booksViewModel = libraryViewModel.createBooksViewModel()
-        booksViewcontroller = BooksTableViewController(viewModel: booksViewModel)
+        let booksViewModel = _libraryViewModel.createBooksViewModel()
+        _booksViewcontroller = BooksTableViewController(booksViewModel: booksViewModel)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,7 +43,7 @@ class LibraryViewController: UIViewController {
         
         view.backgroundColor = Constants.backgroundBlueColor
         
-        load(childViewController: booksViewcontroller,
+        load(childViewController: _booksViewcontroller,
              into: self.view,
              with: UIEdgeInsets(top: Constants.tablePositionY,
                                 left: Constants.defultEdgeValue,
