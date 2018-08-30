@@ -26,9 +26,6 @@ final class HomeViewController: UITabBarController {
         static let rentalsName = "Rentals"
         static let rentalsImage = UIImage(named: "ic_rentals")
         static let rentalsSelectedImage = UIImage(named: "ic_rentals_active") 
-        static let navigationBarImage = UIImage(named: "bc_nav bar")
-        static let statusBarOriginX: CGFloat = 0
-        static let statusBarOriginY: CGFloat = 0
         static let tabBarBorderWidth: CGFloat = 0.0
     }
     
@@ -37,17 +34,9 @@ final class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
-        tabBar.tintColor = GeneralConstants.Design.navigationBlueColor
+        tabBar.tintColor = GeneralConstants.Design.navigationBarBlueColor
         tabBar.layer.borderWidth = Constants.tabBarBorderWidth
         tabBar.clipsToBounds = true
-        
-        let statusBarView = UIView(frame: CGRect(x: Constants.statusBarOriginX,
-                                           y: Constants.statusBarOriginY,
-                                           width: view.frame.width,
-                                           height: UIApplication.shared.statusBarFrame.height))
-        statusBarView.backgroundColor = GeneralConstants.Design.navigationBlueColor
-        view.addSubview(statusBarView)
         
         setupTabBarItems()
     }
@@ -61,13 +50,11 @@ final class HomeViewController: UITabBarController {
         let libraryViewModel = LibraryViewModel(libraryRepository: booksRepository)
         let libraryViewController = LibraryViewController(libraryViewModel: libraryViewModel) 
         libraryViewController.title = Constants.libraryName.uppercased()
-        setupNavigationController(viewController: libraryViewController)
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
                                                         image: Constants.libraryImage,
                                                         selectedImage: Constants.librarySelectedImage)
         
-        let libraryNavigationController = UINavigationController(rootViewController: libraryViewController)
-        tabBarControllers.append(libraryNavigationController)
+        tabBarControllers.append(setupNavigationController(with: libraryViewController))
         
         let wishlistViewController = UIViewController()
         wishlistViewController.title = Constants.wishlistName
@@ -96,24 +83,15 @@ final class HomeViewController: UITabBarController {
         self.viewControllers = tabBarControllers
     }
     
-    private func setupNavigationController(viewController: UIViewController) {
-        let navView = UIView()
+    private func setupNavigationController(with viewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: viewController)
         
-        let title = UILabel()
-        title.text = viewController.title
-        title.textColor = UIColor.white
-        title.font = GeneralConstants.Design.navigationTitleFont
-        title.sizeToFit()
-        title.center = navView.center
-        title.textAlignment = .center
+        navigationController.navigationBar.backgroundColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.font: GeneralConstants.Design.navigationBarTitleFont,
+            NSAttributedStringKey.foregroundColor: UIColor.white
+        ]
         
-        let navigationImageView = UIImageView(image: Constants.navigationBarImage)
-        navigationImageView.contentMode = .scaleAspectFit
-        navigationImageView.center = navView.center
-        
-        navView.addSubview(navigationImageView)
-        navView.addSubview(title)
-        navView.sizeToFit()
-        viewController.navigationItem.titleView = navView
+        return navigationController
     }
 }

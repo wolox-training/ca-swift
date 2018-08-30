@@ -31,6 +31,6 @@ extension Book: Argo.Decodable {
     }
 }
 
-internal func toURL(urlString: String?) -> Decoded<URL?> {
+fileprivate func toURL(urlString: String?) -> Decoded<URL?> {
     return Decoded<URL?>.fromOptional(URL(string: urlString ?? ""))
 }
