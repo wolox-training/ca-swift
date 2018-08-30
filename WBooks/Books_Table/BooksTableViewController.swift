@@ -41,22 +41,32 @@ class BooksTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _view.tableView.delegate = self
-        _view.tableView.dataSource = self
-        
-        _view.tableView.rowHeight = UITableViewAutomaticDimension
-        _view.tableView.estimatedRowHeight = Constants.estimatedRowHeight
-        
-        _view.tableView.register(cell: BookTableViewCell.self)
-        
+
+        configureTableView(_view.tableView)
+        bindViewModel(_booksViewModel)
         _booksViewModel.loadBooks()
+    }
+    
+    // MARK: - Private methods
+    
+    private func configureTableView(_ tableView: UITableView) {
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        _booksViewModel.books.producer.startWithValues { [unowned self] _ in
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = Constants.estimatedRowHeight
+        
+        tableView.register(cell: BookTableViewCell.self)
+    }
+    
+    private func bindViewModel(_ viewModel: BooksViewModel) {
+        viewModel.books.producer.startWithValues { [unowned self] _ in
             self._view.tableView.reloadData()
         }
         
-        _booksViewModel.errorsSignal.observeValues({ [unowned self] (error) in
+        viewModel.errorsSignal
+            .take(duringLifetimeOf: self.reactive.lifetime)
+            .observeValues({ [unowned self] (error) in
             let alertError = UIAlertController(title: Constants.errorAlertTitle,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)

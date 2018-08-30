@@ -13,23 +13,19 @@ class LibraryViewController: UIViewController {
     // MARK: - Constants
     
     struct Constants {
-        static let backgroundBlueColor = UIColor(hex: "EAF6FA")
-        static let tablePositionY: CGFloat = 40
-        static let defultEdgeValue: CGFloat = 0
+        static let tableTopMargin: CGFloat = 40
+        static let tableDefaultMargin: CGFloat = 0
     }
     
     // MARK: - Properties
     
     private let _libraryViewModel: LibraryViewModel!
-    private let _booksViewcontroller: BooksTableViewController
+    private lazy var _booksViewcontroller = BooksTableViewController(booksViewModel: self._libraryViewModel.createBooksViewModel())
     
     // MARK: - Initializers
     
     init(libraryViewModel: LibraryViewModel) {
         _libraryViewModel = libraryViewModel
-        
-        let booksViewModel = _libraryViewModel.createBooksViewModel()
-        _booksViewcontroller = BooksTableViewController(booksViewModel: booksViewModel)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,16 +37,14 @@ class LibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Constants.backgroundBlueColor
+        view.backgroundColor = GeneralConstants.Design.backgroundBlueColor
         
         load(childViewController: _booksViewcontroller,
              into: self.view,
-             with: UIEdgeInsets(top: Constants.tablePositionY,
-                                left: Constants.defultEdgeValue,
-                                bottom: Constants.defultEdgeValue,
-                                right: Constants.defultEdgeValue),
-             in: .front,
-             layout: .constraints,
+             with: UIEdgeInsets(top: Constants.tableTopMargin,
+                                left: Constants.tableDefaultMargin,
+                                bottom: Constants.tableDefaultMargin,
+                                right: Constants.tableDefaultMargin),
              respectSafeArea: true)
     }
 }

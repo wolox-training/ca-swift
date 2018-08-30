@@ -18,16 +18,19 @@ struct Book {
     let id: Int
     let author: String
     let title: String
-    let imageUrl: String?
+    let imageUrl: URL?
 }
 
 extension Book: Argo.Decodable {
-    
     public static func decode(_ json: JSON) -> Decoded<Book> {
         return curry(Book.init)
-            <^> json <| "id"
-            <*> json <| "author"
-            <*> json <| "title"
-            <*> json <|? "image_url"
+        <^> json <| "id"
+        <*> json <| "author"
+        <*> json <| "title"
+        <*> ( (json <|? "image_url") >>- toURL)
     }
+}
+
+internal func toURL(urlString: String?) -> Decoded<URL?> {
+    return Decoded<URL?>.fromOptional(URL(string: urlString ?? ""))
 }

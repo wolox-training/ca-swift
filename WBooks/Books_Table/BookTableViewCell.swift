@@ -32,7 +32,7 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
         authorLabel.text = book.author
         logoImageView.image = Constants.defaultImage
         
-        if let urlString = book.imageUrl, let imageURL = URL(string: urlString) {
+        if let imageURL = book.imageUrl {
             let imageFetcher = ImageFetcher()
             let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
                 .liftError()
