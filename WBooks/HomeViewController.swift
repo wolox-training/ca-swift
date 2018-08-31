@@ -26,7 +26,7 @@ final class HomeViewController: UITabBarController {
         static let rentalsName = "Rentals"
         static let rentalsImage = UIImage(named: "ic_rentals")
         static let rentalsSelectedImage = UIImage(named: "ic_rentals_active") 
-        static let tabBarBorderWidth: CGFloat = 0.0
+        static let defaultBarBorderWidth: CGFloat = 0.0
     }
     
     // MARK: - Properties
@@ -35,7 +35,7 @@ final class HomeViewController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.tintColor = GeneralConstants.Design.navigationBarBlueColor
-        tabBar.layer.borderWidth = Constants.tabBarBorderWidth
+        tabBar.layer.borderWidth = Constants.defaultBarBorderWidth
         tabBar.clipsToBounds = true
         
         setupTabBarItems()
@@ -86,7 +86,9 @@ final class HomeViewController: UITabBarController {
     private func setupNavigationController(with viewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        navigationController.navigationBar.backgroundColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.barTintColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.font: GeneralConstants.Design.navigationBarTitleFont,
             NSAttributedStringKey.foregroundColor: UIColor.white

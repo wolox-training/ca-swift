@@ -24,7 +24,6 @@ class LibraryViewController: UIViewController {
     
     private let _libraryViewModel: LibraryViewModel!
     private lazy var _booksViewcontroller = BooksTableViewController(booksViewModel: self._libraryViewModel.createBooksViewModel())
-    private lazy var _headerImageTopMargin = UIApplication.shared.statusBarFrame.size.height + (navigationController?.navigationBar.frame.size.height ?? 0)
     
     // MARK: - Initializers
     
@@ -67,7 +66,7 @@ class LibraryViewController: UIViewController {
                                   NSLayoutConstraint(item: headerImage, attribute: .top, relatedBy: .equal,
                                                      toItem: self.view, attribute: .top,
                                                      multiplier: Constants.constraintDefaultMultiplier,
-                                                     constant: _headerImageTopMargin),
+                                                     constant: Constants.constraintDefaultConstant),
                                   NSLayoutConstraint(item: headerImage, attribute: .width, relatedBy: .equal,
                                                      toItem: self.view, attribute: .width,
                                                      multiplier: Constants.constraintDefaultMultiplier,
