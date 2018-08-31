@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="335" height="295"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-XT-Hxo">
+                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-XT-Hxo">
                     <rect key="frame" x="17" y="12" width="301.5" height="268"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF7-gA-tLs">
@@ -72,7 +72,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="5Dj-zL-1V9" firstAttribute="trailing" secondItem="QG7-zz-Zlc" secondAttribute="trailing" id="Abp-54-AUw"/>
-                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="aUR-F1-CsT" secondAttribute="trailing" constant="20" id="Ej8-WC-G2p"/>
+                                <constraint firstAttribute="trailing" secondItem="aUR-F1-CsT" secondAttribute="trailing" constant="20" id="Ej8-WC-G2p"/>
                                 <constraint firstAttribute="height" constant="160" id="HXp-dv-4gQ"/>
                                 <constraint firstItem="8aP-9J-dVU" firstAttribute="top" secondItem="hF7-gA-tLs" secondAttribute="top" constant="15" id="LJe-tv-RUs"/>
                                 <constraint firstItem="5Dj-zL-1V9" firstAttribute="top" secondItem="QG7-zz-Zlc" secondAttribute="bottom" constant="3" id="NRY-IJ-96H"/>
@@ -92,7 +92,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KH-zm-jCE">
-                            <rect key="frame" x="0.0" y="170" width="301.5" height="44"/>
+                            <rect key="frame" x="30" y="170" width="241.5" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="iKx-QV-I8H"/>
                             </constraints>
@@ -113,7 +113,7 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpz-Ry-sag">
-                            <rect key="frame" x="0.0" y="224" width="301.5" height="44"/>
+                            <rect key="frame" x="30" y="224" width="241.5" height="44"/>
                             <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="IiM-SN-7AH"/>
@@ -129,6 +129,10 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="Jpz-Ry-sag" firstAttribute="width" secondItem="oL7-XT-Hxo" secondAttribute="width" multiplier="0.8" id="Ajn-Ny-z5U"/>
+                        <constraint firstItem="0KH-zm-jCE" firstAttribute="width" secondItem="oL7-XT-Hxo" secondAttribute="width" multiplier="0.8" id="bmY-zU-yfi"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
