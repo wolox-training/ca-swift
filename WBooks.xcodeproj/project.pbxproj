@@ -35,6 +35,8 @@
 		9D1F7A741CBED82900E20BE5 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D1F7A6F1CBED81900E20BE5 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D1F7A751CBED82900E20BE5 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9D1F7A701CBED81900E20BE5 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611A2138269A001DD2C3 /* GeneralConstants.swift */; };
+		AE32612021389D5C001DD2C3 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611F21389D5C001DD2C3 /* BookDetailsView.swift */; };
+		AE32612221389D66001DD2C3 /* BookDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE32612121389D66001DD2C3 /* BookDetailsView.xib */; };
 		AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C32130405200925C9B /* BooksViewModel.swift */; };
 		AE65C8C62130409A00925C9B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C52130409A00925C9B /* Book.swift */; };
 		AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A1E213589EB00545F9E /* ImageFetcher.swift */; };
@@ -119,6 +121,8 @@
 		9D6E40551CB1B939008CE558 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		9D6E40561CB1B93A008CE558 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		AE32611A2138269A001DD2C3 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
+		AE32611F21389D5C001DD2C3 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
+		AE32612121389D66001DD2C3 /* BookDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailsView.xib; sourceTree = "<group>"; };
 		AE65C8C32130405200925C9B /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		AE65C8C52130409A00925C9B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AE696A1E213589EB00545F9E /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 		9D1575031CB1B27500EA395E /* WBooks */ = {
 			isa = PBXGroup;
 			children = (
+				AE32611C21389D18001DD2C3 /* Book_Details */,
 				AEB208942127618B0031776C /* Books_Table */,
 				AE7144EB212C80A700C06BE4 /* Library */,
 				46BEC93F2117C704004338C4 /* Models */,
@@ -288,6 +293,15 @@
 				9D6E40561CB1B93A008CE558 /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE32611C21389D18001DD2C3 /* Book_Details */ = {
+			isa = PBXGroup;
+			children = (
+				AE32611F21389D5C001DD2C3 /* BookDetailsView.swift */,
+				AE32612121389D66001DD2C3 /* BookDetailsView.xib */,
+			);
+			path = Book_Details;
 			sourceTree = "<group>";
 		};
 		AE696A1D213589C000545F9E /* Helpers */ = {
@@ -487,6 +501,7 @@
 				AEB2088E21275F0C0031776C /* SFUIText-Semibold.ttf in Resources */,
 				AEB2088C21275F0C0031776C /* SFUIText-Medium.ttf in Resources */,
 				9D15750C1CB1B27500EA395E /* Assets.xcassets in Resources */,
+				AE32612221389D66001DD2C3 /* BookDetailsView.xib in Resources */,
 				AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */,
 				AEB2088D21275F0C0031776C /* SFUIText-Regular.ttf in Resources */,
 				AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */,
@@ -566,6 +581,7 @@
 				AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */,
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
 				46BEC9492117C7AE004338C4 /* NetworkingBootstrapper.swift in Sources */,
+				AE32612021389D5C001DD2C3 /* BookDetailsView.swift in Sources */,
 				AE696A212135A73200545F9E /* SignalProducer.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 				AE696A262135FC8900545F9E /* UIVIew.swift in Sources */,
