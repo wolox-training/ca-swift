@@ -16,8 +16,6 @@ class LibraryViewController: UIViewController {
         static let tableTopMargin: CGFloat = 40
         static let tableDefaultMargin: CGFloat = 0
         static let headerImageHeight: CGFloat = 30
-        static let constraintDefaultMultiplier: CGFloat = 1
-        static let constraintDefaultConstant: CGFloat = 0
     }
     
     // MARK: - Properties
@@ -59,21 +57,10 @@ class LibraryViewController: UIViewController {
         headerImage.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(headerImage)
         
-        self.view.addConstraints([NSLayoutConstraint(item: headerImage, attribute: .centerX, relatedBy: .equal,
-                                                     toItem: self.view, attribute: .centerX,
-                                                     multiplier: Constants.constraintDefaultMultiplier,
-                                                     constant: Constants.constraintDefaultConstant),
-                                  NSLayoutConstraint(item: headerImage, attribute: .top, relatedBy: .equal,
-                                                     toItem: self.view, attribute: .top,
-                                                     multiplier: Constants.constraintDefaultMultiplier,
-                                                     constant: Constants.constraintDefaultConstant),
-                                  NSLayoutConstraint(item: headerImage, attribute: .width, relatedBy: .equal,
-                                                     toItem: self.view, attribute: .width,
-                                                     multiplier: Constants.constraintDefaultMultiplier,
-                                                     constant: Constants.constraintDefaultConstant),
-                                  NSLayoutConstraint(item: headerImage, attribute: .height, relatedBy: .equal,
-                                                     toItem: nil, attribute: .height,
-                                                     multiplier: Constants.constraintDefaultMultiplier,
-                                                     constant: Constants.headerImageHeight)])
+        NSLayoutConstraint.activate([headerImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                     headerImage.topAnchor.constraint(equalTo: view.topAnchor),
+                                     headerImage.widthAnchor.constraint(equalTo: view.widthAnchor),
+                                     headerImage.heightAnchor.constraint(equalToConstant: Constants.headerImageHeight)
+                                     ])
     }
 }

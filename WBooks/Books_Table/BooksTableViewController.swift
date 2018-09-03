@@ -60,12 +60,14 @@ class BooksTableViewController: UIViewController {
     }
     
     private func bindViewModel(_ viewModel: BooksViewModel) {
-        viewModel.books.producer.startWithValues { [unowned self] _ in
+        viewModel.books.producer
+            .take(during: self.reactive.lifetime)
+            .startWithValues { [unowned self] _ in
             self._view.tableView.reloadData()
         }
         
         viewModel.errorsSignal
-            .take(duringLifetimeOf: self.reactive.lifetime)
+            .take(during: self.reactive.lifetime)
             .observeValues({ [unowned self] (error) in
             let alertError = UIAlertController(title: Constants.errorAlertTitle,
                                                message: error.localizedDescription,
