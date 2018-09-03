@@ -45,4 +45,8 @@ class BooksViewModel {
             }
         }
     }
+    
+    func createBookViewModel(book: Book) -> BookViewModel {
+        return BookViewModel(book: book)
+    }
 }

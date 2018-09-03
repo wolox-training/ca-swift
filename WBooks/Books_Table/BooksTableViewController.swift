@@ -60,12 +60,14 @@ class BooksTableViewController: UIViewController {
     }
     
     private func bindViewModel(_ viewModel: BooksViewModel) {
-        viewModel.books.producer.startWithValues { [unowned self] _ in
+        viewModel.books.producer
+            .take(during: self.reactive.lifetime)
+            .startWithValues { [unowned self] _ in
             self._view.tableView.reloadData()
         }
         
         viewModel.errorsSignal
-            .take(duringLifetimeOf: self.reactive.lifetime)
+            .take(during: self.reactive.lifetime)
             .observeValues({ [unowned self] (error) in
             let alertError = UIAlertController(title: Constants.errorAlertTitle,
                                                message: error.localizedDescription,
@@ -96,11 +98,9 @@ extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         _view.tableView.deselectRow(at: indexPath, animated: true)
         
-        guard indexPath.row < _booksViewModel.books.value.count else {
-            return
-        }
+        let book = _booksViewModel.books.value[indexPath.row]
         
-        let detailsView = BookDetailsViewController()
+        let detailsView = BookDetailsViewController(bookViewModel: _booksViewModel.createBookViewModel(book: book))
         navigationController?.pushViewController(detailsView, animated: true)
     }
 }

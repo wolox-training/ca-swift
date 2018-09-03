@@ -11,4 +11,14 @@ import ReactiveSwift
 
 class BookViewModel {
     
+    // MARK: - Properties
+    
+    let book: Book!
+    
+    // MARK: - Initializers
+    
+    init(book: Book) {
+        self.book = book
+    }
+    
 }

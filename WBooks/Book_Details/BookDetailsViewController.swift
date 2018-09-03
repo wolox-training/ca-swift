@@ -13,8 +13,19 @@ class BookDetailsViewController: UIViewController {
     // MARK: - Properties
     
     private lazy var _view: BookDetailsView = BookDetailsView.loadFromNib()!
+    private let _bookViewModel: BookViewModel
     
     // MARK - Initiaizers
+    
+    init(bookViewModel: BookViewModel) {
+        _bookViewModel = bookViewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         self.view = _view
@@ -23,6 +34,6 @@ class BookDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        _view.configureBookDetails(with: _bookViewModel.book)
     }
 }
