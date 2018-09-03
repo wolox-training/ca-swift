@@ -92,4 +92,15 @@ extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _view.tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard indexPath.row < _booksViewModel.books.value.count else {
+            return
+        }
+        
+        let detailsView = BookDetailsViewController()
+        navigationController?.pushViewController(detailsView, animated: true)
+    }
 }

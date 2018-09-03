@@ -124,7 +124,7 @@
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="100"/>
+                                    <integer key="value" value="50"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
@@ -147,12 +147,12 @@
             <connections>
                 <outlet property="addToWishlistButton" destination="0KH-zm-jCE" id="MR0-Nc-huS"/>
                 <outlet property="authorLabel" destination="5Dj-zL-1V9" id="YBd-4K-d6A"/>
-                <outlet property="logoImageView" destination="8aP-9J-dVU" id="m7I-vg-BMb"/>
+                <outlet property="bookCoverImageView" destination="8aP-9J-dVU" id="m7I-vg-BMb"/>
+                <outlet property="genreLabel" destination="8Oi-gR-lMn" id="t03-oz-pVy"/>
                 <outlet property="releaseYearLabel" destination="V7D-fo-gCr" id="dqA-SC-9d5"/>
                 <outlet property="rentButton" destination="Jpz-Ry-sag" id="ZJv-vn-ngW"/>
                 <outlet property="statusLabel" destination="QG7-zz-Zlc" id="mb9-68-ZO3"/>
                 <outlet property="titleLabel" destination="aUR-F1-CsT" id="iQa-Yg-zr0"/>
-                <outlet property="typeLabel" destination="8Oi-gR-lMn" id="t03-oz-pVy"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="-122.5"/>
         </view>

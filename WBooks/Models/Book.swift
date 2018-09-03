@@ -19,6 +19,10 @@ struct Book {
     let author: String
     let title: String
     let imageUrl: URL?
+    let releaseYear: String
+    let genre: String
+    let available: Bool = true
+    
 }
 
 extension Book: Argo.Decodable {
@@ -28,6 +32,8 @@ extension Book: Argo.Decodable {
         <*> json <| "author"
         <*> json <| "title"
         <*> ( (json <|? "image_url") >>- toURL)
+        <*> json <| "year"
+        <*> json <| "genre"
     }
 }
 
