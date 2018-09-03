@@ -1,5 +1,5 @@
 //
-//  BookViewModel.swift
+//  BookDetailsViewModel.swift
 //  WBooks
 //
 //  Created by Carolina Arcos on 9/3/18.
@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import ReactiveSwift
 
-class BookViewModel {
+class BookDetailsViewModel {
     
     // MARK: - Properties
     
-    let book: Book!
+    private let book: Book
     
     // MARK: - Initializers
     
@@ -21,4 +20,8 @@ class BookViewModel {
         self.book = book
     }
     
+    func createBookInformatonViewModel() -> BookInformationViewModel {
+        return BookInformationViewModel(book: book)
+        
+    }
 }

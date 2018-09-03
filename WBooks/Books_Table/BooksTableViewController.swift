@@ -100,7 +100,7 @@ extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
         
         let book = _booksViewModel.books.value[indexPath.row]
         
-        let detailsView = BookDetailsViewController(bookViewModel: _booksViewModel.createBookViewModel(book: book))
+        let detailsView = BookDetailsViewController(bookViewModel: _booksViewModel.createBookDetailsViewModel(book: book))
         navigationController?.pushViewController(detailsView, animated: true)
     }
 }
