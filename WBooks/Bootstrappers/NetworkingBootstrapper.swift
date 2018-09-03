@@ -38,10 +38,9 @@ class NetworkingBootstrapper {
         injectCurrentUserFetcher()
     }
 
-//    func createWBooksRepository() -> WBooksRepository {
-//        return WBooksRepository(networkingConfiguration: networkingConfiguration, sessionManager: _sessionManager)
-//    }
-
+    func createBooksRepository() -> BooksRepositoryType {
+        return BooksRepository(networkingConfiguration: networkingConfiguration, sessionManager: _sessionManager)
+    }
 }
 
 // MARK: Private Methods

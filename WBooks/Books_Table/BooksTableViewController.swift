@@ -21,12 +21,12 @@ class BooksTableViewController: UIViewController {
     // MARK: - Properties
     
     private lazy var _view: BooksTableView = BooksTableView.loadFromNib()!
-    let booksViewModel: BooksViewModel
+    private let _booksViewModel: BooksViewModel
     
     // MARK: - Initializers
     
-    init(viewModel: BooksViewModel) {
-        booksViewModel = viewModel
+    init(booksViewModel: BooksViewModel) {
+        _booksViewModel = booksViewModel
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,22 +41,34 @@ class BooksTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        configureTableView(_view.tableView)
+        bindViewModel(_booksViewModel)
+        _booksViewModel.loadBooks()
+    }
+    
+    // MARK: - Private methods
+    
+    private func configureTableView(_ tableView: UITableView) {
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        _view.tableView.delegate = self
-        _view.tableView.dataSource = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = Constants.estimatedRowHeight
         
-        _view.tableView.rowHeight = UITableViewAutomaticDimension
-        _view.tableView.estimatedRowHeight = Constants.estimatedRowHeight
-        
-        _view.tableView.register(cell: BookTableViewCell.self)
-        
-        booksViewModel.loadBooks()
-        
-        booksViewModel.books.producer.startWithValues { [unowned self] _ in
+        tableView.register(cell: BookTableViewCell.self)
+    }
+    
+    private func bindViewModel(_ viewModel: BooksViewModel) {
+        viewModel.books.producer
+            .take(during: self.reactive.lifetime)
+            .startWithValues { [unowned self] _ in
             self._view.tableView.reloadData()
         }
         
-        booksViewModel.errorsSignal.observeValues({ [unowned self] (error) in
+        viewModel.errorsSignal
+            .take(during: self.reactive.lifetime)
+            .observeValues({ [unowned self] (error) in
             let alertError = UIAlertController(title: Constants.errorAlertTitle,
                                                message: error.localizedDescription,
                                                preferredStyle: .alert)
@@ -72,13 +84,13 @@ class BooksTableViewController: UIViewController {
 
 extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return booksViewModel.books.value.count
+        return _booksViewModel.books.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = _view.tableView.dequeue(cell: BookTableViewCell.self)!
         
-        cell.configureCell(with: booksViewModel.books.value[indexPath.row])
+        cell.configureCell(with: _booksViewModel.books.value[indexPath.row])
         
         return cell
     }

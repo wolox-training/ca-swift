@@ -25,7 +25,8 @@ final class HomeViewController: UITabBarController {
         static let addNewSelectedImage = UIImage(named: "ic_add_new_active")
         static let rentalsName = "Rentals"
         static let rentalsImage = UIImage(named: "ic_rentals")
-        static let rentalsSelectedImage = UIImage(named: "ic_rentals_active")
+        static let rentalsSelectedImage = UIImage(named: "ic_rentals_active") 
+        static let defaultBarBorderWidth: CGFloat = 0.0
     }
     
     // MARK: - Properties
@@ -33,7 +34,9 @@ final class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
+        tabBar.tintColor = GeneralConstants.Design.navigationBarBlueColor
+        tabBar.layer.borderWidth = Constants.defaultBarBorderWidth
+        tabBar.clipsToBounds = true
         
         setupTabBarItems()
     }
@@ -42,21 +45,16 @@ final class HomeViewController: UITabBarController {
     
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
-        
-        let getBooks: () -> SignalProducer<[Book], NSError> = {
-            return SignalProducer(value: [Book(id: 0, author: "First author and a name that is so big", title: "First Title", imageUrl: "http:wolox-training.s3.amazonaws.com/uploads/content.jpeg"),
-                                          Book(id: 0, author: "Second author", title: "Second title and not an URL image", imageUrl: "this is not an URL"),
-                                          Book(id: 0, author: "Third author", title: "Third title", imageUrl: "http://wolox-training.s3.amazonaws.com/uploads/6942334-M.jpg"),
-                                          Book(id: 0, author: "Large title and author and failed image", title: "Large title and author and failed image", imageUrl: "http://failedimage.jpg")])
-        }
-        let bookViewModel = BooksViewModel(getBooks: getBooks)
-        let libraryViewController = BooksTableViewController(viewModel: bookViewModel)
-        libraryViewController.title = Constants.libraryName
+        let booksRepository = NetworkingBootstrapper.shared.createBooksRepository()
+
+        let libraryViewModel = LibraryViewModel(libraryRepository: booksRepository)
+        let libraryViewController = LibraryViewController(libraryViewModel: libraryViewModel) 
+        libraryViewController.title = Constants.libraryName.uppercased()
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
                                                         image: Constants.libraryImage,
                                                         selectedImage: Constants.librarySelectedImage)
         
-        tabBarControllers.append(libraryViewController)
+        tabBarControllers.append(setupNavigationController(with: libraryViewController))
         
         let wishlistViewController = UIViewController()
         wishlistViewController.title = Constants.wishlistName
@@ -83,5 +81,19 @@ final class HomeViewController: UITabBarController {
         tabBarControllers.append(rentalsViewController)
         
         self.viewControllers = tabBarControllers
+    }
+    
+    private func setupNavigationController(with viewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.barTintColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.font: GeneralConstants.Design.navigationBarTitleFont,
+            NSAttributedStringKey.foregroundColor: UIColor.white
+        ]
+        
+        return navigationController
     }
 }

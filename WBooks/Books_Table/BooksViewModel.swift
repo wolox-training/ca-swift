@@ -9,23 +9,24 @@
 import Foundation
 import ReactiveSwift
 import Result
+import Networking
 
 class BooksViewModel {
     
     // MARK: - Properties
     
     private let _mutableBooks = MutableProperty([Book]())
-    private let _errors: Signal<NSError, NoError>.Observer
-    private let _getBooks: () -> SignalProducer<[Book], NSError>
+    private let _errors: Signal<RepositoryError, NoError>.Observer
+    private let _getBooks: () -> SignalProducer<[Book], RepositoryError>
     let books: Property<[Book]>
-    let errorsSignal: Signal<NSError, NoError>
+    let errorsSignal: Signal<RepositoryError, NoError>
     
     // MARK: - Initializers
     
-    init(getBooks: @escaping () -> SignalProducer<[Book], NSError>) {
+    init(getBooks: @escaping () -> SignalProducer<[Book], RepositoryError>) {
         self._getBooks = getBooks
         books = Property(_mutableBooks)
-        (errorsSignal, _errors) = Signal<NSError, NoError>.pipe()
+        (errorsSignal, _errors) = Signal<RepositoryError, NoError>.pipe()
     }
     
     deinit {
