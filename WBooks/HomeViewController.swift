@@ -34,7 +34,7 @@ final class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = GeneralConstants.Design.navigationBarBlueColor
+        tabBar.tintColor = GeneralConstants.Design.applicationBlueColor
         tabBar.layer.borderWidth = Constants.defaultBarBorderWidth
         tabBar.clipsToBounds = true
         
@@ -87,7 +87,7 @@ final class HomeViewController: UITabBarController {
         let navigationController = UINavigationController(rootViewController: viewController)
         
         navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.barTintColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.barTintColor = GeneralConstants.Design.applicationBlueColor
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.font: GeneralConstants.Design.navigationBarTitleFont,

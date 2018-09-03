@@ -40,6 +40,7 @@
 		AE28F3DA213DC08B007C54CA /* BookDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3D9213DC08B007C54CA /* BookDetailsViewModel.swift */; };
 		AE28F3DC213DC89F007C54CA /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3DB213DC89F007C54CA /* BookDetailsView.swift */; };
 		AE28F3DE213DCC08007C54CA /* BookDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE28F3DD213DCC08007C54CA /* BookDetailsView.xib */; };
+		AE28F3E0213DE4E7007C54CA /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3DF213DE4E7007C54CA /* UIButton.swift */; };
 		AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611A2138269A001DD2C3 /* GeneralConstants.swift */; };
 		AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611F21389D5C001DD2C3 /* BookInformationView.swift */; };
 		AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE32612121389D66001DD2C3 /* BookInformationView.xib */; };
@@ -132,6 +133,7 @@
 		AE28F3D9213DC08B007C54CA /* BookDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewModel.swift; sourceTree = "<group>"; };
 		AE28F3DB213DC89F007C54CA /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 		AE28F3DD213DCC08007C54CA /* BookDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailsView.xib; sourceTree = "<group>"; };
+		AE28F3DF213DE4E7007C54CA /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		AE32611A2138269A001DD2C3 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		AE32611F21389D5C001DD2C3 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		AE32612121389D66001DD2C3 /* BookInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInformationView.xib; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				AE696A202135A73200545F9E /* SignalProducer.swift */,
 				AE696A232135ED0B00545F9E /* UIViewController.swift */,
 				AE696A252135FC8900545F9E /* UIVIew.swift */,
+				AE28F3DF213DE4E7007C54CA /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1575071CB1B27500EA395E /* HomeViewController.swift in Sources */,
+				AE28F3E0213DE4E7007C54CA /* UIButton.swift in Sources */,
 				AE28F3D3213D9805007C54CA /* BookInformationViewController.swift in Sources */,
 				AE28F3D5213D9F05007C54CA /* BookInformationViewModel.swift in Sources */,
 				AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */,
