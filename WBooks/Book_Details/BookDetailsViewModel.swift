@@ -12,16 +12,16 @@ class BookDetailsViewModel {
     
     // MARK: - Properties
     
-    private let book: Book
+    private let _book: Book
     
     // MARK: - Initializers
     
     init(book: Book) {
-        self.book = book
+        self._book = book
     }
     
     func createBookInformatonViewModel() -> BookInformationViewModel {
-        return BookInformationViewModel(book: book)
-        
+        let booksRepository = NetworkingBootstrapper.shared.createBooksRepository()
+        return BookInformationViewModel(book: _book, booksRepository: booksRepository)
     }
 }

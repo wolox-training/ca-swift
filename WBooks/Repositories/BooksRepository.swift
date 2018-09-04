@@ -14,6 +14,9 @@ import Argo
 protocol BooksRepositoryType {
     
     func getBooks() -> SignalProducer<[Book], RepositoryError>
+    func getBookStatus(id: Int)
+    func rentBook(id: Int)
+    func addBookToWishlist(id: Int)
 }
 
 class BooksRepository: AbstractRepository, BooksRepositoryType {
@@ -28,6 +31,21 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
     
     func getBooks() -> SignalProducer<[Book], RepositoryError> {
         return performRequest(method: .get, path: Constants.booksList) { decode($0).toResult() }
+    }
+    
+    func getBookStatus(id: Int) {
+        let path = Constants.booksList + "/\(id)/rents"
+//        let result = performRequest(method: .get, path: path) { decode($0). }
+    }
+    
+    func rentBook(id: Int) {
+        print("Book rented")
+        // TODO: rent book
+    }
+    
+    func addBookToWishlist(id: Int) {
+        print("Book added")
+        // TODO: add book to wishlist
     }
     
 }

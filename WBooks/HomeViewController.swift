@@ -88,6 +88,7 @@ final class HomeViewController: UITabBarController {
         
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.barTintColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.tintColor = UIColor.white
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.font: GeneralConstants.Design.navigationBarTitleFont,

@@ -14,19 +14,19 @@ class LibraryViewModel {
     
     // MARK: - Properties
     
-    private let _libraryRespository: BooksRepositoryType
+    private let _booksRespository: BooksRepositoryType
     
     // MARK: - Initializers
     
     public init(libraryRepository: BooksRepositoryType) {
-        _libraryRespository = libraryRepository
+        _booksRespository = libraryRepository
     }
     
     // MARK: - Public methods
     
     func createBooksViewModel() -> BooksViewModel {
         let getBooks: () -> SignalProducer<[Book], RepositoryError> = { [unowned self] in
-            self._libraryRespository.getBooks()
+            self._booksRespository.getBooks()
         }
         return BooksViewModel(getBooks: getBooks)
     }

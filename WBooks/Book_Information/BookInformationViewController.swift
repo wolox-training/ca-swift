@@ -36,6 +36,26 @@ class BookInformationViewController: UIViewController {
         super.viewDidLoad()
         
         configureDetails()
+        bindAddToWishlitButtonAction()
+        bindRentButtonAction()
+    }
+    
+    // MARK: - Private methods
+    
+    private func bindAddToWishlitButtonAction() {
+        self._view.addToWishlistButton.reactive.controlEvents(.touchUpInside)
+            .take(during: self.reactive.lifetime)
+            .observeValues { [unowned self] _ in
+                self._bookViewModel.addBookToWishlit()
+        }
+    }
+    
+    private func bindRentButtonAction() {
+        self._view.rentButton.reactive.controlEvents(.touchUpInside)
+        .take(during: self.reactive.lifetime)
+            .observeValues { [unowned self] _ in
+                self._bookViewModel.rentBook()
+        }
     }
     
     // MARK: - Helper Methods
