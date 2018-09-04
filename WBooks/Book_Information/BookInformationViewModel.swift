@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import Result
+import Networking
 
 class BookInformationViewModel {
     
     // MARK: - Properties
     
     private let _book: Book
-    private let _bookRepository: BooksRepositoryType
+    private let _userBookRepository: UserBooksRepository
     
     let image = MutableProperty(UIImage(named: "default_image"))
     
@@ -46,9 +47,9 @@ class BookInformationViewModel {
     
     // MARK: - Initializers
     
-    init(book: Book, booksRepository: BooksRepositoryType) {
+    init(book: Book, userBooksRepository: UserBooksRepository) {
         self._book = book
-        self._bookRepository = booksRepository
+        self._userBookRepository = userBooksRepository
         
         setImage()
     }
@@ -68,15 +69,15 @@ class BookInformationViewModel {
     // MARK: - Public methods
     
     func getBookStatus() {
-        self._bookRepository.getBookStatus(id: _book.id)
+        self._userBookRepository.booksRepository.getBookStatus(id: _book.id)
     }
     
-    func rentBook() {
-        self._bookRepository.rentBook(id: _book.id)
+    func rentBook() -> SignalProducer<RawDataResponse, RepositoryError> {
+        return self._userBookRepository.userRepository.rentBook(id: _book.id)
     }
     
     func addBookToWishlit() {
-        self._bookRepository.addBookToWishlist(id: _book.id)
+        self._userBookRepository.userRepository.addBookToWishlist(id: _book.id)
     }
     
 }

@@ -15,7 +15,7 @@ protocol BooksRepositoryType {
     
     func getBooks() -> SignalProducer<[Book], RepositoryError>
     func getBookStatus(id: Int)
-    func rentBook(id: Int)
+    func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError>
     func addBookToWishlist(id: Int)
 }
 
@@ -36,11 +36,15 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
     func getBookStatus(id: Int) {
         let path = Constants.booksList + "/\(id)/rents"
 //        let result = performRequest(method: .get, path: path) { decode($0). }
+        // create models and get boolean
     }
     
-    func rentBook(id: Int) {
-        print("Book rented")
-        // TODO: rent book
+    func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError> {
+        let path = "users/51/rents"
+        let parameters: [String: Any] = ["user_id": 51,
+                                         "book_id": id]
+        return performRequest(method: .post, path: path, parameters: parameters)
+        
     }
     
     func addBookToWishlist(id: Int) {

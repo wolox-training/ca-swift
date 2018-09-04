@@ -13,15 +13,16 @@ class BookDetailsViewModel {
     // MARK: - Properties
     
     private let _book: Book
+    private let _userBooksRepository: UserBooksRepository
     
     // MARK: - Initializers
     
-    init(book: Book) {
+    init(book: Book, userBooksRepository: UserBooksRepository) {
         self._book = book
+        self._userBooksRepository = userBooksRepository
     }
     
     func createBookInformatonViewModel() -> BookInformationViewModel {
-        let booksRepository = NetworkingBootstrapper.shared.createBooksRepository()
-        return BookInformationViewModel(book: _book, booksRepository: booksRepository)
+        return BookInformationViewModel(book: _book, userBooksRepository: _userBooksRepository)
     }
 }

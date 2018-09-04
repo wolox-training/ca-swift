@@ -54,7 +54,16 @@ class BookInformationViewController: UIViewController {
         self._view.rentButton.reactive.controlEvents(.touchUpInside)
         .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] _ in
-                self._bookViewModel.rentBook()
+                self._bookViewModel.rentBook().startWithResult({ (result) in
+                    switch result {
+                    case .success:
+                        //TODO: show success message
+                        print("Rent success")
+                    case .failure:
+                        // TODO: show failure message
+                        print("Rent failure")
+                    }
+                })
         }
     }
     
