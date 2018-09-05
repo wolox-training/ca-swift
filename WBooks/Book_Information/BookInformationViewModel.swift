@@ -18,20 +18,14 @@ class BookInformationViewModel {
     
     private let _book: Book
     private let _userBookRepository: UserBooksRepository
-//    private let _mutableIsAvaliable = MutableProperty(BookStatus(rawValue: "Not Avaliable")!)
-    
-    let isAvaliableText = MutableProperty(String())
-    let isAvailableColor = MutableProperty(UIColor(hex: "D0021B"))
-    let isRentButtonEnabled = MutableProperty(false)
-    let image = MutableProperty(UIImage(named: "default_image"))
+    private let _mutableIsAvaliable = MutableProperty(BookStatus(rawValue: "Not Avaliable")!)
+    private let _mutableImage = MutableProperty(UIImage(named: "default_image"))
+    let isAvaliable: Property<BookStatus>
+    let image: Property<UIImage?>
     
     var title: String {
         return _book.title
     }
-    
-//    var statusColor: UIColor {
-//        return (_book.available ? UIColor(hex: "A5CD39") : UIColor(hex: "D0021B"))!
-//    }
     
     var author: String {
         return _book.author
@@ -51,6 +45,9 @@ class BookInformationViewModel {
         _book = book
         _userBookRepository = userBooksRepository
         
+        isAvaliable = Property(_mutableIsAvaliable)
+        image = Property(_mutableImage)
+        
         setImage()
         getStatusText()
     }
@@ -63,7 +60,7 @@ class BookInformationViewModel {
             let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
                 .liftError()
                 .take(duringLifetimeOf: self)
-            self.image <~ imageResult
+            self._mutableImage <~ imageResult
         }
     }
     
@@ -73,14 +70,9 @@ class BookInformationViewModel {
             .startWithResult { [unowned self] (result) in
             switch result {
             case let .success(res):
-                self.isAvaliableText.value = res.rawValue
-                self.isAvailableColor.value = res.textColor
-                self.isRentButtonEnabled.value = res.rentEnabled
-//                self.isAvaliable.value = (isAvaliable ? BookStatus(rawValue: "Avaliable") : BookStatus(rawValue: "Not Avaliable"))!
+                self._mutableIsAvaliable.value = res
             case .failure:
-                self.isAvaliableText.value = "Not Available"
-                self.isAvailableColor.value = UIColor(hex: "D0021B")
-//                self.isAvaliable.value = BookStatus(rawValue: "Not Avaliable")!
+                self._mutableIsAvaliable.value = BookStatus(rawValue: "Not Avaliable")!
             }
         }
     }

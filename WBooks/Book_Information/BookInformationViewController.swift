@@ -30,6 +30,15 @@ enum BookStatus: String {
             return false
         }
     }
+    
+    var rentButtonColor: UIColor {
+        switch self {
+        case .avaliable:
+            return GeneralConstants.Design.navigationBarBlueColor!
+        case .notAvaliable:
+            return UIColor.lightGray
+        }
+    }
 }
 
 class BookInformationViewController: UIViewController {
@@ -107,11 +116,10 @@ class BookInformationViewController: UIViewController {
         _view.releaseYearLabel.text = _bookViewModel.year
         _view.genreLabel.text = _bookViewModel.genre
         _view.bookCoverImageView.reactive.image <~ _bookViewModel.image
-        _view.statusLabel.text = "aaa"
-        _view.rentButton.reactive.isEnabled <~ _bookViewModel.isRentButtonEnabled
-        _view.statusLabel.reactive.text <~ _bookViewModel.isAvaliableText
-//        _view.statusLabel.reactive.textColor <~ _bookViewModel.isAvailableColor
-
+        _view.rentButton.reactive.isEnabled <~ _bookViewModel.isAvaliable.map{ $0.rentEnabled }
+        _view.rentButton.reactive.backgroundColor <~ _bookViewModel.isAvaliable.map{ $0.rentButtonColor }
+        _view.statusLabel.reactive.text <~ _bookViewModel.isAvaliable.map{ $0.rawValue }
+        _view.statusLabel.reactive.textColor <~ _bookViewModel.isAvaliable.map{ $0.textColor }
     }
     
     func getViewHeigth() -> CGFloat {
