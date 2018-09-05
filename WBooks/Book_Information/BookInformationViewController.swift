@@ -80,7 +80,9 @@ class BookInformationViewController: UIViewController {
         _view.releaseYearLabel.text = _bookViewModel.year
         _view.genreLabel.text = _bookViewModel.genre
         _view.bookCoverImageView.reactive.image <~ _bookViewModel.image
-        _bookViewModel.bookStatus.producer.startWithValues( {[unowned self] in
+        _bookViewModel.bookStatus.producer
+            .take(during: self.reactive.lifetime)
+            .startWithValues( {[unowned self] in
             self._view.enableRentButton(isEnabled: $0.rentEnabled)
             self._view.setStatusTo($0)
         })

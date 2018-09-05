@@ -1,5 +1,5 @@
 //
-//  User+BookRepository.swift
+//  User+BooksRepository.swift
 //  WBooks
 //
 //  Created by Carolina Arcos on 9/4/18.
@@ -17,8 +17,8 @@ protocol UserBooksRepositoryType {
 }
 
 class UserBooksRepository: AbstractRepository, UserBooksRepositoryType {
-    var userRepository: UserRepositoryType = NetworkingBootstrapper.shared.createUserRepository()
     
+    var userRepository: UserRepositoryType = NetworkingBootstrapper.shared.createUserRepository()
     var booksRepository: BooksRepositoryType = NetworkingBootstrapper.shared.createBooksRepository()
     
     
