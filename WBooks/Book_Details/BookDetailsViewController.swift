@@ -15,7 +15,7 @@ class BookDetailsViewController: UIViewController {
     private lazy var _view: BookDetailsView = BookDetailsView.loadFromNib()!
     private let _bookViewModel: BookDetailsViewModel
     private lazy var _bookInformationViewController = BookInformationViewController(bookViewModel: self._bookViewModel.createBookInformatonViewModel())
-    private lazy var _bookCommentsViewController = BookCommentsViewController()
+    private lazy var _bookCommentsViewController = BookCommentsViewController(commentsViewModel: self._bookViewModel.createBookCommentsViewModel())
     
     // MARK: - Initielizers
     

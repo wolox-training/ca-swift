@@ -14,6 +14,7 @@ import Curry
 struct Comment {
     let id: Int
     let comment: String
+    let user: User
 }
 
 extension Comment: Argo.Decodable {
@@ -21,5 +22,6 @@ extension Comment: Argo.Decodable {
         return curry(Comment.init)
         <^> json <| "id"
         <*> json <| "content"
+        <*> json <| "user"
     }
 }

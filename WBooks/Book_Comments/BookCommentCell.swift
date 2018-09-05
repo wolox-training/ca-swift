@@ -25,12 +25,12 @@ class BookCommentCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    func configureCell() {
-        nameLabel.text = "Hola"
-        commentLabel.text = "Something here sjkdr adhfkjerh akjsdfkjr ak dfhakejrhk akeakhrkfj as fdergst gsrthgsrtgrt sgtrtgsfv stgs rfs  g rt gs f  fr f se v sa... end"
+    func configureCell(with comment: Comment) {
+        nameLabel.text = "\(comment.user.firstName) \(comment.user.lastName)"
+        commentLabel.text = comment.comment
         userImageView.image = Constants.defaultImage
         
-        if let imageURL = URL(string: "http://someurl.jpg") {
+        if let imageURL = comment.user.imageURL {
             let imageFetcher = ImageFetcher()
             let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
                 .liftError()

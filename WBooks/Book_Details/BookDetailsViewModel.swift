@@ -25,4 +25,8 @@ class BookDetailsViewModel {
     func createBookInformatonViewModel() -> BookInformationViewModel {
         return BookInformationViewModel(book: _book, userBooksRepository: _userBooksRepository)
     }
+    
+    func createBookCommentsViewModel() -> BookCommentsViewModel {
+        return BookCommentsViewModel(book: _book, booksRepository: _userBooksRepository.booksRepository)
+    }
 }

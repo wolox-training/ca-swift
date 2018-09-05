@@ -19,10 +19,13 @@ class BookCommentsViewController: UIViewController {
     // MARK: - Properties
     
     private lazy var _view: BookComentsTableView = BookComentsTableView.loadFromNib()!
+    private let _commentsViewModel: BookCommentsViewModel
     
     // MARK: - Initializers
     
-    init() {
+    init(commentsViewModel: BookCommentsViewModel) {
+        _commentsViewModel = commentsViewModel
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,6 +41,8 @@ class BookCommentsViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableView(_view.tableView)
+        bindViewModel(_commentsViewModel)
+        _commentsViewModel.getBookComments()
     }
     
     // MARK: - Private methods
@@ -51,17 +56,25 @@ class BookCommentsViewController: UIViewController {
         
         tableView.register(cell: BookCommentCell.self)
     }
+    
+    private func bindViewModel(_ viewModel: BookCommentsViewModel) {
+        viewModel.comments.producer
+        .take(during: self.reactive.lifetime)
+            .startWithValues { [unowned self] _ in
+                self._view.tableView.reloadData()
+        }
+    }
 }
 
 extension BookCommentsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return _commentsViewModel.comments.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = _view.tableView.dequeue(cell: BookCommentCell.self)!
         
-        cell.configureCell()
+        cell.configureCell(with: _commentsViewModel.comments.value[indexPath.row])
         
         return cell
     }
