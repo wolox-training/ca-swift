@@ -13,12 +13,6 @@ import Result
 
 class BookTableViewCell: UITableViewCell, NibLoadable {
     
-    // MARK: - Constants
-    
-    struct Constants {
-        static let defaultImage = UIImage(named: "default_image")!
-    }
-    
     // MARK: - Properties
     
     @IBOutlet weak var bookCoverImageView: UIImageView!
@@ -30,7 +24,7 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
     func configureCell(with book: Book) {
         nameLabel.text = book.title
         authorLabel.text = book.author
-        bookCoverImageView.image = Constants.defaultImage
+        bookCoverImageView.image = GeneralConstants.Design.appDefaultImage
         
         if let imageURL = book.imageUrl {
             let imageFetcher = ImageFetcher()
@@ -39,6 +33,5 @@ class BookTableViewCell: UITableViewCell, NibLoadable {
                 .take(until: self.reactive.prepareForReuse)
             self.bookCoverImageView.reactive.image <~ imageResult
         }
-        
     }
 }

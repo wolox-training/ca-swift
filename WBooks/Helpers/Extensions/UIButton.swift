@@ -7,16 +7,27 @@
 //
 
 import UIKit
+import WolmoCore
 
 extension UIButton {
     
-    func setGradientBackgound(colorOne: UIColor, colorTwo: UIColor) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+    // MARK: - Constants
+    
+    struct Constants {
+        static let enabledColors = [GeneralConstants.Design.applicationBlueColor, UIColor(hex: "38CCCD")!]
+        static let disabledColors = [UIColor(hex: "EAEAEA")!, UIColor(hex: "F4F4F4")!]
+    }
+    
+    // MARK: - Gradient
+    
+    func setGradientBackground(enabled: Bool) {
+        let colors: [UIColor]
+        if enabled {
+            colors = Constants.enabledColors
+        } else {
+            colors = Constants.disabledColors
+        }
         
-        layer.insertSublayer(gradientLayer, at: 0)
+        self.gradient = ViewGradient(colors: colors, direction: .leftToRight)
     }
 }

@@ -45,9 +45,9 @@ final class HomeViewController: UITabBarController {
     
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
-        let booksRepository = NetworkingBootstrapper.shared.createBooksRepository()
+        let userBooksRepository = NetworkingBootstrapper.shared.createUserBooksRepository()
 
-        let libraryViewModel = LibraryViewModel(libraryRepository: booksRepository)
+        let libraryViewModel = LibraryViewModel(userBooksRepository: userBooksRepository)
         let libraryViewController = LibraryViewController(libraryViewModel: libraryViewModel) 
         libraryViewController.title = Constants.libraryName.uppercased()
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
@@ -87,6 +87,7 @@ final class HomeViewController: UITabBarController {
         let navigationController = UINavigationController(rootViewController: viewController)
         
         navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.tintColor = UIColor.white
         navigationController.navigationBar.barTintColor = GeneralConstants.Design.applicationBlueColor
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.titleTextAttributes = [
