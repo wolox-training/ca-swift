@@ -12,16 +12,17 @@ class BookDetailsViewModel {
     
     // MARK: - Properties
     
-    private let book: Book
+    private let _book: Book
+    private let _userBooksRepository: UserBooksRepository
     
     // MARK: - Initializers
     
-    init(book: Book) {
-        self.book = book
+    init(book: Book, userBooksRepository: UserBooksRepository) {
+        self._book = book
+        self._userBooksRepository = userBooksRepository
     }
     
     func createBookInformatonViewModel() -> BookInformationViewModel {
-        return BookInformationViewModel(book: book)
-        
+        return BookInformationViewModel(book: _book, userBooksRepository: _userBooksRepository)
     }
 }

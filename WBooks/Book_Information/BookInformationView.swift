@@ -36,7 +36,24 @@ class BookInformationView: UIView, NibLoadable {
     @IBOutlet weak var rentButton: UIButton! {
         didSet {
             rentButton.layer.cornerRadius = Constants.buttonCornerRadius
-            rentButton.setGradientBackgound(colorOne: GeneralConstants.Design.applicationBlueColor, colorTwo: GeneralConstants.Design.buttonGreenColor)
         }
+    }
+    
+    // MARK: - Initializers
+    
+    deinit {
+        rentButton.gradient = .none
+    }
+    
+    // MARK: - Helper methods
+    
+    func enableRentButton(isEnabled: Bool) {
+        rentButton.isEnabled = isEnabled
+        rentButton.setGradientBackgound(enabled: isEnabled)
+    }
+    
+    func setStatusTo(_ status: BookStatus) {
+        statusLabel.text = status.rawValue
+        statusLabel.textColor = status.textColor
     }
 }
