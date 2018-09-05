@@ -50,6 +50,12 @@
 		AE696A212135A73200545F9E /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A202135A73200545F9E /* SignalProducer.swift */; };
 		AE696A242135ED0B00545F9E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A232135ED0B00545F9E /* UIViewController.swift */; };
 		AE696A262135FC8900545F9E /* UIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A252135FC8900545F9E /* UIVIew.swift */; };
+		AE6E1B2C213F6F4C0090E2F3 /* BookCommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1B2B213F6F4C0090E2F3 /* BookCommentsViewModel.swift */; };
+		AE6E1B2E213F6F590090E2F3 /* BookCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1B2D213F6F590090E2F3 /* BookCommentsViewController.swift */; };
+		AE6E1B33213F70D40090E2F3 /* BookComentsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1B31213F70D40090E2F3 /* BookComentsTableView.swift */; };
+		AE6E1B34213F70D40090E2F3 /* BookComentsTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1B32213F70D40090E2F3 /* BookComentsTableView.xib */; };
+		AE6E1B37213F730B0090E2F3 /* BookCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E1B35213F730B0090E2F3 /* BookCommentCell.swift */; };
+		AE6E1B38213F730B0090E2F3 /* BookCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE6E1B36213F730B0090E2F3 /* BookCommentCell.xib */; };
 		AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */; };
 		AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */; };
 		AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */; };
@@ -143,6 +149,12 @@
 		AE696A202135A73200545F9E /* SignalProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProducer.swift; sourceTree = "<group>"; };
 		AE696A232135ED0B00545F9E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		AE696A252135FC8900545F9E /* UIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew.swift; sourceTree = "<group>"; };
+		AE6E1B2B213F6F4C0090E2F3 /* BookCommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCommentsViewModel.swift; sourceTree = "<group>"; };
+		AE6E1B2D213F6F590090E2F3 /* BookCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCommentsViewController.swift; sourceTree = "<group>"; };
+		AE6E1B31213F70D40090E2F3 /* BookComentsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookComentsTableView.swift; sourceTree = "<group>"; };
+		AE6E1B32213F70D40090E2F3 /* BookComentsTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookComentsTableView.xib; sourceTree = "<group>"; };
+		AE6E1B35213F730B0090E2F3 /* BookCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCommentCell.swift; sourceTree = "<group>"; };
+		AE6E1B36213F730B0090E2F3 /* BookCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCommentCell.xib; sourceTree = "<group>"; };
 		AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +262,7 @@
 		9D1575031CB1B27500EA395E /* WBooks */ = {
 			isa = PBXGroup;
 			children = (
+				AE6E1B26213F6EF70090E2F3 /* Book_Comments */,
 				AE28F3D6213DA769007C54CA /* Book_Details */,
 				AE32611C21389D18001DD2C3 /* Book_Information */,
 				AEB208942127618B0031776C /* Books_Table */,
@@ -351,6 +364,19 @@
 				AE28F3DF213DE4E7007C54CA /* UIButton.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE6E1B26213F6EF70090E2F3 /* Book_Comments */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E1B31213F70D40090E2F3 /* BookComentsTableView.swift */,
+				AE6E1B32213F70D40090E2F3 /* BookComentsTableView.xib */,
+				AE6E1B2D213F6F590090E2F3 /* BookCommentsViewController.swift */,
+				AE6E1B2B213F6F4C0090E2F3 /* BookCommentsViewModel.swift */,
+				AE6E1B35213F730B0090E2F3 /* BookCommentCell.swift */,
+				AE6E1B36213F730B0090E2F3 /* BookCommentCell.xib */,
+			);
+			path = Book_Comments;
 			sourceTree = "<group>";
 		};
 		AE7144EB212C80A700C06BE4 /* Library */ = {
@@ -528,12 +554,14 @@
 			files = (
 				AEFD614421276BC000DFF419 /* LaunchScreen.storyboard in Resources */,
 				AE28F3DE213DCC08007C54CA /* BookDetailsView.xib in Resources */,
+				AE6E1B38213F730B0090E2F3 /* BookCommentCell.xib in Resources */,
 				AEB2088E21275F0C0031776C /* SFUIText-Semibold.ttf in Resources */,
 				AEB2088C21275F0C0031776C /* SFUIText-Medium.ttf in Resources */,
 				9D15750C1CB1B27500EA395E /* Assets.xcassets in Resources */,
 				AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */,
 				AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */,
 				AEB2088D21275F0C0031776C /* SFUIText-Regular.ttf in Resources */,
+				AE6E1B34213F70D40090E2F3 /* BookComentsTableView.xib in Resources */,
 				AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */,
 				AEB2088B21275F0C0031776C /* SFUIText-Heavy.ttf in Resources */,
 				AEB208922127610E0031776C /* BooksTableView.xib in Resources */,
@@ -617,8 +645,10 @@
 				AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */,
 				AE28F3D8213DA780007C54CA /* BookDetailsViewController.swift in Sources */,
 				AE696A212135A73200545F9E /* SignalProducer.swift in Sources */,
+				AE6E1B37213F730B0090E2F3 /* BookCommentCell.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 				AE696A262135FC8900545F9E /* UIVIew.swift in Sources */,
+				AE6E1B2E213F6F590090E2F3 /* BookCommentsViewController.swift in Sources */,
 				AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */,
 				AEB20896212763820031776C /* BooksTableView.swift in Sources */,
 				46BEC94B2117DA4E004338C4 /* AuthUser.swift in Sources */,
@@ -626,10 +656,12 @@
 				AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */,
 				AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */,
 				AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */,
+				AE6E1B33213F70D40090E2F3 /* BookComentsTableView.swift in Sources */,
 				AE28F3DA213DC08B007C54CA /* BookDetailsViewModel.swift in Sources */,
 				AE28F3DC213DC89F007C54CA /* BookDetailsView.swift in Sources */,
 				AE65C8C62130409A00925C9B /* Book.swift in Sources */,
 				AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */,
+				AE6E1B2C213F6F4C0090E2F3 /* BookCommentsViewModel.swift in Sources */,
 				46BEC9462117C765004338C4 /* User.swift in Sources */,
 				AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */,
 				AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */,

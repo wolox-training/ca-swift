@@ -21,6 +21,7 @@ class BookDetailsViewController: UIViewController {
     private lazy var _view: BookDetailsView = BookDetailsView.loadFromNib()!
     private let _bookViewModel: BookDetailsViewModel
     private lazy var _bookInformationViewController = BookInformationViewController(bookViewModel: self._bookViewModel.createBookInformatonViewModel())
+    private lazy var _bookCommentsViewController = BookCommentsViewController()
     
     // MARK: - Initielizers
     
@@ -45,6 +46,14 @@ class BookDetailsViewController: UIViewController {
         
         load(childViewController: _bookInformationViewController,
              into: _view.informationContainerView,
+             with: UIEdgeInsets(top: 0,
+                                left: 0,
+                                bottom: 0,
+                                right: 0),
+             respectSafeArea: true)
+        
+        load(childViewController: _bookCommentsViewController,
+             into: _view.commentsContainerView,
              with: UIEdgeInsets(top: 0,
                                 left: 0,
                                 bottom: 0,
