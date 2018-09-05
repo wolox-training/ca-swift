@@ -30,18 +30,18 @@ enum BookStatus: String {
             return false
         }
     }
-    
-    var rentButtonColor: UIColor {
-        switch self {
-        case .avaliable:
-            return GeneralConstants.Design.navigationBarBlueColor!
-        case .notAvaliable:
-            return UIColor.lightGray
-        }
-    }
 }
 
 class BookInformationViewController: UIViewController {
+    
+    // MARK: - Constants
+    
+    struct Constants {
+        static let addToWishlisSuccessMessage = "Book added to wishlist"
+        static let addToWishlisFailureMessage = "Book not added to wishlist. Try again"
+        static let rentBookSuccessMessage = "Book rented"
+        static let rentBookFailureMessage = "The book could not be rented. Try again"
+    }
     
     // MARK: - Properties
     
@@ -74,18 +74,28 @@ class BookInformationViewController: UIViewController {
     
     // MARK: - Private methods
     
+    private func configureDetails() {
+        _view.titleLabel.text = _bookViewModel.title
+        _view.authorLabel.text = _bookViewModel.author
+        _view.releaseYearLabel.text = _bookViewModel.year
+        _view.genreLabel.text = _bookViewModel.genre
+        _view.bookCoverImageView.reactive.image <~ _bookViewModel.image
+        _bookViewModel.bookStatus.producer.startWithValues( {[unowned self] in
+            self._view.enableRentButton(isEnabled: $0.rentEnabled)
+            self._view.setStatusTo($0)
+        })
+    }
+    
     private func bindAddToWishlitButtonAction() {
         self._view.addToWishlistButton.reactive.controlEvents(.touchUpInside)
             .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] _ in
-                self._bookViewModel.addBookToWishlit().startWithResult({ (result) in
+                self._bookViewModel.addBookToWishlit().startWithResult({ [unowned self] (result) in
                     switch result {
                     case .success:
-                        //TODO: show success message
-                        print("Add to wishlit success")
+                        self.showMessage(Constants.addToWishlisSuccessMessage)
                     case .failure:
-                        // TODO: show failure message
-                        print("Add to wishlist failure")
+                        self.showMessage(Constants.addToWishlisFailureMessage)
                     }
                 })
         }
@@ -95,32 +105,25 @@ class BookInformationViewController: UIViewController {
         self._view.rentButton.reactive.controlEvents(.touchUpInside)
             .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] _ in
-                self._bookViewModel.rentBook().startWithResult({ (result) in
+                self._bookViewModel.rentBook().startWithResult({ [unowned self] (result) in
                     switch result {
                     case .success:
-                        //TODO: show success message
-                        print("Rent success")
+                        self.showMessage(Constants.rentBookSuccessMessage)
                     case .failure:
-                        // TODO: show failure message
-                        print("Rent failure")
+                        self.showMessage(Constants.rentBookFailureMessage)
                     }
                 })
         }
     }
     
-    // MARK: - Helper Methods
-    
-    func configureDetails() {
-        _view.titleLabel.text = _bookViewModel.title
-        _view.authorLabel.text = _bookViewModel.author
-        _view.releaseYearLabel.text = _bookViewModel.year
-        _view.genreLabel.text = _bookViewModel.genre
-        _view.bookCoverImageView.reactive.image <~ _bookViewModel.image
-        _view.rentButton.reactive.isEnabled <~ _bookViewModel.isAvaliable.map{ $0.rentEnabled }
-        _view.rentButton.reactive.backgroundColor <~ _bookViewModel.isAvaliable.map{ $0.rentButtonColor }
-        _view.statusLabel.reactive.text <~ _bookViewModel.isAvaliable.map{ $0.rawValue }
-        _view.statusLabel.reactive.textColor <~ _bookViewModel.isAvaliable.map{ $0.textColor }
+    private func showMessage(_ text: String) {
+        let alert = UIAlertController(title: "", message: text, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+
     }
+    
+    // MARK: - Helper Methods
     
     func getViewHeigth() -> CGFloat {
         return _view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height

@@ -12,8 +12,8 @@ import Networking
 
 protocol UserRepositoryType {
     
-    func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError>
-    func addBookToWishlist(id: Int) -> SignalProducer<RawDataResponse, RepositoryError>
+    func rentBook(id: Int) -> SignalProducer<Rent, RepositoryError>
+    func addBookToWishlist(id: Int) -> SignalProducer<Void, RepositoryError>
 }
 
 class UserRepository: AbstractRepository, UserRepositoryType {
@@ -27,17 +27,24 @@ class UserRepository: AbstractRepository, UserRepositoryType {
     
     // MARK: - Consuming methods
     
-    func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError> {
-        let path = Constants.usersPath + "/\(Constants.defaultUserId)/rents"
-        let parameters: [String: Any] = ["user_id": Constants.defaultUserId,
-                                         "book_id": id]
-        return performRequest(method: .post, path: path, parameters: parameters)
+    func rentBook(id: Int) -> SignalProducer<Rent, RepositoryError> {
+        return SignalProducer<Rent, RepositoryError> (value: Rent(id: 0,
+                                                                  startDate: "2018-01-01",
+                                                                  finalDate: "2018-02-02",
+                                                                  returnedDate: nil,
+                                                                  book: Book(id: 0,
+                                                                             author: "Jane",
+                                                                             title: "title",
+                                                                             imageUrl: "jdkss",
+                                                                             releaseYear: "2018",
+                                                                             genre: "programming"),
+                                                                  user: User(id: 0,
+                                                                             firstName: "jdsehs",
+                                                                             lastName: "djkshd",
+                                                                             imageURL: "jkshe")))
     }
     
-    func addBookToWishlist(id: Int) -> SignalProducer<RawDataResponse, RepositoryError> {
-        let path = Constants.usersPath + "\(Constants.defaultUserId)/wishes"
-        let parameters: [String: Any] = ["wish": ["book_id": id,
-                                                  "user_id": Constants.defaultUserId]]
-        return performRequest(method: .post, path: path, parameters: parameters)
+    func addBookToWishlist(id: Int) -> SignalProducer<Void, RepositoryError> {
+        return SignalProducer(value: ())
     }
 }

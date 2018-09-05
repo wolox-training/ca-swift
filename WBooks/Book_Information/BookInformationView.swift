@@ -22,11 +22,7 @@ class BookInformationView: UIView, NibLoadable {
     
     @IBOutlet weak var bookCoverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel! {
-        didSet {
-            statusLabel.text = "Not Avaliable"
-        }
-    }
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var releaseYearLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
@@ -41,5 +37,23 @@ class BookInformationView: UIView, NibLoadable {
         didSet {
             rentButton.layer.cornerRadius = Constants.buttonCornerRadius
         }
+    }
+    
+    // MARK: - Initializers
+    
+    deinit {
+        rentButton.gradient = .none
+    }
+    
+    // MARK: - Helper methods
+    
+    func enableRentButton(isEnabled: Bool) {
+        rentButton.isEnabled = isEnabled
+        rentButton.backgroundColor = isEnabled ? GeneralConstants.Design.navigationBarBlueColor : UIColor.lightGray
+    }
+    
+    func setStatusTo(_ status: BookStatus) {
+        statusLabel.text = status.rawValue
+        statusLabel.textColor = status.textColor
     }
 }

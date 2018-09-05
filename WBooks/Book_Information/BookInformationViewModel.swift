@@ -18,10 +18,10 @@ class BookInformationViewModel {
     
     private let _book: Book
     private let _userBookRepository: UserBooksRepository
-    private let _mutableIsAvaliable = MutableProperty(BookStatus(rawValue: "Not Avaliable")!)
-    private let _mutableImage = MutableProperty(UIImage(named: "default_image"))
-    let isAvaliable: Property<BookStatus>
-    let image: Property<UIImage?>
+    private let _mutableBookStatus = MutableProperty(BookStatus.notAvaliable)
+    private let _mutableImage = MutableProperty(GeneralConstants.Design.appDefaultImage)
+    let bookStatus: Property<BookStatus>
+    let image: Property<UIImage>
     
     var title: String {
         return _book.title
@@ -45,7 +45,7 @@ class BookInformationViewModel {
         _book = book
         _userBookRepository = userBooksRepository
         
-        isAvaliable = Property(_mutableIsAvaliable)
+        bookStatus = Property(_mutableBookStatus)
         image = Property(_mutableImage)
         
         setImage()
@@ -70,9 +70,9 @@ class BookInformationViewModel {
             .startWithResult { [unowned self] (result) in
             switch result {
             case let .success(res):
-                self._mutableIsAvaliable.value = res
+                self._mutableBookStatus.value = res
             case .failure:
-                self._mutableIsAvaliable.value = BookStatus(rawValue: "Not Avaliable")!
+                self._mutableBookStatus.value = BookStatus.notAvaliable
             }
         }
     }
@@ -83,11 +83,11 @@ class BookInformationViewModel {
         return self._userBookRepository.booksRepository.getBookStatus(id: _book.id)
     }
     
-    func rentBook() -> SignalProducer<RawDataResponse, RepositoryError> {
+    func rentBook() -> SignalProducer<Rent, RepositoryError> {
         return self._userBookRepository.userRepository.rentBook(id: _book.id)
     }
     
-    func addBookToWishlit()-> SignalProducer<RawDataResponse, RepositoryError> {
+    func addBookToWishlit()-> SignalProducer<Void, RepositoryError> {
         return self._userBookRepository.userRepository.addBookToWishlist(id: _book.id)
     }
     
