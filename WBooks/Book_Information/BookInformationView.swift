@@ -28,7 +28,7 @@ class BookInformationView: UIView, NibLoadable {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var addToWishlistButton: UIButton! {
         didSet {
-            addToWishlistButton.layer.borderColor = GeneralConstants.Design.navigationBarBlueColor.cgColor
+            addToWishlistButton.layer.borderColor = GeneralConstants.Design.applicationBlueColor.cgColor
             addToWishlistButton.layer.cornerRadius = Constants.buttonCornerRadius
             addToWishlistButton.layer.borderWidth = Constants.buttonBorderWidth
         }
@@ -49,7 +49,7 @@ class BookInformationView: UIView, NibLoadable {
     
     func enableRentButton(isEnabled: Bool) {
         rentButton.isEnabled = isEnabled
-        rentButton.backgroundColor = isEnabled ? GeneralConstants.Design.navigationBarBlueColor : UIColor.lightGray
+        rentButton.setGradientBackground(enabled: isEnabled)
     }
     
     func setStatusTo(_ status: BookStatus) {

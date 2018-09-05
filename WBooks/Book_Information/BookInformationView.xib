@@ -104,7 +104,6 @@
                         </button>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpz-Ry-sag">
                             <rect key="frame" x="33.5" y="219" width="268.5" height="44"/>
-                            <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="IiM-SN-7AH"/>
                             </constraints>
