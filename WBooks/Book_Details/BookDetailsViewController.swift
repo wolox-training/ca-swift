@@ -60,11 +60,11 @@ class BookDetailsViewController: UIViewController {
         let headerImage = UIImageView(image: GeneralConstants.Design.navigationBarImage)
         headerImage.contentMode = .bottom
         headerImage.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(headerImage)
+        view.addSubview(headerImage)
         
-        NSLayoutConstraint.activate([headerImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        NSLayoutConstraint.activate([headerImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                                     headerImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                                      headerImage.topAnchor.constraint(equalTo: view.topAnchor),
-                                     headerImage.widthAnchor.constraint(equalTo: view.widthAnchor),
                                      headerImage.heightAnchor.constraint(equalToConstant: Constants.headerImageHeight)
             ])
     }

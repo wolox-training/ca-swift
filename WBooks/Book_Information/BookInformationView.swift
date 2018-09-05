@@ -28,7 +28,7 @@ class BookInformationView: UIView, NibLoadable {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var addToWishlistButton: UIButton! {
         didSet {
-            addToWishlistButton.layer.borderColor = GeneralConstants.Design.navigationBarBlueColor?.cgColor
+            addToWishlistButton.layer.borderColor = GeneralConstants.Design.navigationBarBlueColor.cgColor
             addToWishlistButton.layer.cornerRadius = Constants.buttonCornerRadius
             addToWishlistButton.layer.borderWidth = Constants.buttonBorderWidth
         }
