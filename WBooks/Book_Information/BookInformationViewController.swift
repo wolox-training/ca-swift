@@ -9,29 +9,6 @@
 import UIKit
 import ReactiveSwift
 
-enum BookStatus: String {
-    case avaliable = "Avaliable"
-    case notAvaliable = "Not Avaliable"
-    
-    var textColor: UIColor {
-        switch self {
-        case .avaliable:
-            return UIColor(hex: "A5CD39")!
-        case .notAvaliable:
-            return UIColor(hex: "D0021B")!
-        }
-    }
-    
-    var rentEnabled: Bool {
-        switch self {
-        case .avaliable:
-            return true
-        case .notAvaliable:
-            return false
-        }
-    }
-}
-
 class BookInformationViewController: UIViewController {
     
     // MARK: - Constants
@@ -129,5 +106,17 @@ class BookInformationViewController: UIViewController {
     
     func getViewHeigth() -> CGFloat {
         return _view.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+    }
+}
+
+fileprivate extension BookStatus {
+    
+    var rentEnabled: Bool {
+        switch self {
+        case .available:
+            return true
+        case .notAvailable:
+            return false
+        }
     }
 }

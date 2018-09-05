@@ -18,7 +18,7 @@ class BookInformationViewModel {
     
     private let _book: Book
     private let _userBookRepository: UserBooksRepository
-    private let _mutableBookStatus = MutableProperty(BookStatus.notAvaliable)
+    private let _mutableBookStatus = MutableProperty(BookStatus.notAvailable)
     private let _mutableImage = MutableProperty(GeneralConstants.Design.appDefaultImage)
     let bookStatus: Property<BookStatus>
     let image: Property<UIImage>
@@ -72,7 +72,7 @@ class BookInformationViewModel {
             case let .success(res):
                 self._mutableBookStatus.value = res
             case .failure:
-                self._mutableBookStatus.value = BookStatus.notAvaliable
+                self._mutableBookStatus.value = BookStatus.notAvailable
             }
         }
     }

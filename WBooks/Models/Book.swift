@@ -36,6 +36,11 @@ extension Book: Argo.Decodable {
     }
 }
 
+enum BookStatus: String {
+    case available = "Available"
+    case notAvailable = "Not Available"
+}
+
 fileprivate func toURL(urlString: String?) -> Decoded<URL?> {
     return Decoded<URL?>.fromOptional(URL(string: urlString ?? ""))
 }

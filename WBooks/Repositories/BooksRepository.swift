@@ -44,9 +44,9 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
     
         let resultStatus: SignalProducer<BookStatus, RepositoryError> = resultBool.map({ resBool in
             if resBool {
-                return BookStatus.avaliable
+                return BookStatus.available
             } else {
-                return BookStatus.notAvaliable
+                return BookStatus.notAvailable
             }
         })
         return resultStatus

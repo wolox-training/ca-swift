@@ -57,3 +57,14 @@ class BookInformationView: UIView, NibLoadable {
         statusLabel.textColor = status.textColor
     }
 }
+
+fileprivate extension BookStatus {
+    var textColor: UIColor {
+        switch self {
+        case .available:
+            return UIColor(hex: "A5CD39")!
+        case .notAvailable:
+            return UIColor(hex: "D0021B")!
+        }
+    }
+}
