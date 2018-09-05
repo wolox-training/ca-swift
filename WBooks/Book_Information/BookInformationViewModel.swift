@@ -18,20 +18,20 @@ class BookInformationViewModel {
     
     private let _book: Book
     private let _userBookRepository: UserBooksRepository
+//    private let _mutableIsAvaliable = MutableProperty(BookStatus(rawValue: "Not Avaliable")!)
     
+    let isAvaliableText = MutableProperty(String())
+    let isAvailableColor = MutableProperty(UIColor(hex: "D0021B"))
+    let isRentButtonEnabled = MutableProperty(false)
     let image = MutableProperty(UIImage(named: "default_image"))
     
     var title: String {
         return _book.title
     }
     
-    var status: String {
-        return _book.available ? "Avaliable" : "Not Avaliable"
-    }
-    
-    var statusColor: UIColor {
-        return (_book.available ? UIColor(hex: "A5CD39") : UIColor(hex: "D0021B"))!
-    }
+//    var statusColor: UIColor {
+//        return (_book.available ? UIColor(hex: "A5CD39") : UIColor(hex: "D0021B"))!
+//    }
     
     var author: String {
         return _book.author
@@ -48,10 +48,11 @@ class BookInformationViewModel {
     // MARK: - Initializers
     
     init(book: Book, userBooksRepository: UserBooksRepository) {
-        self._book = book
-        self._userBookRepository = userBooksRepository
+        _book = book
+        _userBookRepository = userBooksRepository
         
         setImage()
+        getStatusText()
     }
     
     // MARK: - Private methods
@@ -66,18 +67,36 @@ class BookInformationViewModel {
         }
     }
     
+    private func getStatusText() {
+        getBookStatus()
+            .take(duringLifetimeOf: self)
+            .startWithResult { [unowned self] (result) in
+            switch result {
+            case let .success(res):
+                self.isAvaliableText.value = res.rawValue
+                self.isAvailableColor.value = res.textColor
+                self.isRentButtonEnabled.value = res.rentEnabled
+//                self.isAvaliable.value = (isAvaliable ? BookStatus(rawValue: "Avaliable") : BookStatus(rawValue: "Not Avaliable"))!
+            case .failure:
+                self.isAvaliableText.value = "Not Available"
+                self.isAvailableColor.value = UIColor(hex: "D0021B")
+//                self.isAvaliable.value = BookStatus(rawValue: "Not Avaliable")!
+            }
+        }
+    }
+    
     // MARK: - Public methods
     
-    func getBookStatus() {
-        self._userBookRepository.booksRepository.getBookStatus(id: _book.id)
+    func getBookStatus() -> SignalProducer<BookStatus, RepositoryError> {
+        return self._userBookRepository.booksRepository.getBookStatus(id: _book.id)
     }
     
     func rentBook() -> SignalProducer<RawDataResponse, RepositoryError> {
         return self._userBookRepository.userRepository.rentBook(id: _book.id)
     }
     
-    func addBookToWishlit() {
-        self._userBookRepository.userRepository.addBookToWishlist(id: _book.id)
+    func addBookToWishlit()-> SignalProducer<RawDataResponse, RepositoryError> {
+        return self._userBookRepository.userRepository.addBookToWishlist(id: _book.id)
     }
     
 }

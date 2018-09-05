@@ -9,6 +9,29 @@
 import UIKit
 import ReactiveSwift
 
+enum BookStatus: String {
+    case avaliable = "Avaliable"
+    case notAvaliable = "Not Avaliable"
+    
+    var textColor: UIColor {
+        switch self {
+        case .avaliable:
+            return UIColor(hex: "A5CD39")!
+        case .notAvaliable:
+            return UIColor(hex: "D0021B")!
+        }
+    }
+    
+    var rentEnabled: Bool {
+        switch self {
+        case .avaliable:
+            return true
+        case .notAvaliable:
+            return false
+        }
+    }
+}
+
 class BookInformationViewController: UIViewController {
     
     // MARK: - Properties
@@ -46,13 +69,22 @@ class BookInformationViewController: UIViewController {
         self._view.addToWishlistButton.reactive.controlEvents(.touchUpInside)
             .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] _ in
-                self._bookViewModel.addBookToWishlit()
+                self._bookViewModel.addBookToWishlit().startWithResult({ (result) in
+                    switch result {
+                    case .success:
+                        //TODO: show success message
+                        print("Add to wishlit success")
+                    case .failure:
+                        // TODO: show failure message
+                        print("Add to wishlist failure")
+                    }
+                })
         }
     }
     
     private func bindRentButtonAction() {
         self._view.rentButton.reactive.controlEvents(.touchUpInside)
-        .take(during: self.reactive.lifetime)
+            .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] _ in
                 self._bookViewModel.rentBook().startWithResult({ (result) in
                     switch result {
@@ -71,12 +103,15 @@ class BookInformationViewController: UIViewController {
     
     func configureDetails() {
         _view.titleLabel.text = _bookViewModel.title
-        _view.statusLabel.text = _bookViewModel.status
         _view.authorLabel.text = _bookViewModel.author
         _view.releaseYearLabel.text = _bookViewModel.year
         _view.genreLabel.text = _bookViewModel.genre
         _view.bookCoverImageView.reactive.image <~ _bookViewModel.image
-        _view.statusLabel.textColor = _bookViewModel.statusColor
+        _view.statusLabel.text = "aaa"
+        _view.rentButton.reactive.isEnabled <~ _bookViewModel.isRentButtonEnabled
+        _view.statusLabel.reactive.text <~ _bookViewModel.isAvaliableText
+//        _view.statusLabel.reactive.textColor <~ _bookViewModel.isAvailableColor
+
     }
     
     func getViewHeigth() -> CGFloat {

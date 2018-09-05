@@ -14,9 +14,7 @@ import Argo
 protocol BooksRepositoryType {
     
     func getBooks() -> SignalProducer<[Book], RepositoryError>
-    func getBookStatus(id: Int)
-    func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError>
-    func addBookToWishlist(id: Int)
+    func getBookStatus(id: Int) -> SignalProducer<BookStatus, RepositoryError>
 }
 
 class BooksRepository: AbstractRepository, BooksRepositoryType {
@@ -33,23 +31,15 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
         return performRequest(method: .get, path: Constants.booksList) { decode($0).toResult() }
     }
     
-    func getBookStatus(id: Int) {
+    func getBookStatus(id: Int) -> SignalProducer<BookStatus, RepositoryError> {
         let path = Constants.booksList + "/\(id)/rents"
-//        let result = performRequest(method: .get, path: path) { decode($0). }
-        // create models and get boolean
-    }
-    
-    func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError> {
-        let path = "users/51/rents"
-        let parameters: [String: Any] = ["user_id": 51,
-                                         "book_id": id]
-        return performRequest(method: .post, path: path, parameters: parameters)
-        
-    }
-    
-    func addBookToWishlist(id: Int) {
-        print("Book added")
-        // TODO: add book to wishlist
+        let result: SignalProducer<[Rent], RepositoryError> = performRequest(method: .get, path: path) { decode($0).toResult() }
+        //TODO: filter [Rent] to get book status
+        return SignalProducer<BookStatus, RepositoryError> { (observer, _) in
+            observer.send(value: BookStatus(rawValue: "Not Avaliable")!)
+            observer.sendCompleted()
+        }
+
     }
     
 }

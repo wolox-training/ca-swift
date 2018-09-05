@@ -22,7 +22,11 @@ class BookInformationView: UIView, NibLoadable {
     
     @IBOutlet weak var bookCoverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel! {
+        didSet {
+            statusLabel.text = "Not Avaliable"
+        }
+    }
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var releaseYearLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!

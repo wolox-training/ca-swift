@@ -13,7 +13,7 @@ import Networking
 protocol UserRepositoryType {
     
     func rentBook(id: Int) -> SignalProducer<RawDataResponse, RepositoryError>
-    func addBookToWishlist(id: Int)
+    func addBookToWishlist(id: Int) -> SignalProducer<RawDataResponse, RepositoryError>
 }
 
 class UserRepository: AbstractRepository, UserRepositoryType {
@@ -34,8 +34,10 @@ class UserRepository: AbstractRepository, UserRepositoryType {
         return performRequest(method: .post, path: path, parameters: parameters)
     }
     
-    func addBookToWishlist(id: Int) {
-        print("Book added")
-        // TODO: add book to wishlist
+    func addBookToWishlist(id: Int) -> SignalProducer<RawDataResponse, RepositoryError> {
+        let path = Constants.usersPath + "\(Constants.defaultUserId)/wishes"
+        let parameters: [String: Any] = ["wish": ["book_id": id,
+                                                  "user_id": Constants.defaultUserId]]
+        return performRequest(method: .post, path: path, parameters: parameters)
     }
 }

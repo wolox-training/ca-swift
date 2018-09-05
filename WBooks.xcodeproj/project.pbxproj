@@ -42,6 +42,7 @@
 		AE28F3DE213DCC08007C54CA /* BookDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE28F3DD213DCC08007C54CA /* BookDetailsView.xib */; };
 		AE28F3E2213EE02E007C54CA /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E1213EE02E007C54CA /* UserRepository.swift */; };
 		AE28F3E4213EE12F007C54CA /* User+BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E3213EE12F007C54CA /* User+BookRepository.swift */; };
+		AE28F3E6213EE982007C54CA /* Rent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E5213EE982007C54CA /* Rent.swift */; };
 		AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611A2138269A001DD2C3 /* GeneralConstants.swift */; };
 		AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611F21389D5C001DD2C3 /* BookInformationView.swift */; };
 		AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE32612121389D66001DD2C3 /* BookInformationView.xib */; };
@@ -136,6 +137,7 @@
 		AE28F3DD213DCC08007C54CA /* BookDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailsView.xib; sourceTree = "<group>"; };
 		AE28F3E1213EE02E007C54CA /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AE28F3E3213EE12F007C54CA /* User+BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+BookRepository.swift"; sourceTree = "<group>"; };
+		AE28F3E5213EE982007C54CA /* Rent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent.swift; sourceTree = "<group>"; };
 		AE32611A2138269A001DD2C3 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		AE32611F21389D5C001DD2C3 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		AE32612121389D66001DD2C3 /* BookInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInformationView.xib; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				46BEC9452117C765004338C4 /* User.swift */,
 				46BEC94A2117DA4E004338C4 /* AuthUser.swift */,
 				AE65C8C52130409A00925C9B /* Book.swift */,
+				AE28F3E5213EE982007C54CA /* Rent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				46BEC9492117C7AE004338C4 /* NetworkingBootstrapper.swift in Sources */,
 				AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */,
 				AE28F3D8213DA780007C54CA /* BookDetailsViewController.swift in Sources */,
+				AE28F3E6213EE982007C54CA /* Rent.swift in Sources */,
 				AE696A212135A73200545F9E /* SignalProducer.swift in Sources */,
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 				AE696A262135FC8900545F9E /* UIVIew.swift in Sources */,

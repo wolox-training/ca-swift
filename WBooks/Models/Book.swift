@@ -21,7 +21,6 @@ struct Book {
     let imageUrl: URL?
     let releaseYear: String
     let genre: String
-    let available: Bool = true
     
 }
 
