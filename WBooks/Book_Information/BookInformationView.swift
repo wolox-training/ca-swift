@@ -49,7 +49,7 @@ class BookInformationView: UIView, NibLoadable {
     
     func enableRentButton(isEnabled: Bool) {
         rentButton.isEnabled = isEnabled
-        rentButton.setGradientBackgound(enabled: isEnabled)
+        rentButton.setGradientBackground(enabled: isEnabled)
     }
     
     func setStatusTo(_ status: BookStatus) {

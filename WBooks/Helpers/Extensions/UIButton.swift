@@ -20,7 +20,7 @@ extension UIButton {
     
     // MARK: - Gradient
     
-    func setGradientBackgound(enabled: Bool) {
+    func setGradientBackground(enabled: Bool) {
         let colors: [UIColor]
         if enabled {
             colors = Constants.enabledColors
