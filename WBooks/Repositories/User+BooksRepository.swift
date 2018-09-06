@@ -11,17 +11,17 @@ import ReactiveSwift
 import Networking
 
 protocol UserBooksRepositoryType {
-    
     var userRepository: UserRepositoryType { get }
     var booksRepository: BooksRepositoryType { get }
 }
 
-class UserBooksRepository: AbstractRepository, UserBooksRepositoryType {
+class UserBooksRepository: UserBooksRepositoryType {
     
-    var userRepository: UserRepositoryType = NetworkingBootstrapper.shared.createUserRepository()
-    var booksRepository: BooksRepositoryType = NetworkingBootstrapper.shared.createBooksRepository()
+    var userRepository: UserRepositoryType
+    var booksRepository: BooksRepositoryType
     
-    
-    
-    
+    init(networkingConfiguration: NetworkingConfiguration, sessionManager: SessionManager) {
+        userRepository = UserRepository(networkingConfiguration: networkingConfiguration, sessionManager: sessionManager)
+        booksRepository = BooksRepository(networkingConfiguration: networkingConfiguration, sessionManager: sessionManager)
+    }
 }

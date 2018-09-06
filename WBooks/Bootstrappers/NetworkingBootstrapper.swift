@@ -41,14 +41,6 @@ class NetworkingBootstrapper {
     func createUserBooksRepository() -> UserBooksRepository {
         return UserBooksRepository(networkingConfiguration: networkingConfiguration, sessionManager: _sessionManager)
     }
-    
-    func createBooksRepository() -> BooksRepositoryType {
-        return BooksRepository(networkingConfiguration: networkingConfiguration, sessionManager: _sessionManager)
-    }
-    
-    func createUserRepository() -> UserRepositoryType {
-        return UserRepository(networkingConfiguration: networkingConfiguration, sessionManager: _sessionManager)
-    }
 }
 
 // MARK: Private Methods
