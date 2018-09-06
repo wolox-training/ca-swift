@@ -17,5 +17,7 @@ struct GeneralConstants {
         static let appDefaultImage = UIImage(named: "default_image")!
         static let navigationBarImage = UIImage(named: "bc_nav bar")!
         static let headerImageHeight: CGFloat = 30
+        static let buttonCornerRadius: CGFloat = 20
+        static let buttonBorderWidth: CGFloat = 1
     }
 }

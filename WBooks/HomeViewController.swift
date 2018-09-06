@@ -64,13 +64,14 @@ final class HomeViewController: UITabBarController {
         
         tabBarControllers.append(wishlistViewController)
         
-        let addNewViewController = UIViewController()
+        let addNewViewModel = AddNewViewModel()
+        let addNewViewController = AddNewViewController(addNewViewModel: addNewViewModel)
         addNewViewController.title = Constants.addNewName
         addNewViewController.tabBarItem = UITabBarItem(title: Constants.addNewName,
                                                        image: Constants.addNewImage,
                                                        selectedImage: Constants.addNewSelectedImage)
         
-        tabBarControllers.append(addNewViewController)
+        tabBarControllers.append(setupNavigationController(with: addNewViewController))
         
         let rentalsViewController = UIViewController()
         rentalsViewController.title = Constants.rentalsName
