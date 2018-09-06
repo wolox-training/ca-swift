@@ -18,4 +18,9 @@ struct GeneralConstants {
         static let navigationBarImage = UIImage(named: "bc_nav bar")!
         static let headerImageHeight: CGFloat = 30
     }
+    
+    struct Texts {
+        static let errorAlertTitle = "Error"
+        static let errorAlertButtonTitle = "OK"
+    }
 }

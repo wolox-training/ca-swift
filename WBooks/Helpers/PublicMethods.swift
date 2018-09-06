@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Networking
 
 func addHeaderImage(to view: UIView) {
     let headerImage = UIImageView(image: GeneralConstants.Design.navigationBarImage)
@@ -19,4 +20,14 @@ func addHeaderImage(to view: UIView) {
                                  headerImage.topAnchor.constraint(equalTo: view.topAnchor),
                                  headerImage.heightAnchor.constraint(equalToConstant: GeneralConstants.Design.headerImageHeight)
         ])
+}
+
+func showErrorMessage(with error: RepositoryError,in viewController: UIViewController) {
+    let alertError = UIAlertController(title: GeneralConstants.Texts.errorAlertTitle,
+                                       message: error.localizedDescription,
+                                       preferredStyle: .alert)
+    alertError.addAction(UIAlertAction(title: GeneralConstants.Texts.errorAlertButtonTitle,
+                                       style: .default,
+                                       handler: nil))
+    viewController.present(alertError, animated: true, completion: nil)
 }

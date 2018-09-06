@@ -44,6 +44,8 @@
 		AE28F3E2213EE02E007C54CA /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E1213EE02E007C54CA /* UserRepository.swift */; };
 		AE28F3E4213EE12F007C54CA /* User+BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E3213EE12F007C54CA /* User+BooksRepository.swift */; };
 		AE28F3E6213EE982007C54CA /* Rent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E5213EE982007C54CA /* Rent.swift */; };
+		AE2E3AE4214160AC00DE35AC /* EmptyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E3AE2214160AC00DE35AC /* EmptyCommentCell.swift */; };
+		AE2E3AE5214160AC00DE35AC /* EmptyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2E3AE3214160AC00DE35AC /* EmptyCommentCell.xib */; };
 		AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611A2138269A001DD2C3 /* GeneralConstants.swift */; };
 		AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611F21389D5C001DD2C3 /* BookInformationView.swift */; };
 		AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE32612121389D66001DD2C3 /* BookInformationView.xib */; };
@@ -148,6 +150,8 @@
 		AE28F3E1213EE02E007C54CA /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AE28F3E3213EE12F007C54CA /* User+BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+BooksRepository.swift"; sourceTree = "<group>"; };
 		AE28F3E5213EE982007C54CA /* Rent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent.swift; sourceTree = "<group>"; };
+		AE2E3AE2214160AC00DE35AC /* EmptyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCommentCell.swift; sourceTree = "<group>"; };
+		AE2E3AE3214160AC00DE35AC /* EmptyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCommentCell.xib; sourceTree = "<group>"; };
 		AE32611A2138269A001DD2C3 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		AE32611F21389D5C001DD2C3 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		AE32612121389D66001DD2C3 /* BookInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInformationView.xib; sourceTree = "<group>"; };
@@ -388,6 +392,8 @@
 				AE6E1B2B213F6F4C0090E2F3 /* BookCommentsViewModel.swift */,
 				AE6E1B35213F730B0090E2F3 /* BookCommentCell.swift */,
 				AE6E1B36213F730B0090E2F3 /* BookCommentCell.xib */,
+				AE2E3AE2214160AC00DE35AC /* EmptyCommentCell.swift */,
+				AE2E3AE3214160AC00DE35AC /* EmptyCommentCell.xib */,
 			);
 			path = Book_Comments;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */,
 				AEB2088B21275F0C0031776C /* SFUIText-Heavy.ttf in Resources */,
 				AEB208922127610E0031776C /* BooksTableView.xib in Resources */,
+				AE2E3AE5214160AC00DE35AC /* EmptyCommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +680,7 @@
 				AE6E1B3A21403E870090E2F3 /* PublicMethods.swift in Sources */,
 				46BEC94B2117DA4E004338C4 /* AuthUser.swift in Sources */,
 				AE696A242135ED0B00545F9E /* UIViewController.swift in Sources */,
+				AE2E3AE4214160AC00DE35AC /* EmptyCommentCell.swift in Sources */,
 				AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */,
 				AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */,
 				AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */,

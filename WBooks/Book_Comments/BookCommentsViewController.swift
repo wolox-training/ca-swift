@@ -55,6 +55,7 @@ class BookCommentsViewController: UIViewController {
         tableView.estimatedRowHeight = Constants.estimatedRowHeight
         
         tableView.register(cell: BookCommentCell.self)
+        tableView.register(cell: EmptyCommentCell.self)
     }
     
     private func bindViewModel(_ viewModel: BookCommentsViewModel) {
@@ -63,15 +64,26 @@ class BookCommentsViewController: UIViewController {
             .startWithValues { [unowned self] _ in
                 self._view.tableView.reloadData()
         }
+        
+        viewModel.errorsSignal
+        .take(during: self.reactive.lifetime)
+            .observeValues { [unowned self] (error) in
+                showErrorMessage(with: error, in: self)
+        }
     }
 }
 
 extension BookCommentsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return _commentsViewModel.comments.value.count
+        return _commentsViewModel.comments.value.isEmpty ? 1 : _commentsViewModel.comments.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard !_commentsViewModel.comments.value.isEmpty else {
+            let cell = _view.tableView.dequeue(cell: EmptyCommentCell.self)!
+            return cell
+        }
+        
         let cell = _view.tableView.dequeue(cell: BookCommentCell.self)!
         
         cell.configureCell(with: _commentsViewModel.comments.value[indexPath.row])
