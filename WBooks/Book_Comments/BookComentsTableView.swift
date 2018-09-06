@@ -14,6 +14,4 @@ class BookComentsTableView: UIView, NibLoadable{
     // MARK: - Properties
     
     @IBOutlet weak var tableView: UITableView!
-    
-
 }

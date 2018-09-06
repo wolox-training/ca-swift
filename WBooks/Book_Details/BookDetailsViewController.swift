@@ -44,10 +44,6 @@ class BookDetailsViewController: UIViewController {
         
         load(childViewController: _bookCommentsViewController,
              into: _view.commentsContainerView,
-             with: UIEdgeInsets(top: 0,
-                                left: 0,
-                                bottom: 0,
-                                right: 0),
              respectSafeArea: true)
         
         _view.informationHeigthConstraint.constant = _bookInformationViewController.getViewHeigth()

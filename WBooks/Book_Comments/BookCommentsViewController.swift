@@ -60,13 +60,13 @@ class BookCommentsViewController: UIViewController {
     
     private func bindViewModel(_ viewModel: BookCommentsViewModel) {
         viewModel.comments.producer
-        .take(during: self.reactive.lifetime)
+            .take(during: self.reactive.lifetime)
             .startWithValues { [unowned self] _ in
                 self._view.tableView.reloadData()
         }
         
         viewModel.errorsSignal
-        .take(during: self.reactive.lifetime)
+            .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] (error) in
                 showErrorMessage(with: error, in: self)
         }
@@ -74,6 +74,7 @@ class BookCommentsViewController: UIViewController {
 }
 
 extension BookCommentsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return _commentsViewModel.comments.value.isEmpty ? 1 : _commentsViewModel.comments.value.count
     }
@@ -85,9 +86,7 @@ extension BookCommentsViewController: UITableViewDelegate, UITableViewDataSource
         }
         
         let cell = _view.tableView.dequeue(cell: BookCommentCell.self)!
-        
         cell.configureCell(with: _commentsViewModel.comments.value[indexPath.row])
-        
         return cell
     }
 }

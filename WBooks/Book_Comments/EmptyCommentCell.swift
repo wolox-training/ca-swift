@@ -10,6 +10,5 @@ import UIKit
 import WolmoCore
 
 class EmptyCommentCell: UITableViewCell, NibLoadable {
-    
-    // MARK: - Properties
+
 }
