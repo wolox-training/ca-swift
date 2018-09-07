@@ -65,13 +65,15 @@ class BookCommentsViewController: UIViewController {
                 self._view.tableView.reloadData()
         }
         
-        viewModel.errorsSignal
+        viewModel.errors
             .take(during: self.reactive.lifetime)
             .observeValues { [unowned self] (error) in
                 showErrorMessage(with: error, in: self)
         }
     }
 }
+
+// MARK: - UITableViewDelegate and UITableViewDataSource
 
 extension BookCommentsViewController: UITableViewDelegate, UITableViewDataSource {
     

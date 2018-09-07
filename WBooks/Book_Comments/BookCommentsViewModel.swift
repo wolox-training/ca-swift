@@ -20,7 +20,7 @@ class BookCommentsViewModel {
     private let _mutableComments = MutableProperty([Comment]())
     private let _errors: Signal<RepositoryError, NoError>.Observer
     let comments: Property<[Comment]>
-    let errorsSignal: Signal<RepositoryError, NoError>
+    let errors: Signal<RepositoryError, NoError>
     
     // MARK: - Initializers
     
@@ -28,7 +28,7 @@ class BookCommentsViewModel {
         _book = book
         _booksRepository = booksRepository
         comments = Property(_mutableComments)
-        (errorsSignal, _errors) = Signal<RepositoryError, NoError>.pipe()
+        (errors, _errors) = Signal<RepositoryError, NoError>.pipe()
     }
     
     deinit {
