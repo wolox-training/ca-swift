@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveSwift
+import MobileCoreServices
 
 class AddNewViewController: UIViewController {
     
@@ -33,7 +35,39 @@ class AddNewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bindImagePicker()
 
-        // Do any additional setup after loading the view.
+        addHeaderImage(to: self.view)
+    }
+    
+    // MARK: - Private methods
+    
+    private func bindImagePicker() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        _view.coverImageView.addGestureRecognizer(gestureRecognizer)
+//        _view.submitButton.reactive.controlEvents(.touchUpInside)
+//        .take(during: self.reactive.lifetime)
+//            .observeValues { [unowned self] _ in
+//                self.selectImage()
+//        }
+    }
+    
+    @objc private func selectImage() {
+        let mediaPicker = MediaPickerService(viewController: self)
+        mediaPicker.presentImagePickerController(from: .photoLibrary, for: [.image]) {
+            print("permisionNotGranted")
+        }
+        
+        mediaPicker.mediaSignal
+            .take(during: self.reactive.lifetime)
+            .observeResult { (result) in
+                switch result {
+                case let .success(media):
+                    print("**** image selected")
+                case let .failure(error):
+                    print("**** image Error: \(error)")
+                }
+        }
     }
 }

@@ -61,6 +61,8 @@
 		AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */; };
 		AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */; };
 		AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */; };
+		AE88A6D62142C71800B7CE07 /* MediaPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */; };
+		AE88A6D82142C77200B7CE07 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */; };
 		AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB208792127568C0031776C /* BookTableViewCell.swift */; };
 		AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2087A2127568C0031776C /* BookTableViewCell.xib */; };
 		AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */; };
@@ -162,6 +164,8 @@
 		AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerService.swift; sourceTree = "<group>"; };
+		AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		AEB208792127568C0031776C /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		AEB2087A2127568C0031776C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
@@ -368,6 +372,7 @@
 				AE696A1E213589EB00545F9E /* ImageFetcher.swift */,
 				AE32611A2138269A001DD2C3 /* GeneralConstants.swift */,
 				AE6E1B3921403E870090E2F3 /* PublicMethods.swift */,
+				AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				AE696A232135ED0B00545F9E /* UIViewController.swift */,
 				AE696A252135FC8900545F9E /* UIVIew.swift */,
 				AE28F3DF213DE4E7007C54CA /* UIButton.swift */,
+				AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 				AE696A242135ED0B00545F9E /* UIViewController.swift in Sources */,
 				AE2E3AE921419F5200DE35AC /* AddNewView.swift in Sources */,
 				AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */,
+				AE88A6D62142C71800B7CE07 /* MediaPickerService.swift in Sources */,
 				AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */,
 				AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */,
 				AE28F3DA213DC08B007C54CA /* BookDetailsViewModel.swift in Sources */,
@@ -673,6 +680,7 @@
 				46BEC9462117C765004338C4 /* User.swift in Sources */,
 				AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */,
 				AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */,
+				AE88A6D82142C77200B7CE07 /* UIImagePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

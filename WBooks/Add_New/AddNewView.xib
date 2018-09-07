@@ -22,12 +22,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yT-4q-TrF">
-                    <rect key="frame" x="20" y="60" width="335" height="597"/>
+                    <rect key="frame" x="20" y="65" width="335" height="592"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-p6-kca">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="500"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add photo" translatesAutoresizingMaskIntoConstraints="NO" id="8qx-Ju-8Qn">
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add photo" translatesAutoresizingMaskIntoConstraints="NO" id="8qx-Ju-8Qn">
                                     <rect key="frame" x="26" y="26" width="96" height="96"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="96" id="IML-aN-ena"/>
@@ -100,6 +100,11 @@
                                 <constraint firstItem="8qx-Ju-8Qn" firstAttribute="top" secondItem="ARz-p6-kca" secondAttribute="top" constant="26" id="xhw-OE-2rF"/>
                             </constraints>
                             <viewLayoutGuide key="safeArea" id="5H7-Y0-KPx"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <constraints>
@@ -114,7 +119,7 @@
             <color key="backgroundColor" red="0.91764705882352937" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="9BO-nV-NDR" firstAttribute="bottom" secondItem="4yT-4q-TrF" secondAttribute="bottom" constant="10" id="4aQ-DL-PKb"/>
-                <constraint firstItem="4yT-4q-TrF" firstAttribute="top" secondItem="9BO-nV-NDR" secondAttribute="top" constant="40" id="Sp4-Qw-hFs"/>
+                <constraint firstItem="4yT-4q-TrF" firstAttribute="top" secondItem="9BO-nV-NDR" secondAttribute="top" constant="45" id="Sp4-Qw-hFs"/>
                 <constraint firstItem="4yT-4q-TrF" firstAttribute="leading" secondItem="9BO-nV-NDR" secondAttribute="leading" constant="20" id="qTN-4a-vgY"/>
                 <constraint firstItem="9BO-nV-NDR" firstAttribute="trailing" secondItem="4yT-4q-TrF" secondAttribute="trailing" constant="20" id="wfJ-i6-bkr"/>
             </constraints>
