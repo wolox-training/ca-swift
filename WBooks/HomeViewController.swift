@@ -34,7 +34,7 @@ final class HomeViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = GeneralConstants.Design.navigationBarBlueColor
+        tabBar.tintColor = GeneralConstants.Design.applicationBlueColor
         tabBar.layer.borderWidth = Constants.defaultBarBorderWidth
         tabBar.clipsToBounds = true
         
@@ -45,9 +45,9 @@ final class HomeViewController: UITabBarController {
     
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
-        let booksRepository = NetworkingBootstrapper.shared.createBooksRepository()
+        let userBooksRepository = NetworkingBootstrapper.shared.createUserBooksRepository()
 
-        let libraryViewModel = LibraryViewModel(libraryRepository: booksRepository)
+        let libraryViewModel = LibraryViewModel(userBooksRepository: userBooksRepository)
         let libraryViewController = LibraryViewController(libraryViewModel: libraryViewModel) 
         libraryViewController.title = Constants.libraryName.uppercased()
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
@@ -87,7 +87,8 @@ final class HomeViewController: UITabBarController {
         let navigationController = UINavigationController(rootViewController: viewController)
         
         navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.barTintColor = GeneralConstants.Design.navigationBarBlueColor
+        navigationController.navigationBar.tintColor = UIColor.white
+        navigationController.navigationBar.barTintColor = GeneralConstants.Design.applicationBlueColor
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.titleTextAttributes = [
             NSAttributedStringKey.font: GeneralConstants.Design.navigationBarTitleFont,

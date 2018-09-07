@@ -81,7 +81,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorLabel" destination="SGB-dp-E4j" id="OkV-Pz-gVw"/>
-                <outlet property="logoImageView" destination="jNG-TV-kXc" id="Ofk-HP-Vo3"/>
+                <outlet property="bookCoverImageView" destination="jNG-TV-kXc" id="Ofk-HP-Vo3"/>
                 <outlet property="nameLabel" destination="s3B-2z-d7V" id="xbS-Un-IiA"/>
             </connections>
             <point key="canvasLocation" x="34" y="77"/>

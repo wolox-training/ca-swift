@@ -19,6 +19,9 @@ struct Book {
     let author: String
     let title: String
     let imageUrl: URL?
+    let releaseYear: String
+    let genre: String
+    
 }
 
 extension Book: Argo.Decodable {
@@ -28,7 +31,14 @@ extension Book: Argo.Decodable {
         <*> json <| "author"
         <*> json <| "title"
         <*> ( (json <|? "image_url") >>- toURL)
+        <*> json <| "year"
+        <*> json <| "genre"
     }
+}
+
+enum BookStatus: String {
+    case available = "Available"
+    case notAvailable = "Not Available"
 }
 
 fileprivate func toURL(urlString: String?) -> Decoded<URL?> {

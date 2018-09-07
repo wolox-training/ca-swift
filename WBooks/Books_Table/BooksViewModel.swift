@@ -18,13 +18,15 @@ class BooksViewModel {
     private let _mutableBooks = MutableProperty([Book]())
     private let _errors: Signal<RepositoryError, NoError>.Observer
     private let _getBooks: () -> SignalProducer<[Book], RepositoryError>
+    private let _userBooksRepository: UserBooksRepository
     let books: Property<[Book]>
     let errorsSignal: Signal<RepositoryError, NoError>
     
     // MARK: - Initializers
     
-    init(getBooks: @escaping () -> SignalProducer<[Book], RepositoryError>) {
-        self._getBooks = getBooks
+    init(getBooks: @escaping () -> SignalProducer<[Book], RepositoryError>, userBooksRepository: UserBooksRepository) {
+        _userBooksRepository = userBooksRepository
+        _getBooks = getBooks
         books = Property(_mutableBooks)
         (errorsSignal, _errors) = Signal<RepositoryError, NoError>.pipe()
     }
@@ -44,5 +46,9 @@ class BooksViewModel {
                 self._errors.send(value: error)
             }
         }
+    }
+    
+    func createBookDetailsViewModel(book: Book) -> BookDetailsViewModel {
+        return BookDetailsViewModel(book: book, userBooksRepository: _userBooksRepository)
     }
 }

@@ -14,8 +14,6 @@ class BooksTableViewController: UIViewController {
     
     struct Constants {
         static let estimatedRowHeight: CGFloat = 90
-        static let errorAlertTitle = "Error"
-        static let errorAlertButtonTitle = "OK"
     }
     
     // MARK: - Properties
@@ -69,14 +67,8 @@ class BooksTableViewController: UIViewController {
         viewModel.errorsSignal
             .take(during: self.reactive.lifetime)
             .observeValues({ [unowned self] (error) in
-            let alertError = UIAlertController(title: Constants.errorAlertTitle,
-                                               message: error.localizedDescription,
-                                               preferredStyle: .alert)
-            alertError.addAction(UIAlertAction(title: Constants.errorAlertButtonTitle,
-                                               style: .default,
-                                               handler: nil))
-            self.present(alertError, animated: true, completion: nil)
-        })
+                showErrorMessage(with: error, in: self)
+            })
     }
 }
 
@@ -93,5 +85,14 @@ extension BooksTableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(with: _booksViewModel.books.value[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _view.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let book = _booksViewModel.books.value[indexPath.row]
+        
+        let detailsView = BookDetailsViewController(bookViewModel: _booksViewModel.createBookDetailsViewModel(book: book))
+        navigationController!.pushViewController(detailsView, animated: true)
     }
 }
