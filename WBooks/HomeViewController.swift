@@ -65,7 +65,7 @@ final class HomeViewController: UITabBarController {
         
         tabBarControllers.append(wishlistViewController)
         
-        let addNewViewModel = AddNewViewModel()
+        let addNewViewModel = AddNewViewModel(booksRepository: userBooksRepository.booksRepository)
         let addNewViewController = AddNewViewController(addNewViewModel: addNewViewModel)
         addNewViewController.title = Constants.addNewNameBook.uppercased()
         addNewViewController.tabBarItem = UITabBarItem(title: Constants.addNewName,

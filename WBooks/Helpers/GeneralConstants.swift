@@ -20,4 +20,9 @@ struct GeneralConstants {
         static let buttonCornerRadius: CGFloat = 20
         static let buttonBorderWidth: CGFloat = 1
     }
+    
+    struct Texts {
+        static let errorAlertTitle = "Error"
+        static let errorAlertButtonTitle = "OK"
+    }
 }

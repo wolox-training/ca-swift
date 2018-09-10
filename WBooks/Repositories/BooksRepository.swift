@@ -15,6 +15,7 @@ protocol BooksRepositoryType {
     
     func getBooks() -> SignalProducer<[Book], RepositoryError>
     func getBookStatus(id: Int) -> SignalProducer<BookStatus, RepositoryError>
+    func getBookComments(id: Int) -> SignalProducer<[Comment], RepositoryError>
 }
 
 class BooksRepository: AbstractRepository, BooksRepositoryType {
@@ -50,6 +51,11 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
             }
         })
         return resultStatus
+    }
+    
+    func getBookComments(id: Int) -> SignalProducer<[Comment], RepositoryError> {
+        let path = Constants.booksList + "/\(id)/comments"
+        return performRequest(method: .get, path: path) { decode($0).toResult()}
     }
     
 }

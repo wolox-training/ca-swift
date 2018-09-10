@@ -37,6 +37,7 @@ class AddNewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bindSubmitButton()
         bindImagePicker()
 
         addHeaderImage(to: self.view)
@@ -44,13 +45,54 @@ class AddNewViewController: UIViewController {
     
     // MARK: - Private methods
     
+    private func bindSubmitButton() {
+        self._view.submitButton.reactive.controlEvents(.touchUpInside)
+        .take(during: self.reactive.lifetime)
+            .observeValues({ [unowned self] _ in
+                if self.validateBookInformation() {
+                    self._addNewViewModel.submitBook()
+                } else {
+                    showMessage("Complete all information before submitting", in: self)
+                }
+            })
+    }
+    
     private func bindImagePicker() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         _view.coverImageView.addGestureRecognizer(gestureRecognizer)
     }
     
     @objc private func selectImage() {
-        _mediaPicker.presentImagePickerController(from: .photoLibrary, for: [.image]) {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let galleryButton = UIAlertAction(title: "Photo Gallery", style: .default, handler: { [unowned self] (action) -> Void in
+            self.showPickerController(for: .photoLibrary)
+        })
+        let cameraButton = UIAlertAction(title: "Camera", style: .default, handler: { [unowned self] (action) -> Void in
+            self.showPickerController(for: .camera)
+        })
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    
+        actionSheet.addAction(galleryButton)
+        actionSheet.addAction(cameraButton)
+        actionSheet.addAction(cancelButton)
+        
+        self.navigationController!.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func validateBookInformation() -> Bool {
+        guard let _ = Int(_view.yearTextField.text!),
+            _view.nameTextField.text!.isNotEmpty,
+            _view.authorTextField.text!.isNotEmpty,
+            _view.topicTextField.text!.isNotEmpty,
+            _view.descriptionTextField.text!.isNotEmpty else {
+                return false
+        }
+        
+         return true
+    }
+    
+    private func showPickerController(for type: UIImagePickerControllerSourceType) {
+        _mediaPicker.presentImagePickerController(from: type, for: [.image]) {
             print("permisionNotGranted")
         }
         
