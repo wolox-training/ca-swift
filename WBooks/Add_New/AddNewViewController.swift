@@ -15,13 +15,14 @@ class AddNewViewController: UIViewController {
     // MARK: - Properties
     
     private lazy var _view: AddNewView = AddNewView.loadFromNib()!
+    private lazy var _mediaPicker =  MediaPickerService(viewController: self)
     private let _addNewViewModel: AddNewViewModel
 
     // MARK: - Initializers
     
     init(addNewViewModel: AddNewViewModel) {
         _addNewViewModel = addNewViewModel
-        
+
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,25 +47,24 @@ class AddNewViewController: UIViewController {
     private func bindImagePicker() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         _view.coverImageView.addGestureRecognizer(gestureRecognizer)
-//        _view.submitButton.reactive.controlEvents(.touchUpInside)
-//        .take(during: self.reactive.lifetime)
-//            .observeValues { [unowned self] _ in
-//                self.selectImage()
-//        }
     }
     
     @objc private func selectImage() {
-        let mediaPicker = MediaPickerService(viewController: self)
-        mediaPicker.presentImagePickerController(from: .photoLibrary, for: [.image]) {
+        _mediaPicker.presentImagePickerController(from: .photoLibrary, for: [.image]) {
             print("permisionNotGranted")
         }
         
-        mediaPicker.mediaSignal
+        _mediaPicker.mediaSignal
             .take(during: self.reactive.lifetime)
-            .observeResult { (result) in
+            .observeResult { [unowned self] (result) in
                 switch result {
                 case let .success(media):
-                    print("**** image selected")
+                    switch media {
+                    case .image(let image):
+                        self._view.coverImageView.image = image
+                    default:
+                        print("**** image Error: not and image")
+                    }
                 case let .failure(error):
                     print("**** image Error: \(error)")
                 }
