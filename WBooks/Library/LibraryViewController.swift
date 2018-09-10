@@ -15,7 +15,6 @@ class LibraryViewController: UIViewController {
     struct Constants {
         static let tableTopMargin: CGFloat = 40
         static let tableDefaultMargin: CGFloat = 0
-        static let headerImageHeight: CGFloat = 30
     }
     
     // MARK: - Properties
@@ -40,7 +39,7 @@ class LibraryViewController: UIViewController {
         
         view.backgroundColor = GeneralConstants.Design.backgroundBlueColor
         
-        addHeaderImage()
+        addHeaderImage(to: self.view)
         
         load(childViewController: _booksViewcontroller,
              into: self.view,
@@ -49,18 +48,5 @@ class LibraryViewController: UIViewController {
                                 bottom: Constants.tableDefaultMargin,
                                 right: Constants.tableDefaultMargin),
              respectSafeArea: true)
-    }
-    
-    private func addHeaderImage() {
-        let headerImage = UIImageView(image: GeneralConstants.Design.navigationBarImage)
-        headerImage.contentMode = .bottom
-        headerImage.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(headerImage)
-        
-        NSLayoutConstraint.activate([headerImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     headerImage.topAnchor.constraint(equalTo: view.topAnchor),
-                                     headerImage.widthAnchor.constraint(equalTo: view.widthAnchor),
-                                     headerImage.heightAnchor.constraint(equalToConstant: Constants.headerImageHeight)
-                                     ])
     }
 }

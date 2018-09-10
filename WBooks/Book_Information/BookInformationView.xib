@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFUIText-Bold.ttf">
+            <string>SFUIText-Bold</string>
+        </array>
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BookInformationView" customModule="WBooks" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="279"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-XT-Hxo">
+                    <rect key="frame" x="0.5" y="1" width="335" height="263"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF7-gA-tLs">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="155"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8aP-9J-dVU">
+                                    <rect key="frame" x="25" y="15" width="68" height="105"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="105" id="fGw-2U-fFQ"/>
+                                        <constraint firstAttribute="width" constant="68" id="kb2-kE-d8d"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Available" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QG7-zz-Zlc">
+                                    <rect key="frame" x="113" y="47" width="202" height="18"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="15"/>
+                                    <color key="textColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dj-zL-1V9">
+                                    <rect key="frame" x="113" y="68" width="202" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7D-fo-gCr">
+                                    <rect key="frame" x="113" y="91" width="202" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oi-gR-lMn">
+                                    <rect key="frame" x="113" y="114" width="202" height="20.5"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUR-F1-CsT">
+                                    <rect key="frame" x="113" y="15" width="202" height="29"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="24"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="8Oi-gR-lMn" secondAttribute="bottom" constant="20.5" id="9Ex-MS-5rZ"/>
+                                <constraint firstAttribute="trailing" secondItem="aUR-F1-CsT" secondAttribute="trailing" constant="20" id="Ej8-WC-G2p"/>
+                                <constraint firstItem="8aP-9J-dVU" firstAttribute="top" secondItem="hF7-gA-tLs" secondAttribute="top" constant="15" id="LJe-tv-RUs"/>
+                                <constraint firstItem="5Dj-zL-1V9" firstAttribute="top" secondItem="QG7-zz-Zlc" secondAttribute="bottom" constant="3" id="NRY-IJ-96H"/>
+                                <constraint firstItem="V7D-fo-gCr" firstAttribute="top" secondItem="5Dj-zL-1V9" secondAttribute="bottom" constant="3" id="QkO-xv-YER"/>
+                                <constraint firstItem="QG7-zz-Zlc" firstAttribute="top" secondItem="aUR-F1-CsT" secondAttribute="bottom" constant="3" id="Rgh-fP-9Zw"/>
+                                <constraint firstItem="aUR-F1-CsT" firstAttribute="leading" secondItem="8aP-9J-dVU" secondAttribute="trailing" constant="20" id="Umv-51-odI"/>
+                                <constraint firstAttribute="trailing" secondItem="5Dj-zL-1V9" secondAttribute="trailing" constant="20" id="WVF-hv-XGp"/>
+                                <constraint firstItem="8aP-9J-dVU" firstAttribute="leading" secondItem="hF7-gA-tLs" secondAttribute="leading" constant="25" id="Z7K-6A-jZM"/>
+                                <constraint firstItem="5Dj-zL-1V9" firstAttribute="leading" secondItem="QG7-zz-Zlc" secondAttribute="leading" id="epe-l5-hZs"/>
+                                <constraint firstAttribute="trailing" secondItem="QG7-zz-Zlc" secondAttribute="trailing" constant="20" id="fAc-jB-Xx3"/>
+                                <constraint firstItem="QG7-zz-Zlc" firstAttribute="leading" secondItem="aUR-F1-CsT" secondAttribute="leading" id="fBA-tQ-LHd"/>
+                                <constraint firstItem="aUR-F1-CsT" firstAttribute="top" secondItem="8aP-9J-dVU" secondAttribute="top" id="gGq-cu-Lvv"/>
+                                <constraint firstAttribute="trailing" secondItem="V7D-fo-gCr" secondAttribute="trailing" constant="20" id="mLN-jA-T5A"/>
+                                <constraint firstItem="V7D-fo-gCr" firstAttribute="leading" secondItem="5Dj-zL-1V9" secondAttribute="leading" id="nLu-eB-gRh"/>
+                                <constraint firstItem="8Oi-gR-lMn" firstAttribute="top" secondItem="V7D-fo-gCr" secondAttribute="bottom" constant="3" id="ssW-cy-a9I"/>
+                                <constraint firstItem="8Oi-gR-lMn" firstAttribute="leading" secondItem="V7D-fo-gCr" secondAttribute="leading" id="vhM-Uc-t3t"/>
+                                <constraint firstAttribute="trailing" secondItem="8Oi-gR-lMn" secondAttribute="trailing" constant="20" id="xGF-zO-r04"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KH-zm-jCE">
+                            <rect key="frame" x="33.5" y="165" width="268.5" height="44"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="iKx-QV-I8H"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="15"/>
+                            <state key="normal" title="ADD TO WISHLIST">
+                                <color key="titleColor" red="0.0" green="0.67843137254901964" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpz-Ry-sag">
+                            <rect key="frame" x="33.5" y="219" width="268.5" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="IiM-SN-7AH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIText-Bold" family="SF UI Text" pointSize="15"/>
+                            <state key="normal" title="RENT">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Jpz-Ry-sag" firstAttribute="width" secondItem="oL7-XT-Hxo" secondAttribute="width" multiplier="0.8" id="Ajn-Ny-z5U"/>
+                        <constraint firstItem="0KH-zm-jCE" firstAttribute="width" secondItem="oL7-XT-Hxo" secondAttribute="width" multiplier="0.8" id="bmY-zU-yfi"/>
+                        <constraint firstItem="hF7-gA-tLs" firstAttribute="width" secondItem="oL7-XT-Hxo" secondAttribute="width" id="ef1-Yb-Lrb"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oL7-XT-Hxo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NOu-dx-Xg2"/>
+                <constraint firstItem="oL7-XT-Hxo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="1" id="Wfp-if-Dvv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Jpz-Ry-sag" secondAttribute="bottom" constant="15" id="aEG-Fz-ZWN"/>
+                <constraint firstItem="oL7-XT-Hxo" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="auo-8o-RuX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addToWishlistButton" destination="0KH-zm-jCE" id="MR0-Nc-huS"/>
+                <outlet property="authorLabel" destination="5Dj-zL-1V9" id="YBd-4K-d6A"/>
+                <outlet property="bookCoverImageView" destination="8aP-9J-dVU" id="m7I-vg-BMb"/>
+                <outlet property="genreLabel" destination="8Oi-gR-lMn" id="t03-oz-pVy"/>
+                <outlet property="releaseYearLabel" destination="V7D-fo-gCr" id="dqA-SC-9d5"/>
+                <outlet property="rentButton" destination="Jpz-Ry-sag" id="ZJv-vn-ngW"/>
+                <outlet property="statusLabel" destination="QG7-zz-Zlc" id="mb9-68-ZO3"/>
+                <outlet property="titleLabel" destination="aUR-F1-CsT" id="iQa-Yg-zr0"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-118.5"/>
+        </view>
+    </objects>
+</document>
