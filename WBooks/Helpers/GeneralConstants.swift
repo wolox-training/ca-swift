@@ -14,6 +14,7 @@ struct GeneralConstants {
         static let backgroundBlueColor = UIColor(hex: "EAF6FA")!
         static let applicationBlueColor = UIColor(hex: "00ADEE")!
         static let navigationBarTitleFont = UIFont(name: "SFUIText-Semibold", size: 17)!
+        static let textFont = UIFont(name: "SFUIText-Regular", size: 15)!
         static let appDefaultImage = UIImage(named: "default_image")!
         static let navigationBarImage = UIImage(named: "bc_nav bar")!
         static let headerImageHeight: CGFloat = 30

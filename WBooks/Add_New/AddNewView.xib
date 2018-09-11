@@ -13,6 +13,9 @@
         <array key="SFUIText-Bold.ttf">
             <string>SFUIText-Bold</string>
         </array>
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewView" customModule="WBooks" customModuleProvider="target"/>
@@ -25,7 +28,7 @@
                     <rect key="frame" x="20" y="65" width="335" height="592"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-p6-kca">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="500"/>
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="530"/>
                             <subviews>
                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add photo" translatesAutoresizingMaskIntoConstraints="NO" id="8qx-Ju-8Qn">
                                     <rect key="frame" x="26" y="26" width="96" height="96"/>
@@ -34,38 +37,53 @@
                                         <constraint firstAttribute="width" constant="96" id="xod-zK-jwX"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Book's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-HK-Fc5" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
-                                    <rect key="frame" x="26" y="152" width="289" height="17"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-HK-Fc5" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="152" width="274" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Wbc-9z-wbx"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-in-z8i" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="213" width="274" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="XnN-Jp-fXG"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-in-z8i">
-                                    <rect key="frame" x="26" y="190" width="289" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-QM-Wi2" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="333" width="274" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="YYe-8D-n3C"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-QM-Wi2">
-                                    <rect key="frame" x="26" y="290" width="289" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUL-GB-bKK" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="393" width="274" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="AGC-TX-J3i"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUL-GB-bKK">
-                                    <rect key="frame" x="26" y="340" width="289" height="30"/>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-jU-IV4">
-                                    <rect key="frame" x="26" y="240" width="289" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-jU-IV4" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="273" width="274" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="NcC-69-vOq"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWb-Kv-uYv">
-                                    <rect key="frame" x="30" y="436" width="275" height="44"/>
+                                    <rect key="frame" x="30" y="466" width="275" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="bgO-cX-zih"/>
                                     </constraints>
@@ -78,19 +96,19 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="KBz-in-z8i" firstAttribute="leading" secondItem="Wc1-HK-Fc5" secondAttribute="leading" id="2q8-sn-tcg"/>
-                                <constraint firstAttribute="trailing" secondItem="QCB-QM-Wi2" secondAttribute="trailing" constant="20" id="3bX-Tb-Yqa"/>
+                                <constraint firstAttribute="trailing" secondItem="QCB-QM-Wi2" secondAttribute="trailing" constant="35" id="3bX-Tb-Yqa"/>
                                 <constraint firstItem="ZWb-Kv-uYv" firstAttribute="leading" secondItem="5H7-Y0-KPx" secondAttribute="leading" constant="30" id="7Zl-TA-I1g"/>
                                 <constraint firstItem="FfD-jU-IV4" firstAttribute="top" secondItem="KBz-in-z8i" secondAttribute="bottom" constant="20" id="Bpn-8A-4Hv"/>
-                                <constraint firstAttribute="trailing" secondItem="aUL-GB-bKK" secondAttribute="trailing" constant="20" id="MPW-Kq-Eox"/>
+                                <constraint firstAttribute="trailing" secondItem="aUL-GB-bKK" secondAttribute="trailing" constant="35" id="MPW-Kq-Eox"/>
                                 <constraint firstItem="Wc1-HK-Fc5" firstAttribute="top" secondItem="8qx-Ju-8Qn" secondAttribute="bottom" constant="30" id="P1y-fG-OL9"/>
-                                <constraint firstAttribute="trailing" secondItem="FfD-jU-IV4" secondAttribute="trailing" constant="20" id="Pe3-Fb-DrO"/>
+                                <constraint firstAttribute="trailing" secondItem="FfD-jU-IV4" secondAttribute="trailing" constant="35" id="Pe3-Fb-DrO"/>
                                 <constraint firstItem="5H7-Y0-KPx" firstAttribute="bottom" secondItem="ZWb-Kv-uYv" secondAttribute="bottom" constant="20" id="R9D-8x-jx7"/>
                                 <constraint firstItem="aUL-GB-bKK" firstAttribute="leading" secondItem="QCB-QM-Wi2" secondAttribute="leading" id="UO7-8p-rj4"/>
                                 <constraint firstItem="QCB-QM-Wi2" firstAttribute="leading" secondItem="FfD-jU-IV4" secondAttribute="leading" id="WKD-Wb-mej"/>
-                                <constraint firstAttribute="height" constant="500" id="Wlw-Qh-y42"/>
-                                <constraint firstAttribute="trailing" secondItem="Wc1-HK-Fc5" secondAttribute="trailing" constant="20" id="YFy-gW-kg4"/>
+                                <constraint firstAttribute="height" constant="530" id="Wlw-Qh-y42"/>
+                                <constraint firstAttribute="trailing" secondItem="Wc1-HK-Fc5" secondAttribute="trailing" constant="35" id="YFy-gW-kg4"/>
                                 <constraint firstItem="5H7-Y0-KPx" firstAttribute="trailing" secondItem="ZWb-Kv-uYv" secondAttribute="trailing" constant="30" id="apx-Zc-dKH"/>
-                                <constraint firstAttribute="trailing" secondItem="KBz-in-z8i" secondAttribute="trailing" constant="20" id="bLJ-Ga-zqz"/>
+                                <constraint firstAttribute="trailing" secondItem="KBz-in-z8i" secondAttribute="trailing" constant="35" id="bLJ-Ga-zqz"/>
                                 <constraint firstItem="FfD-jU-IV4" firstAttribute="leading" secondItem="KBz-in-z8i" secondAttribute="leading" id="eBt-Xj-zGL"/>
                                 <constraint firstItem="KBz-in-z8i" firstAttribute="top" secondItem="Wc1-HK-Fc5" secondAttribute="bottom" constant="21" id="mbQ-S9-xOh"/>
                                 <constraint firstItem="aUL-GB-bKK" firstAttribute="top" secondItem="QCB-QM-Wi2" secondAttribute="bottom" constant="20" id="pxm-Bw-48p"/>
