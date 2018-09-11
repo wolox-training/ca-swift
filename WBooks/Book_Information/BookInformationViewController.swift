@@ -44,9 +44,10 @@ class BookInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureDetails()
         bindAddToWishlitButtonAction()
         bindRentButtonAction()
+        configureDetails()
+        _bookViewModel.updateBookInfo()
     }
     
     // MARK: - Private methods

@@ -53,6 +53,13 @@
 		AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611A2138269A001DD2C3 /* GeneralConstants.swift */; };
 		AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611F21389D5C001DD2C3 /* BookInformationView.swift */; };
 		AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE32612121389D66001DD2C3 /* BookInformationView.xib */; };
+		AE3CC07021480D7A008A34B9 /* BookInformationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC06F21480D7A008A34B9 /* BookInformationViewModelTests.swift */; };
+		AE3CC073214811B8008A34B9 /* UserBooksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC072214811B8008A34B9 /* UserBooksRepositoryMock.swift */; };
+		AE3CC07521481226008A34B9 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC07421481226008A34B9 /* UserRepositoryMock.swift */; };
+		AE3CC07721481249008A34B9 /* BooksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC07621481249008A34B9 /* BooksRepositoryMock.swift */; };
+		AE3CC0792148202A008A34B9 /* ImageFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC0782148202A008A34B9 /* ImageFetcherMock.swift */; };
+		AE3CC07B214820E4008A34B9 /* mockImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE3CC07A214820E4008A34B9 /* mockImage.jpg */; };
+		AE3CC07D214829B0008A34B9 /* BookMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC07C214829B0008A34B9 /* BookMocks.swift */; };
 		AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C32130405200925C9B /* BooksViewModel.swift */; };
 		AE65C8C62130409A00925C9B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C52130409A00925C9B /* Book.swift */; };
 		AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A1E213589EB00545F9E /* ImageFetcher.swift */; };
@@ -166,6 +173,13 @@
 		AE32611A2138269A001DD2C3 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		AE32611F21389D5C001DD2C3 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		AE32612121389D66001DD2C3 /* BookInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInformationView.xib; sourceTree = "<group>"; };
+		AE3CC06F21480D7A008A34B9 /* BookInformationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationViewModelTests.swift; sourceTree = "<group>"; };
+		AE3CC072214811B8008A34B9 /* UserBooksRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBooksRepositoryMock.swift; sourceTree = "<group>"; };
+		AE3CC07421481226008A34B9 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
+		AE3CC07621481249008A34B9 /* BooksRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepositoryMock.swift; sourceTree = "<group>"; };
+		AE3CC0782148202A008A34B9 /* ImageFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherMock.swift; sourceTree = "<group>"; };
+		AE3CC07A214820E4008A34B9 /* mockImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mockImage.jpg; sourceTree = "<group>"; };
+		AE3CC07C214829B0008A34B9 /* BookMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMocks.swift; sourceTree = "<group>"; };
 		AE65C8C32130405200925C9B /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		AE65C8C52130409A00925C9B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AE696A1E213589EB00545F9E /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
@@ -316,8 +330,11 @@
 		9D1575181CB1B27500EA395E /* WBooksTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE3CC07A214820E4008A34B9 /* mockImage.jpg */,
+				AE3CC0712148119A008A34B9 /* Repository Mocks */,
 				9D1575191CB1B27500EA395E /* WBooksTests.swift */,
 				9D15751B1CB1B27500EA395E /* Info.plist */,
+				AE3CC06F21480D7A008A34B9 /* BookInformationViewModelTests.swift */,
 			);
 			path = WBooksTests;
 			sourceTree = "<group>";
@@ -385,6 +402,18 @@
 				AE28F3D4213D9F05007C54CA /* BookInformationViewModel.swift */,
 			);
 			path = Book_Information;
+			sourceTree = "<group>";
+		};
+		AE3CC0712148119A008A34B9 /* Repository Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				AE3CC072214811B8008A34B9 /* UserBooksRepositoryMock.swift */,
+				AE3CC07421481226008A34B9 /* UserRepositoryMock.swift */,
+				AE3CC07621481249008A34B9 /* BooksRepositoryMock.swift */,
+				AE3CC0782148202A008A34B9 /* ImageFetcherMock.swift */,
+				AE3CC07C214829B0008A34B9 /* BookMocks.swift */,
+			);
+			path = "Repository Mocks";
 			sourceTree = "<group>";
 		};
 		AE696A1D213589C000545F9E /* Helpers */ = {
@@ -624,6 +653,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3CC07B214820E4008A34B9 /* mockImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,7 +766,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3CC07521481226008A34B9 /* UserRepositoryMock.swift in Sources */,
+				AE3CC07721481249008A34B9 /* BooksRepositoryMock.swift in Sources */,
+				AE3CC07D214829B0008A34B9 /* BookMocks.swift in Sources */,
+				AE3CC073214811B8008A34B9 /* UserBooksRepositoryMock.swift in Sources */,
+				AE3CC07021480D7A008A34B9 /* BookInformationViewModelTests.swift in Sources */,
 				9D15751A1CB1B27500EA395E /* WBooksTests.swift in Sources */,
+				AE3CC0792148202A008A34B9 /* ImageFetcherMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@ public protocol ImageFetcherType {
      */
     func fetchImage(_ imageURL: URL, with session: URLSession) -> SignalProducer<UIImage, ImageFetcherError>
     
+    func fetchImage(_ imageURL: URL) -> SignalProducer<UIImage, ImageFetcherError>
+    
 }
 
 /**
@@ -40,7 +42,7 @@ public class ImageFetcher: ImageFetcherType {
     
     public init() {}
     
-    public func fetchImage(_ imageURL: URL, with session: URLSession = URLSession.shared) -> SignalProducer<UIImage, ImageFetcherError> {
+    public func fetchImage(_ imageURL: URL, with session: URLSession) -> SignalProducer<UIImage, ImageFetcherError> {
         return session
             .reactive.data(with: URLRequest(url: imageURL))
             .flatMapError { SignalProducer(error: .fetchError($0)) }
@@ -51,6 +53,10 @@ public class ImageFetcher: ImageFetcherType {
                     return SignalProducer(error: .invalidImageFormat)
                 }
         }
+    }
+    
+    public func fetchImage(_ imageURL: URL) -> SignalProducer<UIImage, ImageFetcherError> {
+        return fetchImage(imageURL, with: URLSession.shared)
     }
     
 }

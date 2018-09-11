@@ -47,8 +47,9 @@ final class HomeViewController: UITabBarController {
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
         let userBooksRepository = NetworkingBootstrapper.shared.createUserBooksRepository()
+        let imageFetcher = ImageFetcher()
 
-        let libraryViewModel = LibraryViewModel(userBooksRepository: userBooksRepository)
+        let libraryViewModel = LibraryViewModel(userBooksRepository: userBooksRepository, imageFetcher: imageFetcher)
         let libraryViewController = LibraryViewController(libraryViewModel: libraryViewModel) 
         libraryViewController.title = Constants.libraryName.uppercased()
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,

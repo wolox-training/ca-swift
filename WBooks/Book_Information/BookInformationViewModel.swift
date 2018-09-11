@@ -17,9 +17,11 @@ class BookInformationViewModel {
     // MARK: - Properties
     
     private let _book: Book
-    private let _userBookRepository: UserBooksRepository
+    private let _userBookRepository: UserBooksRepositoryType
+    private let _imageFetcher: ImageFetcherType
     private let _mutableBookStatus = MutableProperty(BookStatus.notAvailable)
-    private let _mutableImage = MutableProperty(GeneralConstants.Design.appDefaultImage)
+    private let _mutableImage =
+        MutableProperty(GeneralConstants.Design.appDefaultImage)
     let bookStatus: Property<BookStatus>
     let image: Property<UIImage>
     
@@ -41,23 +43,20 @@ class BookInformationViewModel {
     
     // MARK: - Initializers
     
-    init(book: Book, userBooksRepository: UserBooksRepository) {
+    init(book: Book, userBooksRepository: UserBooksRepositoryType, imageFetcher: ImageFetcherType) {
         _book = book
         _userBookRepository = userBooksRepository
+        _imageFetcher = imageFetcher
         
         bookStatus = Property(_mutableBookStatus)
         image = Property(_mutableImage)
-        
-        setImage()
-        getStatusText()
     }
     
     // MARK: - Private methods
     
     private func setImage() {
         if let imageURL = _book.imageUrl {
-            let imageFetcher = ImageFetcher()
-            let imageResult: SignalProducer<UIImage, NoError> = imageFetcher.fetchImage(imageURL)
+            let imageResult: SignalProducer<UIImage, NoError> = _imageFetcher.fetchImage(imageURL)
                 .liftError()
                 .take(duringLifetimeOf: self)
             self._mutableImage <~ imageResult
@@ -77,10 +76,15 @@ class BookInformationViewModel {
         }
     }
     
+    private func getBookStatus() -> SignalProducer<BookStatus, RepositoryError> {
+        return self._userBookRepository.booksRepository.getBookStatus(id: _book.id)
+    }
+    
     // MARK: - Public methods
     
-    func getBookStatus() -> SignalProducer<BookStatus, RepositoryError> {
-        return self._userBookRepository.booksRepository.getBookStatus(id: _book.id)
+    func updateBookInfo() {
+        setImage()
+        getStatusText()
     }
     
     func rentBook() -> SignalProducer<Rent, RepositoryError> {
