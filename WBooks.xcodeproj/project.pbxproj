@@ -70,6 +70,7 @@
 		AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */; };
 		AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */; };
 		AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */; };
+		AE8246992147186F0042EE4E /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8246982147186F0042EE4E /* LineTextField.swift */; };
 		AE88A6D62142C71800B7CE07 /* MediaPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */; };
 		AE88A6D82142C77200B7CE07 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */; };
 		AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB208792127568C0031776C /* BookTableViewCell.swift */; };
@@ -182,6 +183,7 @@
 		AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		AE8246982147186F0042EE4E /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerService.swift; sourceTree = "<group>"; };
 		AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		AEB208792127568C0031776C /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				AE696A222135ECEC00545F9E /* Extensions */,
+				AE8246982147186F0042EE4E /* LineTextField.swift */,
 				AE696A1E213589EB00545F9E /* ImageFetcher.swift */,
 				AE32611A2138269A001DD2C3 /* GeneralConstants.swift */,
 				AE6E1B3921403E870090E2F3 /* PublicMethods.swift */,
@@ -687,6 +690,7 @@
 				AE28F3E2213EE02E007C54CA /* UserRepository.swift in Sources */,
 				9D1575071CB1B27500EA395E /* HomeViewController.swift in Sources */,
 				AE28F3E4213EE12F007C54CA /* User+BooksRepository.swift in Sources */,
+				AE8246992147186F0042EE4E /* LineTextField.swift in Sources */,
 				AE28F3E0213DE4E7007C54CA /* UIButton.swift in Sources */,
 				AE28F3D3213D9805007C54CA /* BookInformationViewController.swift in Sources */,
 				AE28F3D5213D9F05007C54CA /* BookInformationViewModel.swift in Sources */,
