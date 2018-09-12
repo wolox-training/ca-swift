@@ -59,7 +59,7 @@
 		AE3CC07721481249008A34B9 /* BooksRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC07621481249008A34B9 /* BooksRepositoryMock.swift */; };
 		AE3CC0792148202A008A34B9 /* ImageFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC0782148202A008A34B9 /* ImageFetcherMock.swift */; };
 		AE3CC07B214820E4008A34B9 /* mockImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE3CC07A214820E4008A34B9 /* mockImage.jpg */; };
-		AE3CC07D214829B0008A34B9 /* BookMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC07C214829B0008A34B9 /* BookMocks.swift */; };
+		AE3CC07D214829B0008A34B9 /* ModelsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3CC07C214829B0008A34B9 /* ModelsMocks.swift */; };
 		AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C32130405200925C9B /* BooksViewModel.swift */; };
 		AE65C8C62130409A00925C9B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65C8C52130409A00925C9B /* Book.swift */; };
 		AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE696A1E213589EB00545F9E /* ImageFetcher.swift */; };
@@ -179,7 +179,7 @@
 		AE3CC07621481249008A34B9 /* BooksRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepositoryMock.swift; sourceTree = "<group>"; };
 		AE3CC0782148202A008A34B9 /* ImageFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcherMock.swift; sourceTree = "<group>"; };
 		AE3CC07A214820E4008A34B9 /* mockImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mockImage.jpg; sourceTree = "<group>"; };
-		AE3CC07C214829B0008A34B9 /* BookMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMocks.swift; sourceTree = "<group>"; };
+		AE3CC07C214829B0008A34B9 /* ModelsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsMocks.swift; sourceTree = "<group>"; };
 		AE65C8C32130405200925C9B /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		AE65C8C52130409A00925C9B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		AE696A1E213589EB00545F9E /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 				AE3CC07421481226008A34B9 /* UserRepositoryMock.swift */,
 				AE3CC07621481249008A34B9 /* BooksRepositoryMock.swift */,
 				AE3CC0782148202A008A34B9 /* ImageFetcherMock.swift */,
-				AE3CC07C214829B0008A34B9 /* BookMocks.swift */,
+				AE3CC07C214829B0008A34B9 /* ModelsMocks.swift */,
 			);
 			path = "Repository Mocks";
 			sourceTree = "<group>";
@@ -768,7 +768,7 @@
 			files = (
 				AE3CC07521481226008A34B9 /* UserRepositoryMock.swift in Sources */,
 				AE3CC07721481249008A34B9 /* BooksRepositoryMock.swift in Sources */,
-				AE3CC07D214829B0008A34B9 /* BookMocks.swift in Sources */,
+				AE3CC07D214829B0008A34B9 /* ModelsMocks.swift in Sources */,
 				AE3CC073214811B8008A34B9 /* UserBooksRepositoryMock.swift in Sources */,
 				AE3CC07021480D7A008A34B9 /* BookInformationViewModelTests.swift in Sources */,
 				9D15751A1CB1B27500EA395E /* WBooksTests.swift in Sources */,

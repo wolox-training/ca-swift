@@ -16,7 +16,11 @@ class UserRepositoryMock: UserRepositoryType {
     var expectedError: Bool = false
     
     func rentBook(id: Int) -> SignalProducer<Rent, RepositoryError> {
-        return SignalProducer.empty
+        if expectedError {
+            return SignalProducer(error: RepositoryError.invalidURL)
+        } else {
+            return SignalProducer(value: SuccessfulRent)
+        }
     }
     
     func addBookToWishlist(id: Int) -> SignalProducer<Void, RepositoryError> {

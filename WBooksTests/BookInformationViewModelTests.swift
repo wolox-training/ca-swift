@@ -10,16 +10,18 @@ import Foundation
 import Quick
 import Nimble
 import Result
+import Networking
 
 @testable import WBooks
 
 class BookInformationViewModelTests: QuickSpec {
     override func spec() {
+        var repository: UserBooksRepositoryMock!
+        var viewModel: BookInformationViewModel!
+        var book: Book!
+        var imageFetcher: ImageFetcherMock!
+        
         describe("#updateBookInfo") {
-            var repository: UserBooksRepositoryMock!
-            var book: Book!
-            var viewModel: BookInformationViewModel!
-            var imageFetcher: ImageFetcherMock!
             
             beforeEach {
                 repository = UserBooksRepositoryMock()
@@ -39,7 +41,8 @@ class BookInformationViewModelTests: QuickSpec {
                     expect(image).to(equal(GeneralConstants.Design.appDefaultImage))
                         done()
                     })
-                    }}
+                    }
+                }
             }
             
             context("when image is fetched") {
@@ -53,7 +56,8 @@ class BookInformationViewModelTests: QuickSpec {
 //                        expect(image).to(equal(MockImage))
 //                        done()
 //                    })
-//                    }}
+//                    }
+//            }
             }
             
             context("when the status can't be gotten") {
@@ -85,6 +89,41 @@ class BookInformationViewModelTests: QuickSpec {
                     })
                     }
                 }
+            }
+        }
+        
+        describe("#rentBook") {
+            
+            beforeEach {
+                repository = UserBooksRepositoryMock()
+                book = DefaultBook
+                imageFetcher = ImageFetcherMock()
+            }
+            
+            context("when book is successfully rented") {
+                beforeEach {
+                    viewModel = BookInformationViewModel(book: book, userBooksRepository: repository, imageFetcher: imageFetcher)
+                }
+                
+//                it("should get a valid Rent") { waitUntil { done in
+//                    viewModel.rentBook().startWithResult({ (result) in
+//                        expect(result).to(Result.success(Any))
+//                    })
+//                    }
+//                }
+            }
+            
+            context("when book couldn't be rented") {
+                beforeEach {
+                    viewModel = BookInformationViewModel(book: book, userBooksRepository: repository, imageFetcher: imageFetcher)
+                }
+                
+//                it("should get and error") { waitUntil { done in
+//                    viewModel.rentBook().startWithValues({ (result) in
+//                        expect(result).to(equal(SuccessfulRent))
+//                    })
+//                    }
+//                }
             }
         }
     }
