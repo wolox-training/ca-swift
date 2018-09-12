@@ -12,6 +12,17 @@ import MobileCoreServices
 
 class AddNewViewController: UIViewController {
     
+    // MARK: - Constants
+    
+    struct Constants {
+        static let submitSuccessMessage = "Book information was successfully submitted"
+        static let submitFailureMessage = "Book information could not be sent. Try again"
+        static let completeInformationMessage = "Complete all information before submitting"
+        static let menuGalleryOptionTitle = "Photo Gallery"
+        static let menuCameraOptionTitle = "Camera"
+        static let menuCancelOptionTitle = "Cancel"
+    }
+    
     // MARK: - Properties
     
     private lazy var _view: AddNewView = AddNewView.loadFromNib()!
@@ -50,9 +61,16 @@ class AddNewViewController: UIViewController {
         .take(during: self.reactive.lifetime)
             .observeValues({ [unowned self] _ in
                 if self.validateBookInformation() {
-                    self._addNewViewModel.submitBook()
+                    self._addNewViewModel.submitBook().startWithResult({ [unowned self] (result) in
+                        switch result {
+                        case .success:
+                            showMessage(Constants.submitSuccessMessage, in: self)
+                        case .failure:
+                            showMessage(Constants.submitFailureMessage, in: self)
+                        }
+                    })
                 } else {
-                    showMessage("Complete all information before submitting", in: self)
+                    showMessage(Constants.completeInformationMessage, in: self)
                 }
             })
     }
@@ -64,13 +82,13 @@ class AddNewViewController: UIViewController {
     
     @objc private func selectImage() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let galleryButton = UIAlertAction(title: "Photo Gallery", style: .default, handler: { [unowned self] (action) -> Void in
+        let galleryButton = UIAlertAction(title: Constants.menuGalleryOptionTitle, style: .default, handler: { [unowned self] (action) -> Void in
             self.showPickerController(for: .photoLibrary)
         })
-        let cameraButton = UIAlertAction(title: "Camera", style: .default, handler: { [unowned self] (action) -> Void in
+        let cameraButton = UIAlertAction(title: Constants.menuCameraOptionTitle, style: .default, handler: { [unowned self] (action) -> Void in
             self.showPickerController(for: .camera)
         })
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: Constants.menuCancelOptionTitle, style: .cancel, handler: nil)
     
         actionSheet.addAction(galleryButton)
         actionSheet.addAction(cameraButton)
