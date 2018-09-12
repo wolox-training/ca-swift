@@ -17,6 +17,7 @@ class LineTextField: UITextField {
         configureTextField()
         createBorder()
     }
+    
     required override init(frame: CGRect) {
         super.init(frame: frame)
         configureTextField()
@@ -30,14 +31,19 @@ class LineTextField: UITextField {
         textAlignment = .left
         font = GeneralConstants.Design.textFont
         textColor = UIColor.darkGray
-        attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSAttributedStringKey.font: GeneralConstants.Design.textFont,
-                                                                                      NSAttributedStringKey.foregroundColor: UIColor(hex: "C8C7CC")!])
+        
+        if let placeholder = placeholder {
+            attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
+                NSAttributedStringKey.font: GeneralConstants.Design.textFont,
+                NSAttributedStringKey.foregroundColor: GeneralConstants.Design.textfielGrayColor
+                ])
+        }
     }
     
     private func createBorder() {
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = UIColor(hex: "C8C7CC")!.cgColor
+        border.borderColor = GeneralConstants.Design.textfielGrayColor.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: frame.size.width, height: frame.size.height)
         border.borderWidth = width
         self.layer.addSublayer(border)
