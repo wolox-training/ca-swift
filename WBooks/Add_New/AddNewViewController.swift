@@ -15,6 +15,7 @@ class AddNewViewController: UIViewController {
     // MARK: - Constants
     
     struct Constants {
+        static let defaultCoverImage = UIImage(named: "ic_add photo")!
         static let submitSuccessMessage = "Book information was successfully submitted"
         static let submitFailureMessage = "Book information could not be sent. Try again"
         static let completeInformationMessage = "Complete all information before submitting"
@@ -65,6 +66,7 @@ class AddNewViewController: UIViewController {
                         switch result {
                         case .success:
                             showMessage(Constants.submitSuccessMessage, in: self)
+                            self.clearInformation()
                         case .failure:
                             showMessage(Constants.submitFailureMessage, in: self)
                         }
@@ -129,5 +131,14 @@ class AddNewViewController: UIViewController {
                     print("**** image Error: \(error)")
                 }
         }
+    }
+    
+    private func clearInformation() {
+        _view.nameTextField.text = ""
+        _view.authorTextField.text = ""
+        _view.yearTextField.text = ""
+        _view.topicTextField.text = ""
+        _view.descriptionTextField.text = ""
+        _view.coverImageView.image = Constants.defaultCoverImage
     }
 }
