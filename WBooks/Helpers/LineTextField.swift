@@ -35,7 +35,7 @@ class LineTextField: UITextField {
         if let placeholder = placeholder {
             attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
                 NSAttributedStringKey.font: GeneralConstants.Design.textFont,
-                NSAttributedStringKey.foregroundColor: GeneralConstants.Design.textfielGrayColor
+                NSAttributedStringKey.foregroundColor: GeneralConstants.Design.textfieldGrayColor
                 ])
         }
     }
@@ -43,7 +43,7 @@ class LineTextField: UITextField {
     private func createBorder() {
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = GeneralConstants.Design.textfielGrayColor.cgColor
+        border.borderColor = GeneralConstants.Design.textfieldGrayColor.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: frame.size.width, height: frame.size.height)
         border.borderWidth = width
         self.layer.addSublayer(border)

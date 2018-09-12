@@ -13,7 +13,7 @@ struct GeneralConstants {
     struct Design {
         static let backgroundBlueColor = UIColor(hex: "EAF6FA")!
         static let applicationBlueColor = UIColor(hex: "00ADEE")!
-        static let textfielGrayColor = UIColor(hex: "C8C7CC")!
+        static let textfieldGrayColor = UIColor(hex: "C8C7CC")!
         static let navigationBarTitleFont = UIFont(name: "SFUIText-Semibold", size: 17)!
         static let textFont = UIFont(name: "SFUIText-Regular", size: 15)!
         static let appDefaultImage = UIImage(named: "default_image")!
