@@ -81,13 +81,14 @@
                                 <constraint firstAttribute="trailing" secondItem="QCB-QM-Wi2" secondAttribute="trailing" constant="20" id="3bX-Tb-Yqa"/>
                                 <constraint firstItem="ZWb-Kv-uYv" firstAttribute="leading" secondItem="5H7-Y0-KPx" secondAttribute="leading" constant="30" id="7Zl-TA-I1g"/>
                                 <constraint firstItem="FfD-jU-IV4" firstAttribute="top" secondItem="KBz-in-z8i" secondAttribute="bottom" constant="20" id="Bpn-8A-4Hv"/>
+                                <constraint firstItem="ZWb-Kv-uYv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aUL-GB-bKK" secondAttribute="bottom" constant="53" id="Fv6-2T-uFP"/>
                                 <constraint firstAttribute="trailing" secondItem="aUL-GB-bKK" secondAttribute="trailing" constant="20" id="MPW-Kq-Eox"/>
                                 <constraint firstItem="Wc1-HK-Fc5" firstAttribute="top" secondItem="8qx-Ju-8Qn" secondAttribute="bottom" constant="30" id="P1y-fG-OL9"/>
                                 <constraint firstAttribute="trailing" secondItem="FfD-jU-IV4" secondAttribute="trailing" constant="20" id="Pe3-Fb-DrO"/>
                                 <constraint firstItem="5H7-Y0-KPx" firstAttribute="bottom" secondItem="ZWb-Kv-uYv" secondAttribute="bottom" constant="20" id="R9D-8x-jx7"/>
+                                <constraint firstAttribute="height" constant="500" id="RBN-f5-FJf"/>
                                 <constraint firstItem="aUL-GB-bKK" firstAttribute="leading" secondItem="QCB-QM-Wi2" secondAttribute="leading" id="UO7-8p-rj4"/>
                                 <constraint firstItem="QCB-QM-Wi2" firstAttribute="leading" secondItem="FfD-jU-IV4" secondAttribute="leading" id="WKD-Wb-mej"/>
-                                <constraint firstAttribute="height" constant="500" id="Wlw-Qh-y42"/>
                                 <constraint firstAttribute="trailing" secondItem="Wc1-HK-Fc5" secondAttribute="trailing" constant="20" id="YFy-gW-kg4"/>
                                 <constraint firstItem="5H7-Y0-KPx" firstAttribute="trailing" secondItem="ZWb-Kv-uYv" secondAttribute="trailing" constant="30" id="apx-Zc-dKH"/>
                                 <constraint firstAttribute="trailing" secondItem="KBz-in-z8i" secondAttribute="trailing" constant="20" id="bLJ-Ga-zqz"/>
@@ -108,11 +109,13 @@
                         </view>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="ARz-p6-kca" secondAttribute="bottom" id="0Xr-oK-4EC"/>
                         <constraint firstItem="ARz-p6-kca" firstAttribute="width" secondItem="4yT-4q-TrF" secondAttribute="width" id="EAD-QO-0rX"/>
                         <constraint firstAttribute="bottom" secondItem="ARz-p6-kca" secondAttribute="bottom" id="NK9-aQ-5K5"/>
                         <constraint firstItem="ARz-p6-kca" firstAttribute="top" secondItem="4yT-4q-TrF" secondAttribute="top" id="ixX-YT-3h1"/>
                         <constraint firstAttribute="trailing" secondItem="ARz-p6-kca" secondAttribute="trailing" id="oFi-37-NGa"/>
                         <constraint firstItem="ARz-p6-kca" firstAttribute="leading" secondItem="4yT-4q-TrF" secondAttribute="leading" id="s76-Qn-RLX"/>
+                        <constraint firstItem="ARz-p6-kca" firstAttribute="height" secondItem="4yT-4q-TrF" secondAttribute="height" priority="750" id="xRp-E0-nZ8"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -131,6 +134,7 @@
                 <outlet property="nameTextField" destination="Wc1-HK-Fc5" id="gl4-Ws-eBw"/>
                 <outlet property="submitButton" destination="ZWb-Kv-uYv" id="uyy-bb-qdx"/>
                 <outlet property="topicTextField" destination="QCB-QM-Wi2" id="zSD-Qf-rHh"/>
+                <outlet property="viewHeightConstraint" destination="RBN-f5-FJf" id="KNY-hL-sTS"/>
                 <outlet property="yearTextField" destination="FfD-jU-IV4" id="tvB-Xg-8fm"/>
             </connections>
             <point key="canvasLocation" x="-47.5" y="-564.5"/>

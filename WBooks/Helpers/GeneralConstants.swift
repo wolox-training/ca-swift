@@ -19,6 +19,7 @@ struct GeneralConstants {
         static let headerImageHeight: CGFloat = 30
         static let buttonCornerRadius: CGFloat = 20
         static let buttonBorderWidth: CGFloat = 1
+        static let minimumDeviceHeight: CGFloat = 568
     }
     
     struct Texts {
