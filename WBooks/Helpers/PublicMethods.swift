@@ -22,7 +22,7 @@ func addHeaderImage(to view: UIView) {
         ])
 }
 
-func showErrorMessage(with error: RepositoryError,in viewController: UIViewController) {
+func showErrorMessage(with error: Error, in viewController: UIViewController) {
     let alertError = UIAlertController(title: GeneralConstants.Texts.errorAlertTitle,
                                        message: error.localizedDescription,
                                        preferredStyle: .alert)
@@ -30,4 +30,11 @@ func showErrorMessage(with error: RepositoryError,in viewController: UIViewContr
                                        style: .default,
                                        handler: nil))
     viewController.present(alertError, animated: true, completion: nil)
+}
+
+func showMessage(_ text: String, in viewController: UIViewController) {
+    let alert = UIAlertController(title: "", message: text, preferredStyle: .alert)
+    viewController.present(alert, animated: true, completion: nil)
+    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+    
 }

@@ -19,14 +19,16 @@ class BooksViewModel {
     private let _errors: Signal<RepositoryError, NoError>.Observer
     private let _getBooks: () -> SignalProducer<[Book], RepositoryError>
     private let _userBooksRepository: UserBooksRepository
+    private let _imageFetcher: ImageFetcherType
     let books: Property<[Book]>
     let errorsSignal: Signal<RepositoryError, NoError>
     
     // MARK: - Initializers
     
-    init(getBooks: @escaping () -> SignalProducer<[Book], RepositoryError>, userBooksRepository: UserBooksRepository) {
+    init(getBooks: @escaping () -> SignalProducer<[Book], RepositoryError>, userBooksRepository: UserBooksRepository, imageFetcher: ImageFetcherType) {
         _userBooksRepository = userBooksRepository
         _getBooks = getBooks
+        _imageFetcher = imageFetcher
         books = Property(_mutableBooks)
         (errorsSignal, _errors) = Signal<RepositoryError, NoError>.pipe()
     }
@@ -49,6 +51,6 @@ class BooksViewModel {
     }
     
     func createBookDetailsViewModel(book: Book) -> BookDetailsViewModel {
-        return BookDetailsViewModel(book: book, userBooksRepository: _userBooksRepository)
+        return BookDetailsViewModel(book: book, userBooksRepository: _userBooksRepository, imageFetcher: _imageFetcher)
     }
 }

@@ -15,11 +15,13 @@ class LibraryViewModel {
     // MARK: - Properties
     
     private let _userBooksRepository: UserBooksRepository
+    private let _imageFetcher: ImageFetcherType
     
     // MARK: - Initializers
     
-    public init(userBooksRepository: UserBooksRepository) {
+    public init(userBooksRepository: UserBooksRepository, imageFetcher: ImageFetcherType) {
         _userBooksRepository = userBooksRepository
+        _imageFetcher = imageFetcher
     }
     
     // MARK: - Public methods
@@ -28,6 +30,6 @@ class LibraryViewModel {
         let getBooks: () -> SignalProducer<[Book], RepositoryError> = { [unowned self] in
             self._userBooksRepository.booksRepository.getBooks()
         }
-        return BooksViewModel(getBooks: getBooks, userBooksRepository: _userBooksRepository)
+        return BooksViewModel(getBooks: getBooks, userBooksRepository: _userBooksRepository, imageFetcher: _imageFetcher)
     }
 }

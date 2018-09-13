@@ -12,7 +12,7 @@ import Argo
 import Curry
 import Runes
 
-struct User {
+struct User: Equatable {
     let id: Int
     let firstName: String
     let lastName: String

@@ -44,9 +44,10 @@ class BookInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureDetails()
         bindAddToWishlitButtonAction()
         bindRentButtonAction()
+        configureDetails()
+        _bookViewModel.updateBookInfo()
     }
     
     // MARK: - Private methods
@@ -72,9 +73,9 @@ class BookInformationViewController: UIViewController {
                 self._bookViewModel.addBookToWishlit().startWithResult({ [unowned self] (result) in
                     switch result {
                     case .success:
-                        self.showMessage(Constants.addToWishlisSuccessMessage)
+                        showMessage(Constants.addToWishlisSuccessMessage, in: self)
                     case .failure:
-                        self.showMessage(Constants.addToWishlisFailureMessage)
+                        showMessage(Constants.addToWishlisFailureMessage, in: self)
                     }
                 })
         }
@@ -87,19 +88,12 @@ class BookInformationViewController: UIViewController {
                 self._bookViewModel.rentBook().startWithResult({ [unowned self] (result) in
                     switch result {
                     case .success:
-                        self.showMessage(Constants.rentBookSuccessMessage)
+                        showMessage(Constants.rentBookSuccessMessage, in: self)
                     case .failure:
-                        self.showMessage(Constants.rentBookFailureMessage)
+                        showMessage(Constants.rentBookFailureMessage, in: self)
                     }
                 })
         }
-    }
-    
-    private func showMessage(_ text: String) {
-        let alert = UIAlertController(title: "", message: text, preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
-
     }
     
     // MARK: - Helper Methods

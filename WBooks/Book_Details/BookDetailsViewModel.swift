@@ -14,16 +14,18 @@ class BookDetailsViewModel {
     
     private let _book: Book
     private let _userBooksRepository: UserBooksRepository
+    private let _imageFetcher: ImageFetcherType
     
     // MARK: - Initializers
     
-    init(book: Book, userBooksRepository: UserBooksRepository) {
-        self._book = book
-        self._userBooksRepository = userBooksRepository
+    init(book: Book, userBooksRepository: UserBooksRepository, imageFetcher: ImageFetcherType) {
+        _book = book
+        _userBooksRepository = userBooksRepository
+        _imageFetcher = imageFetcher
     }
     
     func createBookInformatonViewModel() -> BookInformationViewModel {
-        return BookInformationViewModel(book: _book, userBooksRepository: _userBooksRepository)
+        return BookInformationViewModel(book: _book, userBooksRepository: _userBooksRepository, imageFetcher: _imageFetcher)
     }
     
     func createBookCommentsViewModel() -> BookCommentsViewModel {

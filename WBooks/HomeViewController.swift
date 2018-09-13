@@ -21,6 +21,7 @@ final class HomeViewController: UITabBarController {
         static let wishlistImage = UIImage(named: "ic_wishlist")
         static let wishlistSelectedImage = UIImage(named: "ic_wishlist_active")
         static let addNewName = "Add New"
+        static let addNewNameBook = "Add New Book"
         static let addNewImage = UIImage(named: "ic_add_new")
         static let addNewSelectedImage = UIImage(named: "ic_add_new_active")
         static let rentalsName = "Rentals"
@@ -46,8 +47,9 @@ final class HomeViewController: UITabBarController {
     private func setupTabBarItems() {
         var tabBarControllers = [UIViewController]()
         let userBooksRepository = NetworkingBootstrapper.shared.createUserBooksRepository()
+        let imageFetcher = ImageFetcher()
 
-        let libraryViewModel = LibraryViewModel(userBooksRepository: userBooksRepository)
+        let libraryViewModel = LibraryViewModel(userBooksRepository: userBooksRepository, imageFetcher: imageFetcher)
         let libraryViewController = LibraryViewController(libraryViewModel: libraryViewModel) 
         libraryViewController.title = Constants.libraryName.uppercased()
         libraryViewController.tabBarItem = UITabBarItem(title: Constants.libraryName,
@@ -57,23 +59,24 @@ final class HomeViewController: UITabBarController {
         tabBarControllers.append(setupNavigationController(with: libraryViewController))
         
         let wishlistViewController = UIViewController()
-        wishlistViewController.title = Constants.wishlistName
+        wishlistViewController.title = Constants.wishlistName.uppercased()
         wishlistViewController.tabBarItem = UITabBarItem(title: Constants.wishlistName,
                                                          image: Constants.wishlistImage,
                                                          selectedImage: Constants.wishlistSelectedImage)
         
         tabBarControllers.append(wishlistViewController)
         
-        let addNewViewController = UIViewController()
-        addNewViewController.title = Constants.addNewName
+        let addNewViewModel = AddNewViewModel(booksRepository: userBooksRepository.booksRepository)
+        let addNewViewController = AddNewViewController(addNewViewModel: addNewViewModel)
+        addNewViewController.title = Constants.addNewNameBook.uppercased()
         addNewViewController.tabBarItem = UITabBarItem(title: Constants.addNewName,
                                                        image: Constants.addNewImage,
                                                        selectedImage: Constants.addNewSelectedImage)
         
-        tabBarControllers.append(addNewViewController)
+        tabBarControllers.append(setupNavigationController(with: addNewViewController))
         
         let rentalsViewController = UIViewController()
-        rentalsViewController.title = Constants.rentalsName
+        rentalsViewController.title = Constants.rentalsName.uppercased()
         rentalsViewController.tabBarItem = UITabBarItem(title: Constants.rentalsName,
                                                         image: Constants.rentalsImage,
                                                         selectedImage: Constants.rentalsSelectedImage)
