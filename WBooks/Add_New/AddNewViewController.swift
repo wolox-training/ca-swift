@@ -50,7 +50,7 @@ class AddNewViewController: UIViewController {
         super.viewDidLoad()
         
         bindSubmitButton()
-        bindImagePicker()
+        setSelectImageAction()
 
         addHeaderImage(to: self.view)
     }
@@ -59,7 +59,7 @@ class AddNewViewController: UIViewController {
     
     private func bindSubmitButton() {
         self._view.submitButton.reactive.controlEvents(.touchUpInside)
-        .take(during: self.reactive.lifetime)
+            .take(during: self.reactive.lifetime)
             .observeValues({ [unowned self] _ in
                 if self.validateBookInformation() {
                     self._addNewViewModel.submitBook().startWithResult({ [unowned self] (result) in
@@ -77,7 +77,7 @@ class AddNewViewController: UIViewController {
             })
     }
     
-    private func bindImagePicker() {
+    private func setSelectImageAction() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
         _view.coverImageView.addGestureRecognizer(gestureRecognizer)
     }

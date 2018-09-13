@@ -13,14 +13,6 @@ class AddNewView: UIView, NibLoadable {
     
     // MARK: - Properties
     
-    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint! {
-        didSet {
-            print(UIScreen.main.bounds.size.height)
-            if UIScreen.main.bounds.size.height > GeneralConstants.Design.minimumDeviceHeight {
-                viewHeightConstraint.isActive = false
-            }
-        }
-    }
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
@@ -33,4 +25,11 @@ class AddNewView: UIView, NibLoadable {
             submitButton.setGradientBackground(enabled: true)
         }
     }
+//    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint! {
+//        didSet {
+////            if UIScreen.main.bounds.size.height > GeneralConstants.Design.minimumDeviceHeight {
+////                viewHeightConstraint.isActive = false
+////            }
+//        }
+//    }
 }
