@@ -36,30 +36,45 @@
                                 </imageView>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O5j-fN-He7">
                                     <rect key="frame" x="26" y="153" width="274" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="42B-vv-19H"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-ps-rSM">
                                     <rect key="frame" x="26" y="203" width="274" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="eAu-Ld-gKl"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-nx-P88">
                                     <rect key="frame" x="26" y="253" width="274" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="mQZ-pm-CBt"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cE-b2-MYq">
                                     <rect key="frame" x="26" y="303" width="274" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="KQt-53-BSY"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1y-j2-t2w">
                                     <rect key="frame" x="26" y="353" width="274" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="G08-ax-o3O"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -91,7 +106,7 @@
                                 <constraint firstItem="3Aw-8q-FTb" firstAttribute="leading" secondItem="d8U-fG-wpg" secondAttribute="leading" constant="26" id="Yz1-K6-2Nz"/>
                                 <constraint firstItem="x1y-j2-t2w" firstAttribute="leading" secondItem="4cE-b2-MYq" secondAttribute="leading" id="ZR2-ed-42D"/>
                                 <constraint firstItem="cDN-ps-rSM" firstAttribute="leading" secondItem="O5j-fN-He7" secondAttribute="leading" id="aGW-UO-26P"/>
-                                <constraint firstItem="jSB-Mw-gmj" firstAttribute="top" secondItem="x1y-j2-t2w" secondAttribute="bottom" priority="250" constant="50" id="cF9-gg-8hB"/>
+                                <constraint firstItem="jSB-Mw-gmj" firstAttribute="top" secondItem="x1y-j2-t2w" secondAttribute="bottom" constant="50" id="cF9-gg-8hB"/>
                                 <constraint firstAttribute="trailing" secondItem="x1y-j2-t2w" secondAttribute="trailing" constant="35" id="fEW-NU-sGl"/>
                                 <constraint firstItem="3Aw-8q-FTb" firstAttribute="top" secondItem="d8U-fG-wpg" secondAttribute="top" constant="26" id="ou7-IN-kpJ"/>
                                 <constraint firstItem="jSB-Mw-gmj" firstAttribute="leading" secondItem="d8U-fG-wpg" secondAttribute="leading" constant="30" id="pdd-Ah-XFp"/>
@@ -113,6 +128,7 @@
             <constraints>
                 <constraint firstItem="RH5-Gp-V2T" firstAttribute="leading" secondItem="0VY-Q0-bpg" secondAttribute="leading" constant="20" id="4sp-pu-hwz"/>
                 <constraint firstItem="RH5-Gp-V2T" firstAttribute="top" secondItem="0VY-Q0-bpg" secondAttribute="top" constant="45" id="Fap-rb-lgU"/>
+                <constraint firstItem="0VY-Q0-bpg" firstAttribute="bottom" secondItem="d8U-fG-wpg" secondAttribute="bottom" priority="950" constant="10" id="HAQ-Sr-1Zy"/>
                 <constraint firstItem="0VY-Q0-bpg" firstAttribute="trailing" secondItem="d8U-fG-wpg" secondAttribute="trailing" constant="20" id="Q8i-Wc-vw1"/>
                 <constraint firstItem="0VY-Q0-bpg" firstAttribute="trailing" secondItem="RH5-Gp-V2T" secondAttribute="trailing" constant="20" id="SdB-Jt-7WV"/>
                 <constraint firstItem="0VY-Q0-bpg" firstAttribute="bottom" secondItem="RH5-Gp-V2T" secondAttribute="bottom" constant="10" id="ihA-Sr-5Ic"/>
@@ -121,6 +137,8 @@
             <viewLayoutGuide key="safeArea" id="0VY-Q0-bpg"/>
             <connections>
                 <outlet property="authorTextField" destination="cDN-ps-rSM" id="ngw-sb-XWg"/>
+                <outlet property="bottomViewConstraint" destination="HAQ-Sr-1Zy" id="ZVd-pj-9mR"/>
+                <outlet property="buttonDistanceConstraint" destination="cF9-gg-8hB" id="Zqi-5p-QQf"/>
                 <outlet property="coverImageView" destination="3Aw-8q-FTb" id="sIX-vf-x5z"/>
                 <outlet property="descriptionTextField" destination="x1y-j2-t2w" id="rrM-Fq-JMa"/>
                 <outlet property="nameTextField" destination="O5j-fN-He7" id="HN0-Kg-xyb"/>

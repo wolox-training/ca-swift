@@ -25,11 +25,18 @@ class AddNewView: UIView, NibLoadable {
             submitButton.setGradientBackground(enabled: true)
         }
     }
-//    @IBOutlet weak var viewHeightConstraint: NSLayoutConstraint! {
-//        didSet {
-////            if UIScreen.main.bounds.size.height > GeneralConstants.Design.minimumDeviceHeight {
-////                viewHeightConstraint.isActive = false
-////            }
-//        }
-//    }
+    @IBOutlet weak var bottomViewConstraint: NSLayoutConstraint! {
+        didSet {
+            if DeviceType() == .iPhone5_5s_5c_SE {
+                bottomViewConstraint.isActive = false
+            }
+        }
+    }
+    @IBOutlet weak var buttonDistanceConstraint: NSLayoutConstraint! {
+        didSet {
+            if DeviceType() != .iPhone5_5s_5c_SE {
+                buttonDistanceConstraint.isActive = false
+            }
+        }
+    }
 }
