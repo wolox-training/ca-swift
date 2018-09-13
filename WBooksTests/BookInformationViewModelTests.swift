@@ -105,25 +105,37 @@ class BookInformationViewModelTests: QuickSpec {
                     viewModel = BookInformationViewModel(book: book, userBooksRepository: repository, imageFetcher: imageFetcher)
                 }
                 
-//                it("should get a valid Rent") { waitUntil { done in
-//                    viewModel.rentBook().startWithResult({ (result) in
-//                        expect(result).to(Result.success(Any))
-//                    })
-//                    }
-//                }
+                it("should get a valid Rent") { waitUntil { done in
+                    viewModel.rentBook().startWithResult({ (result) in
+                        switch result {
+                        case .success(let rent):
+                            expect(rent).to(equal(SuccessfulRent))
+                            done()
+                        case .failure:
+                            fail()
+                        }
+                    })
+                    }
+                }
             }
             
             context("when book couldn't be rented") {
                 beforeEach {
+                    repository._userRepositoryMock.expectedError = true
                     viewModel = BookInformationViewModel(book: book, userBooksRepository: repository, imageFetcher: imageFetcher)
                 }
                 
-//                it("should get and error") { waitUntil { done in
-//                    viewModel.rentBook().startWithValues({ (result) in
-//                        expect(result).to(equal(SuccessfulRent))
-//                    })
-//                    }
-//                }
+                it("should get and error") { waitUntil { done in
+                    viewModel.rentBook().startWithResult({ result in
+                        switch result {
+                        case .success:
+                            fail()
+                        case .failure:
+                            done()
+                        }
+                    })
+                    }
+                }
             }
         }
     }

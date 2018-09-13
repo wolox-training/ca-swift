@@ -11,7 +11,7 @@ import Argo
 import Runes
 import Curry
 
-struct Rent {
+struct Rent: Equatable {
     
     // MARK: - Properties
     
