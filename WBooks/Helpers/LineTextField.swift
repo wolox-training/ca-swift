@@ -10,6 +10,8 @@ import UIKit
 
 class LineTextField: UITextField {
     
+    // MARK: - Properties
+    
     override var placeholder: String? {
         didSet {
             configurePlaceholder()
@@ -20,12 +22,6 @@ class LineTextField: UITextField {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        configureTextField()
-        _ = add(bottom: .init(thickness: 0.5, color: GeneralConstants.Design.textfieldGrayColor))
-    }
-    
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
         configureTextField()
         _ = add(bottom: .init(thickness: 0.5, color: GeneralConstants.Design.textfieldGrayColor))
     }
