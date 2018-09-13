@@ -16,6 +16,7 @@ protocol BooksRepositoryType {
     func getBooks() -> SignalProducer<[Book], RepositoryError>
     func getBookStatus(id: Int) -> SignalProducer<BookStatus, RepositoryError>
     func getBookComments(id: Int) -> SignalProducer<[Comment], RepositoryError>
+    func submitBook() -> SignalProducer<Void, RepositoryError>
 }
 
 class BooksRepository: AbstractRepository, BooksRepositoryType {
@@ -24,6 +25,7 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
     
     struct Constants {
         static let booksList = "books"
+        static let bookSuggestion = "book_suggestions"
     }
     
     // MARK: - Consuming methods
@@ -44,11 +46,7 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
         })
     
         let resultStatus: SignalProducer<BookStatus, RepositoryError> = resultBool.map({ resBool in
-            if resBool {
-                return BookStatus.available
-            } else {
-                return BookStatus.notAvailable
-            }
+            return resBool ? BookStatus.available : BookStatus.notAvailable
         })
         return resultStatus
     }
@@ -57,5 +55,8 @@ class BooksRepository: AbstractRepository, BooksRepositoryType {
         let path = Constants.booksList + "/\(id)/comments"
         return performRequest(method: .get, path: path) { decode($0).toResult()}
     }
-    
+
+    func submitBook() -> SignalProducer<Void, RepositoryError> {
+        return SignalProducer(value: ())
+    }
 }

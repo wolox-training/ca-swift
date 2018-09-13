@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import ReactiveSwift
+import Networking
 
 class AddNewViewModel {
     
@@ -22,7 +24,7 @@ class AddNewViewModel {
     
     // MARK: - Public methods
     
-    func submitBook() {
-        print("Submitted")
+    func submitBook() -> SignalProducer<Void, RepositoryError> {
+        return self._booksRepository.submitBook()
     }
 }
