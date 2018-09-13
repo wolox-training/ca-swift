@@ -27,7 +27,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8U-fG-wpg">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="497"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add photo" translatesAutoresizingMaskIntoConstraints="NO" id="3Aw-8q-FTb">
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_add photo" translatesAutoresizingMaskIntoConstraints="NO" id="3Aw-8q-FTb">
                                     <rect key="frame" x="26" y="26" width="96" height="96"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="96" id="3EO-Dc-mRU"/>
@@ -79,7 +79,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSB-Mw-gmj">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSB-Mw-gmj">
                                     <rect key="frame" x="30" y="433" width="275" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="yOv-Ov-VDC"/>
@@ -139,7 +139,7 @@
                 <outlet property="authorTextField" destination="cDN-ps-rSM" id="ngw-sb-XWg"/>
                 <outlet property="bottomViewConstraint" destination="HAQ-Sr-1Zy" id="ZVd-pj-9mR"/>
                 <outlet property="buttonDistanceConstraint" destination="cF9-gg-8hB" id="Zqi-5p-QQf"/>
-                <outlet property="coverImageView" destination="3Aw-8q-FTb" id="sIX-vf-x5z"/>
+                <outlet property="coverImageView" destination="3Aw-8q-FTb" id="pVh-WJ-VRj"/>
                 <outlet property="descriptionTextField" destination="x1y-j2-t2w" id="rrM-Fq-JMa"/>
                 <outlet property="nameTextField" destination="O5j-fN-He7" id="HN0-Kg-xyb"/>
                 <outlet property="submitButton" destination="jSB-Mw-gmj" id="LHR-K6-6pu"/>
