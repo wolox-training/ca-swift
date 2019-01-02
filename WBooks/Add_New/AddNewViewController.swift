@@ -21,7 +21,6 @@ class AddNewViewController: UIViewController {
         static let completeInformationMessage = "Complete all information before submitting"
         static let menuGalleryOptionTitle = "Photo Gallery"
         static let menuCameraOptionTitle = "Camera"
-        static let menuCancelOptionTitle = "Cancel"
     }
     
     // MARK: - Properties
@@ -78,25 +77,8 @@ class AddNewViewController: UIViewController {
     }
     
     private func setSelectImageAction() {
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showPickerController))
         _view.coverImageView.addGestureRecognizer(gestureRecognizer)
-    }
-    
-    @objc private func selectImage() {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let galleryButton = UIAlertAction(title: Constants.menuGalleryOptionTitle, style: .default, handler: { [unowned self] (action) -> Void in
-            self.showPickerController(for: .photoLibrary)
-        })
-        let cameraButton = UIAlertAction(title: Constants.menuCameraOptionTitle, style: .default, handler: { [unowned self] (action) -> Void in
-            self.showPickerController(for: .camera)
-        })
-        let cancelButton = UIAlertAction(title: Constants.menuCancelOptionTitle, style: .cancel, handler: nil)
-    
-        actionSheet.addAction(galleryButton)
-        actionSheet.addAction(cameraButton)
-        actionSheet.addAction(cancelButton)
-        
-        self.navigationController!.present(actionSheet, animated: true, completion: nil)
     }
     
     private func validateBookInformation() -> Bool {
@@ -111,8 +93,8 @@ class AddNewViewController: UIViewController {
          return true
     }
     
-    private func showPickerController(for type: UIImagePickerControllerSourceType) {
-        _mediaPicker.presentImagePickerController(from: type, for: [.image]) {
+    @objc private func showPickerController() {
+        _mediaPicker.presentImagePickerController(from: [.camera, .photoLibrary], for: [.image]) {
             print("permisionNotGranted")
         }
         
