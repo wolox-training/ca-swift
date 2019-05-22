@@ -70,15 +70,16 @@
 		AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */; };
 		AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */; };
 		AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */; };
+		AE8246992147186F0042EE4E /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8246982147186F0042EE4E /* LineTextField.swift */; };
 		AE88A6D62142C71800B7CE07 /* MediaPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */; };
 		AE88A6D82142C77200B7CE07 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */; };
+		AEA42FE5214AB35A003DA7A6 /* SFCompactText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEA42FE3214AAFEA003DA7A6 /* SFCompactText-Bold.otf */; };
+		AEA42FE6214AB360003DA7A6 /* SFCompactText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEA42FE2214AAFB0003DA7A6 /* SFCompactText-Regular.otf */; };
+		AEA42FE7214AB360003DA7A6 /* SFCompactText-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEA42FE1214AAF73003DA7A6 /* SFCompactText-MediumItalic.otf */; };
+		AEA42FE8214AB360003DA7A6 /* SFCompactText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEA42FE4214AB02C003DA7A6 /* SFCompactText-Semibold.otf */; };
+		AEA42FE9214AB360003DA7A6 /* SFCompactDisplay-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEA42FE0214AAEC7003DA7A6 /* SFCompactDisplay-Bold.otf */; };
 		AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB208792127568C0031776C /* BookTableViewCell.swift */; };
 		AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2087A2127568C0031776C /* BookTableViewCell.xib */; };
-		AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */; };
-		AEB2088B21275F0C0031776C /* SFUIText-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088821275EEE0031776C /* SFUIText-Heavy.ttf */; };
-		AEB2088C21275F0C0031776C /* SFUIText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */; };
-		AEB2088D21275F0C0031776C /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088921275EEF0031776C /* SFUIText-Regular.ttf */; };
-		AEB2088E21275F0C0031776C /* SFUIText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088621275EEE0031776C /* SFUIText-Semibold.ttf */; };
 		AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB2088F2127610E0031776C /* BooksTableViewController.swift */; };
 		AEB208922127610E0031776C /* BooksTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB208902127610E0031776C /* BooksTableView.xib */; };
 		AEB20896212763820031776C /* BooksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB20895212763820031776C /* BooksTableView.swift */; };
@@ -182,15 +183,16 @@
 		AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		AE8246982147186F0042EE4E /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerService.swift; sourceTree = "<group>"; };
 		AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
+		AEA42FE0214AAEC7003DA7A6 /* SFCompactDisplay-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactDisplay-Bold.otf"; sourceTree = "<group>"; };
+		AEA42FE1214AAF73003DA7A6 /* SFCompactText-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-MediumItalic.otf"; sourceTree = "<group>"; };
+		AEA42FE2214AAFB0003DA7A6 /* SFCompactText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Regular.otf"; sourceTree = "<group>"; };
+		AEA42FE3214AAFEA003DA7A6 /* SFCompactText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Bold.otf"; sourceTree = "<group>"; };
+		AEA42FE4214AB02C003DA7A6 /* SFCompactText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFCompactText-Semibold.otf"; sourceTree = "<group>"; };
 		AEB208792127568C0031776C /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		AEB2087A2127568C0031776C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
-		AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
-		AEB2088621275EEE0031776C /* SFUIText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Semibold.ttf"; sourceTree = "<group>"; };
-		AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Bold.ttf"; sourceTree = "<group>"; };
-		AEB2088821275EEE0031776C /* SFUIText-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Heavy.ttf"; sourceTree = "<group>"; };
-		AEB2088921275EEF0031776C /* SFUIText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Regular.ttf"; sourceTree = "<group>"; };
 		AEB2088F2127610E0031776C /* BooksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableViewController.swift; sourceTree = "<group>"; };
 		AEB208902127610E0031776C /* BooksTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BooksTableView.xib; sourceTree = "<group>"; };
 		AEB20895212763820031776C /* BooksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTableView.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				AE696A222135ECEC00545F9E /* Extensions */,
+				AE8246982147186F0042EE4E /* LineTextField.swift */,
 				AE696A1E213589EB00545F9E /* ImageFetcher.swift */,
 				AE32611A2138269A001DD2C3 /* GeneralConstants.swift */,
 				AE6E1B3921403E870090E2F3 /* PublicMethods.swift */,
@@ -455,11 +458,11 @@
 		AEB2088421275EDF0031776C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */,
-				AEB2088821275EEE0031776C /* SFUIText-Heavy.ttf */,
-				AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */,
-				AEB2088921275EEF0031776C /* SFUIText-Regular.ttf */,
-				AEB2088621275EEE0031776C /* SFUIText-Semibold.ttf */,
+				AEA42FE3214AAFEA003DA7A6 /* SFCompactText-Bold.otf */,
+				AEA42FE2214AAFB0003DA7A6 /* SFCompactText-Regular.otf */,
+				AEA42FE1214AAF73003DA7A6 /* SFCompactText-MediumItalic.otf */,
+				AEA42FE4214AB02C003DA7A6 /* SFCompactText-Semibold.otf */,
+				AEA42FE0214AAEC7003DA7A6 /* SFCompactDisplay-Bold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -601,18 +604,18 @@
 			files = (
 				AEFD614421276BC000DFF419 /* LaunchScreen.storyboard in Resources */,
 				AE2E3AEA21419F5200DE35AC /* AddNewView.xib in Resources */,
+				AEA42FE7214AB360003DA7A6 /* SFCompactText-MediumItalic.otf in Resources */,
 				AE28F3DE213DCC08007C54CA /* BookDetailsView.xib in Resources */,
 				AE6E1B38213F730B0090E2F3 /* BookCommentCell.xib in Resources */,
-				AEB2088E21275F0C0031776C /* SFUIText-Semibold.ttf in Resources */,
-				AEB2088C21275F0C0031776C /* SFUIText-Medium.ttf in Resources */,
+				AEA42FE9214AB360003DA7A6 /* SFCompactDisplay-Bold.otf in Resources */,
 				9D15750C1CB1B27500EA395E /* Assets.xcassets in Resources */,
 				AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */,
 				AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */,
-				AEB2088D21275F0C0031776C /* SFUIText-Regular.ttf in Resources */,
 				AE6E1B34213F70D40090E2F3 /* BookComentsTableView.xib in Resources */,
-				AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */,
-				AEB2088B21275F0C0031776C /* SFUIText-Heavy.ttf in Resources */,
+				AEA42FE6214AB360003DA7A6 /* SFCompactText-Regular.otf in Resources */,
 				AEB208922127610E0031776C /* BooksTableView.xib in Resources */,
+				AEA42FE5214AB35A003DA7A6 /* SFCompactText-Bold.otf in Resources */,
+				AEA42FE8214AB360003DA7A6 /* SFCompactText-Semibold.otf in Resources */,
 				AE2E3AE5214160AC00DE35AC /* EmptyCommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +690,7 @@
 				AE28F3E2213EE02E007C54CA /* UserRepository.swift in Sources */,
 				9D1575071CB1B27500EA395E /* HomeViewController.swift in Sources */,
 				AE28F3E4213EE12F007C54CA /* User+BooksRepository.swift in Sources */,
+				AE8246992147186F0042EE4E /* LineTextField.swift in Sources */,
 				AE28F3E0213DE4E7007C54CA /* UIButton.swift in Sources */,
 				AE28F3D3213D9805007C54CA /* BookInformationViewController.swift in Sources */,
 				AE28F3D5213D9F05007C54CA /* BookInformationViewModel.swift in Sources */,

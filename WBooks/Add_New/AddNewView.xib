@@ -10,8 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SFUIText-Semibold.ttf">
-            <string>SFUIText-Semibold</string>
+        <array key="SFCompactDisplay-Bold.otf">
+            <string>SFCompactDisplay-Bold</string>
+        </array>
+        <array key="SFUIText-Regular.ttf">
+            <string>SFUIText-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -34,46 +37,46 @@
                                         <constraint firstAttribute="height" constant="96" id="EkP-VA-NZx"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O5j-fN-He7">
-                                    <rect key="frame" x="26" y="153" width="274" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-HK-Fc5" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="152" width="274" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="42B-vv-19H"/>
+                                        <constraint firstAttribute="height" constant="40" id="Wbc-9z-wbx"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-in-z8i" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="213" width="274" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="XnN-Jp-fXG"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-ps-rSM">
-                                    <rect key="frame" x="26" y="203" width="274" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-QM-Wi2" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="333" width="274" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="eAu-Ld-gKl"/>
+                                        <constraint firstAttribute="height" constant="40" id="YYe-8D-n3C"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DP7-nx-P88">
-                                    <rect key="frame" x="26" y="253" width="274" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUL-GB-bKK" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="393" width="274" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="mQZ-pm-CBt"/>
+                                        <constraint firstAttribute="height" constant="40" id="AGC-TX-J3i"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cE-b2-MYq">
-                                    <rect key="frame" x="26" y="303" width="274" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FfD-jU-IV4" customClass="LineTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="26" y="273" width="274" height="40"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="KQt-53-BSY"/>
-                                    </constraints>
-                                    <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1y-j2-t2w">
-                                    <rect key="frame" x="26" y="353" width="274" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="G08-ax-o3O"/>
+                                        <constraint firstAttribute="height" constant="40" id="NcC-69-vOq"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -84,7 +87,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="yOv-Ov-VDC"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="SFUIText-Semibold" family="SF UI Text" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="15"/>
                                     <state key="normal" title="SUBMIT">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>

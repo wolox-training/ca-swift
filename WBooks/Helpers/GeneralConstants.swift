@@ -13,7 +13,10 @@ struct GeneralConstants {
     struct Design {
         static let backgroundBlueColor = UIColor(hex: "EAF6FA")!
         static let applicationBlueColor = UIColor(hex: "00ADEE")!
-        static let navigationBarTitleFont = UIFont(name: "SFUIText-Semibold", size: 17)!
+        static let textfieldGrayColor = UIColor(hex: "C8C7CC")!
+        static let navigationBarTitleFont = UIFont(name: "SFCompactDisplay-Bold", size: 17)!
+        static let textFont = UIFont(name: "SFCompactText-Regular", size: 15)!
+        static let placeholderFont = UIFont(name: "SFCompactText-MediumItalic", size: 15)!
         static let appDefaultImage = UIImage(named: "default_image")!
         static let navigationBarImage = UIImage(named: "bc_nav bar")!
         static let headerImageHeight: CGFloat = 30
