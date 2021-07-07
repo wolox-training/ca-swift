@@ -11,13 +11,6 @@ import WolmoCore
 
 class BookInformationView: UIView, NibLoadable {
     
-    // MARK: - Contants
-    
-    struct Constants {
-        static let buttonCornerRadius: CGFloat = 20
-        static let buttonBorderWidth: CGFloat = 1
-    }
-    
     // MARK: - Properties
     
     @IBOutlet weak var bookCoverImageView: UIImageView!
@@ -29,13 +22,13 @@ class BookInformationView: UIView, NibLoadable {
     @IBOutlet weak var addToWishlistButton: UIButton! {
         didSet {
             addToWishlistButton.layer.borderColor = GeneralConstants.Design.applicationBlueColor.cgColor
-            addToWishlistButton.layer.cornerRadius = Constants.buttonCornerRadius
-            addToWishlistButton.layer.borderWidth = Constants.buttonBorderWidth
+            addToWishlistButton.layer.cornerRadius = GeneralConstants.Design.buttonCornerRadius
+            addToWishlistButton.layer.borderWidth = GeneralConstants.Design.buttonBorderWidth
         }
     }
     @IBOutlet weak var rentButton: UIButton! {
         didSet {
-            rentButton.layer.cornerRadius = Constants.buttonCornerRadius
+            rentButton.layer.cornerRadius = GeneralConstants.Design.buttonCornerRadius
         }
     }
     

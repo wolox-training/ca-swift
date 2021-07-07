@@ -46,6 +46,10 @@
 		AE28F3E6213EE982007C54CA /* Rent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28F3E5213EE982007C54CA /* Rent.swift */; };
 		AE2E3AE4214160AC00DE35AC /* EmptyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E3AE2214160AC00DE35AC /* EmptyCommentCell.swift */; };
 		AE2E3AE5214160AC00DE35AC /* EmptyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2E3AE3214160AC00DE35AC /* EmptyCommentCell.xib */; };
+		AE2E3AE921419F5200DE35AC /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E3AE721419F5200DE35AC /* AddNewView.swift */; };
+		AE2E3AEA21419F5200DE35AC /* AddNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE2E3AE821419F5200DE35AC /* AddNewView.xib */; };
+		AE2E3AEC2141A01100DE35AC /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E3AEB2141A01100DE35AC /* AddNewViewController.swift */; };
+		AE2E3AEE2141A01B00DE35AC /* AddNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E3AED2141A01B00DE35AC /* AddNewViewModel.swift */; };
 		AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611A2138269A001DD2C3 /* GeneralConstants.swift */; };
 		AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32611F21389D5C001DD2C3 /* BookInformationView.swift */; };
 		AE32612221389D66001DD2C3 /* BookInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE32612121389D66001DD2C3 /* BookInformationView.xib */; };
@@ -66,6 +70,8 @@
 		AE7144E7212C7CEB00C06BE4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */; };
 		AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */; };
 		AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */; };
+		AE88A6D62142C71800B7CE07 /* MediaPickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */; };
+		AE88A6D82142C77200B7CE07 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */; };
 		AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB208792127568C0031776C /* BookTableViewCell.swift */; };
 		AEB2087C2127568C0031776C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB2087A2127568C0031776C /* BookTableViewCell.xib */; };
 		AEB2088A21275F0C0031776C /* SFUIText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2088721275EEE0031776C /* SFUIText-Bold.ttf */; };
@@ -152,6 +158,10 @@
 		AE28F3E5213EE982007C54CA /* Rent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rent.swift; sourceTree = "<group>"; };
 		AE2E3AE2214160AC00DE35AC /* EmptyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCommentCell.swift; sourceTree = "<group>"; };
 		AE2E3AE3214160AC00DE35AC /* EmptyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCommentCell.xib; sourceTree = "<group>"; };
+		AE2E3AE721419F5200DE35AC /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
+		AE2E3AE821419F5200DE35AC /* AddNewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewView.xib; sourceTree = "<group>"; };
+		AE2E3AEB2141A01100DE35AC /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
+		AE2E3AED2141A01B00DE35AC /* AddNewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewModel.swift; sourceTree = "<group>"; };
 		AE32611A2138269A001DD2C3 /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
 		AE32611F21389D5C001DD2C3 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		AE32612121389D66001DD2C3 /* BookInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookInformationView.xib; sourceTree = "<group>"; };
@@ -172,6 +182,8 @@
 		AE7144E6212C7CEB00C06BE4 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		AE7144E9212C7F8800C06BE4 /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		AE7144ED212CABFB00C06BE4 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerService.swift; sourceTree = "<group>"; };
+		AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		AEB208792127568C0031776C /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		AEB2087A2127568C0031776C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		AEB2088521275EEE0031776C /* SFUIText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Medium.ttf"; sourceTree = "<group>"; };
@@ -279,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6E1B26213F6EF70090E2F3 /* Book_Comments */,
+				AE2E3AE621419F1100DE35AC /* Add_New */,
 				AE28F3D6213DA769007C54CA /* Book_Details */,
 				AE32611C21389D18001DD2C3 /* Book_Information */,
 				AEB208942127618B0031776C /* Books_Table */,
@@ -350,6 +363,17 @@
 			path = Book_Details;
 			sourceTree = "<group>";
 		};
+		AE2E3AE621419F1100DE35AC /* Add_New */ = {
+			isa = PBXGroup;
+			children = (
+				AE2E3AE721419F5200DE35AC /* AddNewView.swift */,
+				AE2E3AE821419F5200DE35AC /* AddNewView.xib */,
+				AE2E3AEB2141A01100DE35AC /* AddNewViewController.swift */,
+				AE2E3AED2141A01B00DE35AC /* AddNewViewModel.swift */,
+			);
+			path = Add_New;
+			sourceTree = "<group>";
+		};
 		AE32611C21389D18001DD2C3 /* Book_Information */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +392,7 @@
 				AE696A1E213589EB00545F9E /* ImageFetcher.swift */,
 				AE32611A2138269A001DD2C3 /* GeneralConstants.swift */,
 				AE6E1B3921403E870090E2F3 /* PublicMethods.swift */,
+				AE88A6D52142C71800B7CE07 /* MediaPickerService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -379,6 +404,7 @@
 				AE696A232135ED0B00545F9E /* UIViewController.swift */,
 				AE696A252135FC8900545F9E /* UIVIew.swift */,
 				AE28F3DF213DE4E7007C54CA /* UIButton.swift */,
+				AE88A6D72142C77200B7CE07 /* UIImagePickerController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -534,7 +560,7 @@
 					9D1575001CB1B27500EA395E = {
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					9D1575141CB1B27500EA395E = {
 						CreatedOnToolsVersion = 7.3;
@@ -574,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEFD614421276BC000DFF419 /* LaunchScreen.storyboard in Resources */,
+				AE2E3AEA21419F5200DE35AC /* AddNewView.xib in Resources */,
 				AE28F3DE213DCC08007C54CA /* BookDetailsView.xib in Resources */,
 				AE6E1B38213F730B0090E2F3 /* BookCommentCell.xib in Resources */,
 				AEB2088E21275F0C0031776C /* SFUIText-Semibold.ttf in Resources */,
@@ -634,7 +661,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		9D6E405E1CB1B94C008CE558 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -664,6 +691,7 @@
 				AE28F3D3213D9805007C54CA /* BookInformationViewController.swift in Sources */,
 				AE28F3D5213D9F05007C54CA /* BookInformationViewModel.swift in Sources */,
 				AEB2087B2127568C0031776C /* BookTableViewCell.swift in Sources */,
+				AE2E3AEC2141A01100DE35AC /* AddNewViewController.swift in Sources */,
 				CEB934DD1D21992100DF75C2 /* Environment.swift in Sources */,
 				46BEC9492117C7AE004338C4 /* NetworkingBootstrapper.swift in Sources */,
 				AE32612021389D5C001DD2C3 /* BookInformationView.swift in Sources */,
@@ -675,13 +703,16 @@
 				9D1575051CB1B27500EA395E /* AppDelegate.swift in Sources */,
 				AE696A262135FC8900545F9E /* UIVIew.swift in Sources */,
 				AE6E1B2E213F6F590090E2F3 /* BookCommentsViewController.swift in Sources */,
+				AE2E3AEE2141A01B00DE35AC /* AddNewViewModel.swift in Sources */,
 				AE65C8C42130405200925C9B /* BooksViewModel.swift in Sources */,
 				AEB20896212763820031776C /* BooksTableView.swift in Sources */,
 				AE6E1B3A21403E870090E2F3 /* PublicMethods.swift in Sources */,
 				46BEC94B2117DA4E004338C4 /* AuthUser.swift in Sources */,
 				AE696A242135ED0B00545F9E /* UIViewController.swift in Sources */,
 				AE2E3AE4214160AC00DE35AC /* EmptyCommentCell.swift in Sources */,
+				AE2E3AE921419F5200DE35AC /* AddNewView.swift in Sources */,
 				AEB208912127610E0031776C /* BooksTableViewController.swift in Sources */,
+				AE88A6D62142C71800B7CE07 /* MediaPickerService.swift in Sources */,
 				AE32611B2138269A001DD2C3 /* GeneralConstants.swift in Sources */,
 				AE696A1F213589EB00545F9E /* ImageFetcher.swift in Sources */,
 				AE6E1B33213F70D40090E2F3 /* BookComentsTableView.swift in Sources */,
@@ -693,6 +724,7 @@
 				46BEC9462117C765004338C4 /* User.swift in Sources */,
 				AE7144EA212C7F8800C06BE4 /* BooksRepository.swift in Sources */,
 				AE7144EE212CABFB00C06BE4 /* LibraryViewController.swift in Sources */,
+				AE88A6D82142C77200B7CE07 /* UIImagePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +816,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-debug";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -887,6 +921,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-alpha";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -990,6 +1026,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-release";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1091,6 +1129,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-production";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
